@@ -1,0 +1,622 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nf-black:#0a0a0a;
+  --nf-white:#ffffff;
+  --nf-gray-50:#f7f7f6;
+  --nf-gray-100:#efefed;
+  --nf-gray-200:#dddbd7;
+  --nf-gray-400:#9e9b95;
+  --nf-gray-600:#5a5854;
+  --nf-gray-800:#2c2b28;
+  --nf-accent:#1a56db;
+  --nf-accent-light:#e8f0fe;
+  --nf-green:#166534;
+  --nf-green-bg:#dcfce7;
+  --nf-red:#991b1b;
+  --nf-red-bg:#fee2e2;
+  --nf-amber:#92400e;
+  --nf-amber-bg:#fef3c7;
+  --radius-sm:4px;
+  --radius-md:8px;
+  --radius-lg:12px;
+}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--nf-gray-50);color:var(--nf-black);font-size:14px;line-height:1.6;min-height:100vh}
+
+/* ── NAV ── */
+nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:28px;height:28px;background:var(--nf-accent);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.nav-logo-text{color:#fff;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.nav-logo-text span{color:var(--nf-gray-400);font-weight:400}
+.nav-badge{background:rgba(255,255,255,.08);color:var(--nf-gray-400);font-size:11px;padding:2px 8px;border-radius:20px;border:0.5px solid rgba(255,255,255,.1)}
+
+/* ── HERO ── */
+.hero{background:var(--nf-black);padding:3rem 2rem 2.5rem;border-bottom:0.5px solid rgba(255,255,255,.08)}
+.hero-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-accent);margin-bottom:.75rem}
+.hero-title{font-size:32px;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem}
+.hero-title span{color:var(--nf-gray-400);font-weight:300}
+.hero-sub{font-size:14px;color:var(--nf-gray-400);max-width:520px;line-height:1.7}
+
+/* ── LAYOUT ── */
+.app{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 56px - 120px)}
+
+/* ── SIDEBAR ── */
+.sidebar{background:var(--nf-white);border-right:0.5px solid var(--nf-gray-200);padding:1.5rem 0}
+.sidebar-section{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-gray-400);padding:.5rem 1.25rem .4rem;margin-top:.5rem}
+.sidebar-item{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;cursor:pointer;font-size:13px;color:var(--nf-gray-600);transition:all .12s;border-left:2px solid transparent;user-select:none}
+.sidebar-item i{font-size:16px;color:var(--nf-gray-400)}
+.sidebar-item:hover{background:var(--nf-gray-50);color:var(--nf-black)}
+.sidebar-item:hover i{color:var(--nf-black)}
+.sidebar-item.active{background:var(--nf-accent-light);color:var(--nf-accent);border-left-color:var(--nf-accent);font-weight:500}
+.sidebar-item.active i{color:var(--nf-accent)}
+.sidebar-divider{height:0.5px;background:var(--nf-gray-100);margin:.75rem 1.25rem}
+.norm-chip{font-size:10px;background:var(--nf-gray-100);color:var(--nf-gray-600);padding:2px 6px;border-radius:3px;margin-left:auto}
+
+/* ── MAIN CONTENT ── */
+.main{padding:0;overflow:hidden}
+.panel{display:none;padding:2rem}
+.panel.active{display:block}
+.panel-header{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:0.5px solid var(--nf-gray-200)}
+.panel-title{font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--nf-black);margin-bottom:.35rem}
+.panel-desc{font-size:13px;color:var(--nf-gray-600);line-height:1.6}
+.norm-ref{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--nf-accent-light);color:var(--nf-accent);padding:3px 8px;border-radius:3px;font-weight:500;margin-top:.5rem}
+
+/* ── FORM ELEMENTS ── */
+.form-section{margin-bottom:1.75rem}
+.form-section-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nf-gray-400);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.form-section-title::after{content:'';flex:1;height:0.5px;background:var(--nf-gray-200)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12px;font-weight:500;color:var(--nf-gray-600);letter-spacing:.01em}
+.field input,.field select{
+  width:100%;padding:8px 11px;
+  border:0.5px solid var(--nf-gray-200);
+  border-radius:var(--radius-md);
+  font-size:13px;
+  background:var(--nf-white);
+  color:var(--nf-black);
+  transition:border-color .12s, box-shadow .12s;
+  -webkit-appearance:none;
+}
+.field input:focus,.field select:focus{outline:none;border-color:var(--nf-accent);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.field input[readonly]{background:var(--nf-gray-50);color:var(--nf-gray-600);cursor:default}
+.field-hint{font-size:11px;color:var(--nf-gray-400);line-height:1.4}
+
+/* ── BUTTON ── */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--nf-black);color:#fff;border:none;border-radius:var(--radius-md);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.01em;transition:background .15s;width:100%;justify-content:center;margin-top:.5rem}
+.btn-primary:hover{background:var(--nf-gray-800)}
+.btn-primary i{font-size:16px}
+
+/* ── RESULT ── */
+.result-area{margin-top:1.5rem;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.result-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nf-gray-400)}
+.metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem}
+.metric-card{background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.125rem}
+.metric-card-label{font-size:11px;color:var(--nf-gray-400);font-weight:500;margin-bottom:.25rem;letter-spacing:.01em}
+.metric-card-value{font-size:24px;font-weight:700;color:var(--nf-black);letter-spacing:-.02em;line-height:1}
+.metric-card-unit{font-size:12px;color:var(--nf-gray-400);margin-left:2px;font-weight:400}
+.status-bar{display:flex;align-items:center;gap:10px;padding:.75rem 1rem;border-radius:var(--radius-md);font-size:13px;font-weight:500;margin-bottom:.75rem}
+.status-ok{background:var(--nf-green-bg);color:var(--nf-green)}
+.status-err{background:var(--nf-red-bg);color:var(--nf-red)}
+.status-warn{background:var(--nf-amber-bg);color:var(--nf-amber)}
+.result-note{font-size:12px;color:var(--nf-gray-600);line-height:1.6;padding:.75rem 1rem;background:var(--nf-gray-50);border-radius:var(--radius-md);border-left:2px solid var(--nf-gray-200)}
+
+/* ── CHECKS ── */
+.checks-list{display:flex;flex-direction:column;gap:0}
+.check-item{display:flex;align-items:flex-start;gap:12px;padding:.75rem 0;border-bottom:0.5px solid var(--nf-gray-100)}
+.check-item:last-child{border-bottom:none}
+.check-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-icon.ok{background:var(--nf-green-bg);color:var(--nf-green)}
+.check-icon.err{background:var(--nf-red-bg);color:var(--nf-red)}
+.check-icon i{font-size:14px}
+.check-body{flex:1}
+.check-label{font-size:13px;font-weight:500;color:var(--nf-black)}
+.check-sub{font-size:11px;color:var(--nf-gray-400);margin-top:1px}
+.check-values{margin-left:auto;text-align:right;flex-shrink:0;padding-left:12px}
+.check-ist{font-size:13px;font-weight:600;color:var(--nf-black)}
+.check-min{font-size:11px;color:var(--nf-gray-400)}
+
+/* ── FOOTER ── */
+footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.footer-left{font-size:12px;color:var(--nf-gray-600)}
+.footer-right{font-size:12px;color:var(--nf-gray-600);display:flex;gap:1.5rem}
+.footer-right a{color:var(--nf-gray-400);text-decoration:none}
+</style></head><body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 16 16"><path d="M2 8 C2 4.5 5 2 8 2 C11 2 14 4.5 14 8"/><path d="M5 8 C5 6.5 6.5 5.5 8 5.5 C9.5 5.5 11 6.5 11 8"/><circle cx="8" cy="8" r="1.5" fill="#fff" stroke="none"/></svg>
+    </div>
+    <span class="nav-logo-text">Normaflow <span>/ SIA 382/1</span></span>
+  </div>
+  <span class="nav-badge">Berechnungstool für Lüftungsplaner</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Normenkonform · Präzise · Effizient</div>
+  <div class="hero-title">Lüftungstechnische<br><span>Berechnungen nach SIA 382/1</span></div>
+  <div class="hero-sub">Professionelle Dimensionierungswerkzeuge für Lüftungsplaner. Alle Berechnungen basieren ausschliesslich auf der Norm SIA 382/1:2025.</div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-section">Berechnungen</div>
+    <div class="sidebar-item active" onclick="showPanel(0,this)">
+      <i class="ti ti-vector-triangle" aria-hidden="true"></i>
+      Luftleitungen
+      <span class="norm-chip">§ 5.11</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(1,this)">
+      <i class="ti ti-wind" aria-hidden="true"></i>
+      Aussenluftfassung
+      <span class="norm-chip">§ 5.12</span>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Referenz</div>
+    <div class="sidebar-item" style="cursor:default;opacity:.5">
+      <i class="ti ti-book" aria-hidden="true"></i>
+      Norm SIA 382/1:2025
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- Panel 0: Luftleitungen -->
+    <div class="panel active" id="p0">
+      <div class="panel-header">
+        <div class="panel-title">Luftleitungsdimensionierung</div>
+        <div class="panel-desc">Maximale Luftgeschwindigkeit nach Volumenstrom und jährlichen Elektro-Volllaststunden. Reduktionsfaktor für Nicht-Rund-Leitungen gemäss Tabelle 50.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Tabellen 49 + 50, Ziff. 5.11.5.7–5.11.5.8</span>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Raumnutzung &amp; Betrieb</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Raumnutzung</label>
+            <select id="nutzung" onchange="updateStunden()">
+              <option value="">— wählen —</option>
+              <optgroup label="Wohnen">
+                <option value="4380|Wohnen MFH">Wohnen MFH</option>
+                <option value="4380|Wohnen EFH">Wohnen EFH</option>
+              </optgroup>
+              <optgroup label="Hotel">
+                <option value="4380|Hotelzimmer">Hotelzimmer</option>
+                <option value="3290|Empfang, Lobby">Empfang, Lobby</option>
+              </optgroup>
+              <optgroup label="Büro / Verwaltung">
+                <option value="2740|Einzel-, Gruppenbüro">Einzel-, Gruppenbüro</option>
+                <option value="2740|Grossraumbüro">Grossraumbüro</option>
+                <option value="1090|Sitzungszimmer">Sitzungszimmer</option>
+                <option value="2740|Schalterhalle, Empfang">Schalterhalle, Empfang</option>
+              </optgroup>
+              <optgroup label="Bildung">
+                <option value="1640|Schulzimmer">Schulzimmer</option>
+                <option value="1640|Lehrerzimmer">Lehrerzimmer</option>
+                <option value="2180|Bibliothek">Bibliothek</option>
+                <option value="1090|Hörsaal">Hörsaal</option>
+                <option value="1640|Schulfachraum (Spezialraum)">Schulfachraum (Spezialraum)</option>
+              </optgroup>
+              <optgroup label="Verkauf">
+                <option value="3290|Lebensmittelverkauf">Lebensmittelverkauf</option>
+                <option value="2740|Fachgeschäft Verkauf">Fachgeschäft Verkauf</option>
+                <option value="2180|Möbel, Bau, Garten">Möbel, Bau, Garten</option>
+              </optgroup>
+              <optgroup label="Gastgewerbe">
+                <option value="4380|Restaurant">Restaurant</option>
+                <option value="4380|Selbstbedienungsrestaurant">Selbstbedienungsrestaurant</option>
+                <option value="5840|Küche zu Restaurant">Küche zu Restaurant</option>
+                <option value="5840|Küche zu Selbstbedienungsrest.">Küche zu Selbstbedienungsrest.</option>
+              </optgroup>
+              <optgroup label="Versammlung">
+                <option value="1090|Vorstellungsraum">Vorstellungsraum</option>
+                <option value="1090|Mehrzweckhalle">Mehrzweckhalle</option>
+                <option value="1090|Ausstellungshalle">Ausstellungshalle</option>
+              </optgroup>
+              <optgroup label="Gesundheit">
+                <option value="5840|Bettenzimmer">Bettenzimmer</option>
+                <option value="2740|Stationszimmer">Stationszimmer</option>
+                <option value="2180|Behandlungsraum">Behandlungsraum</option>
+              </optgroup>
+              <optgroup label="Produktion / Labor">
+                <option value="5840|Produktion (grobe Arbeit)">Produktion (grobe Arbeit)</option>
+                <option value="5840|Produktion (feine Arbeit)">Produktion (feine Arbeit)</option>
+                <option value="2740|Laborraum">Laborraum</option>
+                <option value="3290|Lagerhalle">Lagerhalle</option>
+              </optgroup>
+              <optgroup label="Sport">
+                <option value="1640|Turnhalle">Turnhalle</option>
+                <option value="2740|Fitnessraum">Fitnessraum</option>
+                <option value="4380|Schwimmhalle">Schwimmhalle</option>
+              </optgroup>
+              <optgroup label="Nebenräume / Verkehr">
+                <option value="2740|Verkehrsfläche">Verkehrsfläche</option>
+                <option value="8760|Verkehrsfläche 24 h">Verkehrsfläche 24 h</option>
+                <option value="2740|Treppenhaus">Treppenhaus</option>
+                <option value="2740|Nebenraum">Nebenraum</option>
+                <option value="2740|Küche, Teeküche">Küche, Teeküche</option>
+                <option value="2740|WC, Bad, Dusche">WC, Bad, Dusche</option>
+                <option value="2740|WC">WC</option>
+                <option value="2740|Garderobe, Dusche">Garderobe, Dusche</option>
+              </optgroup>
+              <optgroup label="Spezial">
+                <option value="4380|Parkhaus">Parkhaus</option>
+                <option value="2740|Wasch- und Trockenraum">Wasch- und Trockenraum</option>
+                <option value="8760|Kühlraum">Kühlraum</option>
+                <option value="8760|Serverraum">Serverraum</option>
+                <option value="custom|Manuell">Manuell eingeben</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field">
+            <label>Elektro-Volllaststunden t<sub>V,Fld,el</sub> [h/a]</label>
+            <input type="number" id="vollstunden" placeholder="z.B. 2740" min="500" max="8760" oninput="clearNutzung()">
+            <span class="field-hint">Aus Raumdatenblätter SIA 2024 — wird automatisch befüllt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Geometrie &amp; Volumenstrom</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Leitungsform</label>
+            <select id="leitungsform" onchange="updateGeomFeld()">
+              <option value="rund">Rund — Durchmesser prüfen</option>
+              <option value="rund_calc">Rund — Durchmesser berechnen</option>
+              <option value="rechteckig">Rechteckig — Breite × Höhe</option>
+              <option value="oval">Flachoval — Breite × Höhe</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Luftvolumenstrom q<sub>v</sub> [m³/h]</label>
+            <input type="number" id="vol_strom" value="5800" min="10">
+          </div>
+        </div>
+        <div class="grid2" id="row_rund_d" style="margin-top:12px">
+          <div class="field">
+            <label>Durchmesser DN [mm]</label>
+            <input type="number" id="d_rund" value="400" min="50" step="25">
+          </div>
+          <div class="field"></div>
+        </div>
+        <div class="grid4" id="row_rect" style="display:none;margin-top:12px">
+          <div class="field">
+            <label>Breite a [mm]</label>
+            <input type="number" id="breite" value="400" min="50" step="50" oninput="updateSV()">
+          </div>
+          <div class="field">
+            <label>Höhe b [mm]</label>
+            <input type="number" id="hoehe" value="200" min="50" step="50" oninput="updateSV()">
+          </div>
+          <div class="field">
+            <label>Seitenverhältnis a:b</label>
+            <input type="text" id="sv_anzeige" readonly value="—">
+          </div>
+          <div class="field">
+            <label>Reduktionsfaktor f (Tab. 50)</label>
+            <input type="text" id="fva_anzeige" readonly value="—">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="calcLeitung()">
+        <i class="ti ti-calculator" aria-hidden="true"></i> Berechnung ausführen
+      </button>
+
+      <div id="res_leitung" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="r_metrics"></div>
+        <div id="r_status_l" style="margin-bottom:.75rem"></div>
+        <div id="r_detail_l" class="result-note"></div>
+      </div>
+    </div>
+
+    <!-- Panel 1: Aussenluftfassung -->
+    <div class="panel" id="p1">
+      <div class="panel-header">
+        <div class="panel-title">Aussenluftfassung</div>
+        <div class="panel-desc">Überprüfung der Anordnung von Aussenluft-Durchlässen nach allen relevanten Kriterien. Jede Anforderung wird einzeln bewertet und dokumentiert.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Ziff. 5.12.2 + 5.12.4, Figur 8</span>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Standort &amp; Lage</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Höhe Durchlass über Terrain [m]</label>
+            <input type="number" id="h_terrain" value="3.0" step="0.1" min="0">
+          </div>
+          <div class="field">
+            <label>Max. jährl. Schneehöhe h<sub>max</sub> [m]</label>
+            <input type="number" id="h_schnee" value="0.5" step="0.1" min="0">
+          </div>
+        </div>
+        <div class="grid2" style="margin-top:12px">
+          <div class="field">
+            <label>Lage des Durchlasses</label>
+            <select id="lage_durchlass">
+              <option value="fassade">Fassade / Wand</option>
+              <option value="dach">Dach / Terrasse</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Öffentl. zugänglicher Bereich?</label>
+            <select id="oeffentlich">
+              <option value="nein">Nein</option>
+              <option value="ja">Ja (Spielplatz, Strasse etc.)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Abstände zu Emissionsquellen</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Abstand zu Schadstoffquellen [m]</label>
+            <input type="number" id="abst_schad" value="10" step="0.5" min="0">
+            <span class="field-hint">Strassen, Parkplätze ≥ 3 Fzg., Kamine, Abfalllager</span>
+          </div>
+          <div class="field">
+            <label>Abstand zu Fortluft-Durchlass (horizontal) [m]</label>
+            <input type="number" id="abst_fortluft" value="10" step="0.5" min="0">
+          </div>
+        </div>
+        <div class="grid2" style="margin-top:12px">
+          <div class="field">
+            <label>Fortluftkategorie</label>
+            <select id="fortluft_kat">
+              <option value="1">EHA 1 / 2 — gering / mässig verunreinigt</option>
+              <option value="3">EHA 3 — hoch verunreinigt</option>
+              <option value="4_klein">EHA 4 — q<sub>v</sub> &lt; 0,3 m³/s</option>
+              <option value="4_mittel">EHA 4 — q<sub>v</sub> = 1,5 m³/s</option>
+              <option value="4_gross">EHA 4 — q<sub>v</sub> = 3,0 m³/s</option>
+              <option value="4_xl">EHA 4 — q<sub>v</sub> = 6,0 m³/s</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Höhenversatz Fort-/Aussenluft [m, positiv = Fortluft höher]</label>
+            <input type="number" id="h_versatz" value="0" step="0.5">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Luftdurchlass &amp; Wetterschutzgitter</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Breite Anschlusskanal [mm]</label>
+            <input type="number" id="ald_breite" value="500" min="50" step="10" oninput="calcNettoALD()">
+          </div>
+          <div class="field">
+            <label>Höhe Anschlusskanal [mm]</label>
+            <input type="number" id="ald_hoehe" value="300" min="50" step="10" oninput="calcNettoALD()">
+          </div>
+          <div class="field">
+            <label>Freier Querschnitt Gitter [%]</label>
+            <input type="number" id="ald_gitter" value="60" min="10" max="100" step="1" oninput="calcNettoALD()">
+            <span class="field-hint">Standard: 60 % (§ 5.12.2.12)</span>
+          </div>
+        </div>
+        <div class="grid3" style="margin-top:12px">
+          <div class="field">
+            <label>Brutto-Querschnitt [m²]</label>
+            <input type="text" id="a_brutto" readonly value="—">
+          </div>
+          <div class="field">
+            <label>Netto-Querschnitt [m²]</label>
+            <input type="text" id="a_ald" readonly value="—">
+          </div>
+          <div class="field">
+            <label>Volumenstrom am Durchlass [m³/h]</label>
+            <input type="number" id="q_ald" value="2000" min="100" oninput="calcNettoALD()">
+          </div>
+        </div>
+        <div id="ald_v_preview" style="display:none;margin-top:10px"></div>
+      </div>
+
+      <button class="btn-primary" onclick="calcAussen()">
+        <i class="ti ti-list-check" aria-hidden="true"></i> Alle Kriterien prüfen
+      </button>
+
+      <div id="res_aussen" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Prüfprotokoll</span></div>
+        <div id="checks_list" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-bottom:1rem"></div>
+        <div id="aussen_summary"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <span class="footer-left">© 2025 Normaflow · Berechnungen gemäss SIA 382/1:2025</span>
+  <div class="footer-right">
+    <a href="#">Über Normaflow</a>
+    <a href="#">Normen-Referenz</a>
+    <a href="#">Kontakt</a>
+  </div>
+</footer>
+
+<script>
+function showPanel(n,el){
+  document.querySelectorAll('.panel').forEach(function(p,i){p.classList.toggle('active',i===n);});
+  document.querySelectorAll('.sidebar-item').forEach(function(s){s.classList.remove('active');});
+  el.classList.add('active');
+}
+
+/* ── Modul 1 ── */
+function clearNutzung(){document.getElementById('nutzung').value='';}
+function updateStunden(){
+  var v=document.getElementById('nutzung').value;
+  if(!v||v.startsWith('custom')) return;
+  document.getElementById('vollstunden').value=v.split('|')[0];
+}
+function updateGeomFeld(){
+  var f=document.getElementById('leitungsform').value;
+  document.getElementById('row_rund_d').style.display=(f==='rund')?'grid':'none';
+  document.getElementById('row_rect').style.display=(f==='rechteckig'||f==='oval')?'grid':'none';
+  if(f==='rechteckig'||f==='oval') updateSV();
+}
+updateGeomFeld();
+
+var t50=[[1,0.941,null],[2,0.914,0.933],[3,0.876,0.893],[4,0.842,0.857],[5,0.813,0.825],[6,0.788,0.798],[7,0.766,0.775],[8,0.746,0.754],[9,0.729,0.736],[10,0.714,0.720]];
+function getF50(ratio,isOval){
+  ratio=Math.max(1,Math.min(10,ratio));
+  var lo=Math.floor(ratio),hi=Math.ceil(ratio);
+  function fAt(r){var row=t50.find(function(x){return x[0]===r;});if(!row)return 1;return isOval?(row[2]||row[1]):row[1];}
+  if(lo===hi) return fAt(lo);
+  return fAt(lo)+(fAt(hi)-fAt(lo))*(ratio-lo);
+}
+function updateSV(){
+  var a=parseFloat(document.getElementById('breite').value)||1;
+  var b=parseFloat(document.getElementById('hoehe').value)||1;
+  var big=Math.max(a,b),small=Math.min(a,b);
+  var ratio=big/small;
+  document.getElementById('sv_anzeige').value='1:'+ratio.toFixed(2);
+  var f=getF50(ratio,document.getElementById('leitungsform').value==='oval');
+  document.getElementById('fva_anzeige').value=f.toFixed(3);
+}
+
+var t49=[[40,[2.5,2.5,2.5]],[1000,[3.0,3.0,3.0]],[2000,[4.0,4.0,3.5]],[4000,[5.0,5.0,4.0]],[10000,[6.0,5.5,4.5]],[1e9,[7.0,6.0,5.0]]];
+function interpVmax(qv,h){
+  var row=t49.find(function(r){return qv<=r[0];});
+  if(!row) row=t49[t49.length-1];
+  var v=row[1];
+  if(h<=2000) return v[0];
+  if(h>=8000) return v[2];
+  if(h<=4000) return v[0]+(v[1]-v[0])*(h-2000)/2000;
+  return v[1]+(v[2]-v[1])*(h-4000)/4000;
+}
+function mc(label,val,unit){
+  return '<div class="metric-card"><div class="metric-card-label">'+label+'</div>'
+    +'<div class="metric-card-value">'+val+'<span class="metric-card-unit">'+unit+'</span></div></div>';
+}
+
+function calcLeitung(){
+  var qv=parseFloat(document.getElementById('vol_strom').value)||0;
+  var h=parseFloat(document.getElementById('vollstunden').value)||0;
+  var form=document.getElementById('leitungsform').value;
+  if(!qv||!h){alert('Bitte Volumenstrom und Volllaststunden eingeben.');return;}
+  var vmaxRund=interpVmax(qv,h);
+  var resHTML='',statusHTML='',detailText='';
+
+  if(form==='rund'){
+    var d=parseFloat(document.getElementById('d_rund').value)||200;
+    var A=Math.PI*(d/1000/2)*(d/1000/2);
+    var vist=qv/3600/A;
+    var ok=vist<=vmaxRund;
+    resHTML=mc('Durchmesser',d,'mm')+mc('v<sub>max</sub> (Tab. 49)',vmaxRund.toFixed(2),'m/s')+mc('v<sub>ist</sub>',vist.toFixed(2),'m/s')+mc('Querschnitt',A.toFixed(4),'m²');
+    statusHTML='<div class="status-bar '+(ok?'status-ok':'status-err')+'">'+(ok?'<i class="ti ti-check"></i> DN '+d+' mm — Geschwindigkeit eingehalten':'<i class="ti ti-x"></i> Überschreitung — grösseren DN wählen. Mindest-DN: '+Math.ceil(Math.sqrt(qv/3600/vmaxRund/Math.PI)*2*1000/25)*25+' mm')+'</div>';
+    detailText='Tabelle 49 SIA 382/1 | '+h+' Elektro-Volllaststunden | v_max (rund): '+vmaxRund.toFixed(2)+' m/s';
+  } else if(form==='rund_calc'){
+    var vmax=vmaxRund;
+    var A2=qv/3600/vmax;
+    var d2=Math.ceil(Math.sqrt(A2/Math.PI)*2*1000/25)*25;
+    var An=Math.PI*(d2/1000/2)*(d2/1000/2);
+    var vi=qv/3600/An;
+    resHTML=mc('Empf. DN',d2,'mm')+mc('v<sub>max</sub>',vmax.toFixed(2),'m/s')+mc('v<sub>ist</sub>',vi.toFixed(2),'m/s')+mc('Querschnitt',An.toFixed(4),'m²');
+    statusHTML='<div class="status-bar status-ok"><i class="ti ti-check"></i> Empfohlener Nenndurchmesser DN '+d2+' mm (auf 25-mm-Stufe aufgerundet)</div>';
+    detailText='Tabelle 49 SIA 382/1 | '+h+' Elektro-Volllaststunden | v_max: '+vmax.toFixed(2)+' m/s';
+  } else {
+    var a=parseFloat(document.getElementById('breite').value)||1;
+    var b=parseFloat(document.getElementById('hoehe').value)||1;
+    var big=Math.max(a,b),small=Math.min(a,b);
+    var ratio=big/small;
+    var isOval=(form==='oval');
+    var fRed=getF50(ratio,isOval);
+    var vmax2=vmaxRund*fRed;
+    var A3=(a/1000)*(b/1000);
+    var vi2=qv/3600/A3;
+    var ok2=vi2<=vmax2;
+    resHTML=mc('Querschnitt',a+'×'+b,'mm')+mc('Verhältnis','1:'+ratio.toFixed(2),'')+mc('f (Tab. 50)',fRed.toFixed(3),'')+mc('v<sub>max</sub>',vmax2.toFixed(2),'m/s')+mc('v<sub>ist</sub>',vi2.toFixed(2),'m/s')+mc('A',A3.toFixed(4),'m²');
+    statusHTML='<div class="status-bar '+(ok2?'status-ok':'status-err')+'">'+(ok2?'<i class="ti ti-check"></i> '+a+'×'+b+' mm — Geschwindigkeit eingehalten':'<i class="ti ti-x"></i> Überschreitung — Querschnitt vergrössern')+'</div>';
+    detailText='Tabelle 49+50 SIA 382/1 | '+h+' h/a | v_max (rund): '+vmaxRund.toFixed(2)+' m/s × f '+fRed.toFixed(3)+' = '+vmax2.toFixed(2)+' m/s';
+  }
+  var sel=document.getElementById('nutzung');
+  var nn=sel.options[sel.selectedIndex]?sel.options[sel.selectedIndex].text:'';
+  if(nn&&nn!=='— wählen —') detailText='Nutzung: '+nn+' | '+detailText;
+  document.getElementById('r_metrics').innerHTML=resHTML;
+  document.getElementById('r_status_l').innerHTML=statusHTML;
+  document.getElementById('r_detail_l').textContent=detailText;
+  document.getElementById('res_leitung').style.display='block';
+}
+
+/* ── Modul 2 Hilfsfunktion ── */
+function calcNettoALD(){
+  var b=parseFloat(document.getElementById('ald_breite').value)||0;
+  var h=parseFloat(document.getElementById('ald_hoehe').value)||0;
+  var gp=parseFloat(document.getElementById('ald_gitter').value)||60;
+  var qv=parseFloat(document.getElementById('q_ald').value)||0;
+  if(!b||!h) return;
+  var aB=parseFloat(((b/1000)*(h/1000)).toFixed(4));
+  var aN=parseFloat((aB*gp/100).toFixed(4));
+  document.getElementById('a_brutto').value=aB.toFixed(4);
+  document.getElementById('a_ald').value=aN.toFixed(4);
+  var prev=document.getElementById('ald_v_preview');
+  if(qv&&aN>0){
+    var v=qv/3600/aN;
+    var ok=v<=2.0;
+    prev.style.display='block';
+    prev.innerHTML='<div class="status-bar '+(ok?'status-ok':'status-err')+'" style="padding:.5rem .75rem;font-size:12px">'
+      +(ok?'<i class="ti ti-check"></i>':'<i class="ti ti-x"></i>')
+      +' Luftgeschwindigkeit am Gitter: <b>'+v.toFixed(2)+' m/s</b>'
+      +(ok?' — eingehalten (≤ 2,0 m/s)':' — Überschreitung! Grösseren Durchlass oder höheren Gitter-%-Wert wählen.')
+      +'</div>';
+  } else { prev.style.display='none'; }
+}
+
+/* ── Modul 2 ── */
+var fortluftMin={'1':2,'3':5,'4_klein':8,'4_mittel':12,'4_gross':16,'4_xl':20};
+function checkItem(ok,label,sub,ist,min,unit){
+  return '<div class="check-item">'
+    +'<div class="check-icon '+(ok?'ok':'err')+'"><i class="ti '+(ok?'ti-check':'ti-x')+'" aria-hidden="true"></i></div>'
+    +'<div class="check-body"><div class="check-label">'+label+'</div>'+(sub?'<div class="check-sub">'+sub+'</div>':'')+'</div>'
+    +'<div class="check-values"><div class="check-ist">'+ist+' '+unit+'</div><div class="check-min">Min. '+min+' '+unit+'</div></div>'
+    +'</div>';
+}
+
+function calcAussen(){
+  var hT=parseFloat(document.getElementById('h_terrain').value)||0;
+  var hS=parseFloat(document.getElementById('h_schnee').value)||0;
+  var lage=document.getElementById('lage_durchlass').value;
+  var oeffentl=document.getElementById('oeffentlich').value;
+  var abstS=parseFloat(document.getElementById('abst_schad').value)||0;
+  var abstF=parseFloat(document.getElementById('abst_fortluft').value)||0;
+  var fKat=document.getElementById('fortluft_kat').value;
+  var hVers=parseFloat(document.getElementById('h_versatz').value)||0;
+  calcNettoALD();
+  var aALD=parseFloat(document.getElementById('a_ald').value)||0.01;
+  var qALD=parseFloat(document.getElementById('q_ald').value)||0;
+  var html='',nOk=0,nFail=0;
+  function add(ok,l,s,ist,min,u){html+=checkItem(ok,l,s,ist,min,u);ok?nOk++:nFail++;}
+  var hMin=(oeffentl==='ja')?3.0:1.5;
+  add(hT>=hMin,'Mindesthöhe über Terrain','§ 5.12.2.7 — öffentl. zugänglich: 3,0 m / sonst: 1,5 m',hT.toFixed(1),hMin.toFixed(1),'m');
+  var hSneeMin=parseFloat((1.5*hS).toFixed(2));
+  add(hT>=hSneeMin,'Schutz vor Schneeeintrag','§ 5.12.2.6 — Unterkante ≥ 1,5 × h_max,an',hT.toFixed(1),hSneeMin.toFixed(2),'m');
+  if(lage==='dach') add(hT>=hSneeMin,'Dach / Terrasse: Unterkante ≥ 1,5 × Schneehöhe','§ 5.12.2.8',hT.toFixed(1),hSneeMin.toFixed(2),'m');
+  add(abstS>=8,'Mindestabstand zu Schadstoffquellen','§ 5.12.2.2 — Strassen, Parkplätze ≥ 3 Fzg., Kamine, Abfall',abstS.toFixed(1),'8,0','m');
+  var fMin=fortluftMin[fKat]||2;
+  if(hVers>2) fMin=Math.max(fMin-Math.round(hVers)*1.5,1);
+  add(abstF>=fMin,'Mindestabstand zu Fortluft-Durchlass','§ 5.12.4, Figur 8'+(hVers>0?' (Höhenversatz '+hVers+' m berücksichtigt)':''),abstF.toFixed(1),fMin.toFixed(1),'m');
+  var vALD=parseFloat((qALD/3600/aALD).toFixed(2));
+  add(vALD<=2.0,'Max. Luftgeschwindigkeit am Durchlass','§ 5.12.2.12 — bezogen auf Netto-Querschnitt',vALD.toFixed(2),'2,0','m/s');
+  document.getElementById('checks_list').innerHTML=html;
+  var summ=nFail===0
+    ?'<div class="status-bar status-ok"><i class="ti ti-shield-check"></i> Alle '+nOk+' Kriterien erfüllt — Anordnung normkonform.</div>'
+    :'<div class="status-bar status-err"><i class="ti ti-alert-triangle"></i> '+nFail+' Kriterium/Kriterien nicht erfüllt — Anordnung anpassen.</div>';
+  document.getElementById('aussen_summary').innerHTML=summ;
+  document.getElementById('res_aussen').style.display='block';
+}
+</script>
+</body></html>
