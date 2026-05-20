@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">
+<title>Normaflow – SIA 382/1</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -24,8 +25,6 @@
   --radius-lg:12px;
 }
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--nf-gray-50);color:var(--nf-black);font-size:14px;line-height:1.6;min-height:100vh}
-
-/* ── NAV ── */
 nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:10px}
 .nav-logo-mark{width:28px;height:28px;background:var(--nf-accent);border-radius:6px;display:flex;align-items:center;justify-content:center}
@@ -33,19 +32,13 @@ nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;ju
 .nav-logo-text{color:#fff;font-size:15px;font-weight:600;letter-spacing:-.01em}
 .nav-logo-text span{color:var(--nf-gray-400);font-weight:400}
 .nav-badge{background:rgba(255,255,255,.08);color:var(--nf-gray-400);font-size:11px;padding:2px 8px;border-radius:20px;border:0.5px solid rgba(255,255,255,.1)}
-
-/* ── HERO ── */
 .hero{background:var(--nf-black);padding:3rem 2rem 2.5rem;border-bottom:0.5px solid rgba(255,255,255,.08)}
 .hero-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-accent);margin-bottom:.75rem}
 .hero-title{font-size:32px;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem}
 .hero-title span{color:var(--nf-gray-400);font-weight:300}
 .hero-sub{font-size:14px;color:var(--nf-gray-400);max-width:520px;line-height:1.7}
-
-/* ── LAYOUT ── */
-.app{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 56px - 120px)}
-
-/* ── SIDEBAR ── */
-.sidebar{background:var(--nf-white);border-right:0.5px solid var(--nf-gray-200);padding:1.5rem 0}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 56px - 120px)}
+.sidebar{background:var(--nf-white);border-right:0.5px solid var(--nf-gray-200);padding:1.5rem 0;overflow-y:auto;max-height:calc(100vh - 56px)}
 .sidebar-section{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-gray-400);padding:.5rem 1.25rem .4rem;margin-top:.5rem}
 .sidebar-item{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;cursor:pointer;font-size:13px;color:var(--nf-gray-600);transition:all .12s;border-left:2px solid transparent;user-select:none}
 .sidebar-item i{font-size:16px;color:var(--nf-gray-400)}
@@ -55,8 +48,6 @@ nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;ju
 .sidebar-item.active i{color:var(--nf-accent)}
 .sidebar-divider{height:0.5px;background:var(--nf-gray-100);margin:.75rem 1.25rem}
 .norm-chip{font-size:10px;background:var(--nf-gray-100);color:var(--nf-gray-600);padding:2px 6px;border-radius:3px;margin-left:auto}
-
-/* ── MAIN CONTENT ── */
 .main{padding:0;overflow:hidden}
 .panel{display:none;padding:2rem}
 .panel.active{display:block}
@@ -64,8 +55,6 @@ nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;ju
 .panel-title{font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--nf-black);margin-bottom:.35rem}
 .panel-desc{font-size:13px;color:var(--nf-gray-600);line-height:1.6}
 .norm-ref{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--nf-accent-light);color:var(--nf-accent);padding:3px 8px;border-radius:3px;font-weight:500;margin-top:.5rem}
-
-/* ── FORM ELEMENTS ── */
 .form-section{margin-bottom:1.75rem}
 .form-section-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nf-gray-400);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
 .form-section-title::after{content:'';flex:1;height:0.5px;background:var(--nf-gray-200)}
@@ -87,13 +76,9 @@ nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;ju
 .field input:focus,.field select:focus{outline:none;border-color:var(--nf-accent);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
 .field input[readonly]{background:var(--nf-gray-50);color:var(--nf-gray-600);cursor:default}
 .field-hint{font-size:11px;color:var(--nf-gray-400);line-height:1.4}
-
-/* ── BUTTON ── */
 .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--nf-black);color:#fff;border:none;border-radius:var(--radius-md);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.01em;transition:background .15s;width:100%;justify-content:center;margin-top:.5rem}
 .btn-primary:hover{background:var(--nf-gray-800)}
 .btn-primary i{font-size:16px}
-
-/* ── RESULT ── */
 .result-area{margin-top:1.5rem;animation:fadeIn .2s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 .result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
@@ -108,8 +93,6 @@ nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;ju
 .status-err{background:var(--nf-red-bg);color:var(--nf-red)}
 .status-warn{background:var(--nf-amber-bg);color:var(--nf-amber)}
 .result-note{font-size:12px;color:var(--nf-gray-600);line-height:1.6;padding:.75rem 1rem;background:var(--nf-gray-50);border-radius:var(--radius-md);border-left:2px solid var(--nf-gray-200)}
-
-/* ── CHECKS ── */
 .checks-list{display:flex;flex-direction:column;gap:0}
 .check-item{display:flex;align-items:flex-start;gap:12px;padding:.75rem 0;border-bottom:0.5px solid var(--nf-gray-100)}
 .check-item:last-child{border-bottom:none}
@@ -123,14 +106,20 @@ nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;ju
 .check-values{margin-left:auto;text-align:right;flex-shrink:0;padding-left:12px}
 .check-ist{font-size:13px;font-weight:600;color:var(--nf-black)}
 .check-min{font-size:11px;color:var(--nf-gray-400)}
-
-/* ── FOOTER ── */
+.chart-wrap{background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem;margin-top:1rem}
+.chart-wrap canvas{display:block;width:100%;height:auto}
 footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between}
 .footer-left{font-size:12px;color:var(--nf-gray-600)}
 .footer-right{font-size:12px;color:var(--nf-gray-600);display:flex;gap:1.5rem}
 .footer-right a{color:var(--nf-gray-400);text-decoration:none}
+.info-box{background:var(--nf-accent-light);border-left:3px solid var(--nf-accent);padding:.75rem 1rem;border-radius:var(--radius-sm);font-size:12px;color:var(--nf-gray-800);margin-bottom:1rem;line-height:1.5}
+.tab-row{display:flex;gap:4px;margin-bottom:1rem;border-bottom:0.5px solid var(--nf-gray-200)}
+.tab-btn{padding:.5rem 1rem;background:none;border:none;cursor:pointer;font-size:12px;color:var(--nf-gray-600);font-weight:500;border-bottom:2px solid transparent;transition:all .12s}
+.tab-btn.active{color:var(--nf-accent);border-bottom-color:var(--nf-accent)}
+.tab-btn:hover{color:var(--nf-black)}
+.tab-content{display:none}
+.tab-content.active{display:block}
 </style></head><body>
-
 <nav>
   <div class="nav-logo">
     <div class="nav-logo-mark">
@@ -140,44 +129,70 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
   </div>
   <span class="nav-badge">Berechnungstool für Lüftungsplaner</span>
 </nav>
-
 <div class="hero">
   <div class="hero-label">Normenkonform · Präzise · Effizient</div>
   <div class="hero-title">Lüftungstechnische<br><span>Berechnungen nach SIA 382/1</span></div>
   <div class="hero-sub">Professionelle Dimensionierungswerkzeuge für Lüftungsplaner. Alle Berechnungen basieren ausschliesslich auf der Norm SIA 382/1:2025.</div>
 </div>
-
 <div class="app">
   <aside class="sidebar">
-    <div class="sidebar-section">Berechnungen</div>
+    <div class="sidebar-section">Strömungstechnik</div>
     <div class="sidebar-item active" onclick="showPanel(0,this)">
-      <i class="ti ti-vector-triangle" aria-hidden="true"></i>
-      Luftleitungen
-      <span class="norm-chip">§ 5.11</span>
+      <i class="ti ti-vector-triangle"></i> Luftleitungen <span class="norm-chip">§ 5.11</span>
     </div>
     <div class="sidebar-item" onclick="showPanel(1,this)">
-      <i class="ti ti-wind" aria-hidden="true"></i>
-      Aussenluftfassung
-      <span class="norm-chip">§ 5.12</span>
+      <i class="ti ti-wind"></i> Aussenluftfassung <span class="norm-chip">§ 5.12</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(2,this)">
+      <i class="ti ti-arrow-bar-to-down"></i> Luftvolumenstrom <span class="norm-chip">§ 5.4</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(3,this)">
+      <i class="ti ti-window"></i> Fensterlüftung <span class="norm-chip">Anh. I</span>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Energie &amp; Effizienz</div>
+    <div class="sidebar-item" onclick="showPanel(4,this)">
+      <i class="ti ti-bolt"></i> Ventilatorleistung PSFP <span class="norm-chip">§ 5.11.2</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(5,this)">
+      <i class="ti ti-chart-bar"></i> Elektrizitätsbedarf <span class="norm-chip">Anh. G</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(6,this)">
+      <i class="ti ti-recycle"></i> Wärmerückgewinnung <span class="norm-chip">§ 5.7</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(7,this)">
+      <i class="ti ti-layout-grid"></i> Wärmedämmung <span class="norm-chip">§ 5.14</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(8,this)">
+      <i class="ti ti-snowflake"></i> Vereisungsschutz <span class="norm-chip">§ 4.4</span>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Raumklima</div>
+    <div class="sidebar-item" onclick="showPanel(9,this)">
+      <i class="ti ti-molecule"></i> CO₂-Konzentration <span class="norm-chip">§ 5.4.5</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(10,this)">
+      <i class="ti ti-mood-happy"></i> PMV/PPD &amp; h,x <span class="norm-chip">Anh. D</span>
+    </div>
+    <div class="sidebar-item" onclick="showPanel(11,this)">
+      <i class="ti ti-mountain"></i> Luftdichte/-druck <span class="norm-chip">§ 1.12</span>
     </div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Referenz</div>
     <div class="sidebar-item" style="cursor:default;opacity:.5">
-      <i class="ti ti-book" aria-hidden="true"></i>
-      Norm SIA 382/1:2025
+      <i class="ti ti-book"></i> Norm SIA 382/1:2025
     </div>
   </aside>
-
   <main class="main">
-
-    <!-- Panel 0: Luftleitungen -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 0: Luftleitungen (BESTEHEND – unverändert) -->
+    <!-- ════════════════════════════════════════════════════ -->
     <div class="panel active" id="p0">
       <div class="panel-header">
         <div class="panel-title">Luftleitungsdimensionierung</div>
         <div class="panel-desc">Maximale Luftgeschwindigkeit nach Volumenstrom und jährlichen Elektro-Volllaststunden. Reduktionsfaktor für Nicht-Rund-Leitungen gemäss Tabelle 50.</div>
         <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Tabellen 49 + 50, Ziff. 5.11.5.7–5.11.5.8</span>
       </div>
-
       <div class="form-section">
         <div class="form-section-title">Raumnutzung &amp; Betrieb</div>
         <div class="grid2">
@@ -264,7 +279,6 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
           </div>
         </div>
       </div>
-
       <div class="form-section">
         <div class="form-section-title">Geometrie &amp; Volumenstrom</div>
         <div class="grid2">
@@ -308,11 +322,9 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
           </div>
         </div>
       </div>
-
       <button class="btn-primary" onclick="calcLeitung()">
-        <i class="ti ti-calculator" aria-hidden="true"></i> Berechnung ausführen
+        <i class="ti ti-calculator"></i> Berechnung ausführen
       </button>
-
       <div id="res_leitung" style="display:none" class="result-area">
         <div class="result-header"><span class="result-title">Ergebnis</span></div>
         <div class="metrics-row" id="r_metrics"></div>
@@ -321,14 +333,15 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
       </div>
     </div>
 
-    <!-- Panel 1: Aussenluftfassung -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 1: Aussenluftfassung (BESTEHEND – unverändert) -->
+    <!-- ════════════════════════════════════════════════════ -->
     <div class="panel" id="p1">
       <div class="panel-header">
         <div class="panel-title">Aussenluftfassung</div>
         <div class="panel-desc">Überprüfung der Anordnung von Aussenluft-Durchlässen nach allen relevanten Kriterien. Jede Anforderung wird einzeln bewertet und dokumentiert.</div>
         <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Ziff. 5.12.2 + 5.12.4, Figur 8</span>
       </div>
-
       <div class="form-section">
         <div class="form-section-title">Standort &amp; Lage</div>
         <div class="grid2">
@@ -358,7 +371,6 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
           </div>
         </div>
       </div>
-
       <div class="form-section">
         <div class="form-section-title">Abstände zu Emissionsquellen</div>
         <div class="grid2">
@@ -390,7 +402,6 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
           </div>
         </div>
       </div>
-
       <div class="form-section">
         <div class="form-section-title">Luftdurchlass &amp; Wetterschutzgitter</div>
         <div class="grid3">
@@ -424,11 +435,9 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
         </div>
         <div id="ald_v_preview" style="display:none;margin-top:10px"></div>
       </div>
-
       <button class="btn-primary" onclick="calcAussen()">
-        <i class="ti ti-list-check" aria-hidden="true"></i> Alle Kriterien prüfen
+        <i class="ti ti-list-check"></i> Alle Kriterien prüfen
       </button>
-
       <div id="res_aussen" style="display:none" class="result-area">
         <div class="result-header"><span class="result-title">Prüfprotokoll</span></div>
         <div id="checks_list" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-bottom:1rem"></div>
@@ -436,9 +445,782 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
       </div>
     </div>
 
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 2: Luftvolumenstrom (§ 5.4) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p2">
+      <div class="panel-header">
+        <div class="panel-title">Luftvolumenstrom-Bemessung</div>
+        <div class="panel-desc">Berechnung des erforderlichen Zuluft-Volumenstroms nach allen Kriterien (Personenbelegung, Wärmeabfuhr, CO₂-Verdünnung, Feuchteabfuhr). Massgebend ist der grösste resultierende Wert.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.4, Gl. (24), (25), (29), (33)</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Raumdaten</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Nettogeschossfläche A<sub>NFA</sub> [m²]</label>
+            <input type="number" id="vs_anfa" value="50" min="1" step="1">
+          </div>
+          <div class="field">
+            <label>Raumhöhe [m]</label>
+            <input type="number" id="vs_hr" value="2.5" min="2" step="0.1">
+          </div>
+          <div class="field">
+            <label>Anzahl Personen n<sub>P</sub></label>
+            <input type="number" id="vs_np" value="5" min="0" step="1">
+          </div>
+        </div>
+        <div class="grid3" style="margin-top:12px">
+          <div class="field">
+            <label>Standorthöhe [m ü. M.]</label>
+            <input type="number" id="vs_hoehe" value="500" min="0" step="50">
+          </div>
+          <div class="field">
+            <label>IDA-Kategorie (CO₂)</label>
+            <select id="vs_ida">
+              <option value="36">IDA 1 — 36 m³/h pro Person</option>
+              <option value="25" selected>IDA 2 — 25 m³/h pro Person</option>
+              <option value="15">IDA 3 — 15 m³/h pro Person</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Lüftungseffektivität ε<sub>V</sub></label>
+            <input type="number" id="vs_ev" value="1.0" min="0.5" max="2.0" step="0.1">
+            <span class="field-hint">Mischlüftung = 1,0 / Quelllüftung = 1,2–2,0</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Thermische Lasten (optional)</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Sens. Wärmelast Φ<sub>HC</sub> [W]</label>
+            <input type="number" id="vs_phc" value="0" min="0" step="100">
+            <span class="field-hint">0 = nicht berechnen</span>
+          </div>
+          <div class="field">
+            <label>θ<sub>Zuluft</sub> [°C]</label>
+            <input type="number" id="vs_tsup" value="18" step="0.5">
+          </div>
+          <div class="field">
+            <label>θ<sub>Raumluft</sub> [°C]</label>
+            <input type="number" id="vs_tida" value="24" step="0.5">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">CO₂-Verdünnung (Detail)</div>
+        <div class="grid3">
+          <div class="field">
+            <label>CO₂-Emission pro Person [l/h]</label>
+            <input type="number" id="vs_co2_g" value="20" min="5" step="1">
+            <span class="field-hint">Standard: 20 l/h bei 1,2 met</span>
+          </div>
+          <div class="field">
+            <label>C<sub>IDA</sub> max. [ppm]</label>
+            <input type="number" id="vs_cida" value="1200" min="600" step="50">
+          </div>
+          <div class="field">
+            <label>C<sub>ODA</sub> Aussenluft [ppm]</label>
+            <input type="number" id="vs_coda" value="400" min="350" step="10">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Feuchteabfuhr (optional)</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Feuchtelast G [g/h]</label>
+            <input type="number" id="vs_gh" value="0" min="0" step="10">
+          </div>
+          <div class="field">
+            <label>x<sub>Zuluft</sub> [g/kg]</label>
+            <input type="number" id="vs_xsup" value="5" step="0.5">
+          </div>
+          <div class="field">
+            <label>x<sub>Raumluft</sub> max. [g/kg]</label>
+            <input type="number" id="vs_xida" value="11" step="0.5">
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcVS()">
+        <i class="ti ti-calculator"></i> Volumenströme berechnen
+      </button>
+      <div id="res_vs" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis – massgebend</span></div>
+        <div class="metrics-row" id="vs_metrics"></div>
+        <div id="vs_status"></div>
+        <div id="vs_detail_list" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-top:.75rem"></div>
+        <div id="vs_note" class="result-note" style="margin-top:.75rem"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 3: Fensterlüftung / Nachtauskühlung (Anh. I) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p3">
+      <div class="panel-header">
+        <div class="panel-title">Fensterlüftung &amp; Nachtauskühlung</div>
+        <div class="panel-desc">Prüfung der Voraussetzungen und Anforderungen an Fensterlüftung als Lüftungsmethode oder zur Nachtauskühlung gemäss Anhang I.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Anhang I, § 5.4.11, SIA 180 § 5.2.3</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Raumgeometrie</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Nettogeschossfläche A<sub>NFA</sub> [m²]</label>
+            <input type="number" id="fl_anfa" value="30" min="5" step="1">
+          </div>
+          <div class="field">
+            <label>Raumhöhe h<sub>R</sub> [m]</label>
+            <input type="number" id="fl_hr" value="2.7" min="2" step="0.1">
+          </div>
+          <div class="field">
+            <label>Raumtiefe d<sub>R</sub> [m]</label>
+            <input type="number" id="fl_dr" value="5" min="2" step="0.1">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Fensteröffnungen</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Freie Strömungsfläche Fenster [m²]</label>
+            <input type="number" id="fl_af" value="2.0" min="0" step="0.1">
+            <span class="field-hint">Summe aller zu öffnenden Fenster</span>
+          </div>
+          <div class="field">
+            <label>Fassadenseiten</label>
+            <select id="fl_seiten">
+              <option value="1">Eine Fassade</option>
+              <option value="2">Zwei (gegenüberliegend / über Eck)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Zweck</label>
+            <select id="fl_zweck">
+              <option value="normal">Normaler Lüftungsbedarf (3 %)</option>
+              <option value="intensiv">Intensive Lüftung / Nachtauskühlung (5 %)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Aussenbedingungen &amp; Nachtauskühlung</div>
+        <div class="grid3">
+          <div class="field">
+            <label>NO₂-Belastung Aussenluft [μg/m³]</label>
+            <input type="number" id="fl_no2" value="20" min="0" step="1">
+            <span class="field-hint">Grenze ODA 3: > 45 μg/m³</span>
+          </div>
+          <div class="field">
+            <label>PM10-Belastung [μg/m³]</label>
+            <input type="number" id="fl_pm10" value="15" min="0" step="1">
+            <span class="field-hint">Grenze ODA 3: > 30 μg/m³</span>
+          </div>
+          <div class="field">
+            <label>Aussenlärm</label>
+            <select id="fl_laerm">
+              <option value="gering">Gering / unbelastet</option>
+              <option value="mittel">Mittel — beachten</option>
+              <option value="hoch">Zu hoch — Fensterlüftung nicht möglich</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcFL()">
+        <i class="ti ti-list-check"></i> Fensterlüftung prüfen
+      </button>
+      <div id="res_fl" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Prüfprotokoll</span></div>
+        <div class="metrics-row" id="fl_metrics"></div>
+        <div id="fl_checks" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-bottom:1rem"></div>
+        <div id="fl_summary"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 4: PSFP Spezifische Ventilatorleistung (§ 5.11.2) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p4">
+      <div class="panel-header">
+        <div class="panel-title">Spezifische Ventilatorleistung P<sub>SFP</sub></div>
+        <div class="panel-desc">Berechnung der Grenz- und Zielwerte für die spezifische Ventilatorleistung von Nichtwohnraum-Lüftungsanlagen (NWLA) mit allen relevanten Korrekturen.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.11.2, Tab. 41 / 42 / 43 / 44, Gl. (37)–(38)</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Anlage</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Anlagetyp (Tab. 1)</label>
+            <select id="ps_typ">
+              <option value="1">1 — Einfache Zuluftanlage (UVU)</option>
+              <option value="2">2 — Zuluftanlage mit Lufterwärmung (UVU)</option>
+              <option value="3">3 — Einfache Abluftanlage (UVU)</option>
+              <option value="4">4 — Abluftanlage mit Abwärmenutzung (UVU)</option>
+              <option value="5" selected>5 — Einfache Lüftungsanlage (BVU)</option>
+              <option value="6">6 — Lüftungsanlage mit Lufterwärmung (BVU)</option>
+              <option value="7">7 — Lüftung mit Erwärmung + Befeuchtung (BVU)</option>
+              <option value="8">8 — Einfache Klimaanlage (BVU)</option>
+              <option value="9">9 — Klimaanlage mit Entfeuchtung (BVU)</option>
+              <option value="10">10 — Klimaanlage mit Befeuchtung (BVU)</option>
+              <option value="11">11 — Klimaanlage mit Be- &amp; Entfeuchtung (BVU)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Nennvolumenstrom q<sub>v,a,n</sub> [m³/h]</label>
+            <input type="number" id="ps_qv" value="5800" min="100" step="100">
+            <span class="field-hint">Wird automatisch in m³/s umgerechnet</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Wärmerückgewinnung (nur BVU)</div>
+        <div class="grid3">
+          <div class="field">
+            <label>WRG-Kategorie</label>
+            <select id="ps_hrc">
+              <option value="other">HRC1, HRC1x, HRC2b, HRC3a/x/b/y</option>
+              <option value="2a">HRC2a — Kreislaufverbund</option>
+              <option value="none">Keine WRG</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Temperatur-Bruttoeffizienz η<sub>t,gro</sub> [%]</label>
+            <input type="number" id="ps_eta" value="78" min="0" max="100" step="1">
+            <span class="field-hint">Zielwert: 78 % (HRC1/3) / 85 % (HRC3b/y)</span>
+          </div>
+          <div class="field">
+            <label>Einzelwiderstandsanteil γ<sub>dis</sub></label>
+            <select id="ps_gamma">
+              <option value="L" selected>Niedrig ≤ 50 %</option>
+              <option value="M">Mittel 50–75 %</option>
+              <option value="H">Hoch > 75 %</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Steuerung/Regelung (Tab. 60)</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Standard-Betriebsart (Vergleich)</label>
+            <select id="ps_std">
+              <option value="1.00|1.0">SZC00 — Dauerbetrieb</option>
+              <option value="0.95|1.0" selected>SZC02 — Ein/Aus zeitgesteuert</option>
+              <option value="0.85|1.0">SZC04 — Ein/Aus bedarfsgeregelt</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Geplante Betriebsart</label>
+            <select id="ps_des">
+              <option value="1.00|1.0">SZC00 — Dauerbetrieb (f=1,00, x=1,0)</option>
+              <option value="0.95|1.0">SZC02 — Ein/Aus zeitgesteuert</option>
+              <option value="0.85|1.2">SZC05 — 2-stufig nach Präsenz (Z-M)</option>
+              <option value="0.95|1.2" selected>SZC06 — 2-stufig zeitabh. (Z-M)</option>
+              <option value="0.85|1.5">SZC07 — 3-stufig nach Personen</option>
+              <option value="0.85|2.0">SZC09 — Stufenlos (Z-F)</option>
+              <option value="0.65|2.0">SZC11 — Stufenlos raumweise Personen (R-F)</option>
+              <option value="0.85|2.0">SZC12 — Stufenlos CO₂ (Z-F)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Besondere Komponenten (Tab. 43)</div>
+        <div class="grid4">
+          <div class="field">
+            <label>Zusätzlicher Partikelfilter</label>
+            <select id="ps_x1"><option value="0">Nein</option><option value="1">Ja</option></select>
+          </div>
+          <div class="field">
+            <label>Molekularfilter (Gas)</label>
+            <select id="ps_x2"><option value="0">Nein</option><option value="1">Ja</option></select>
+          </div>
+          <div class="field">
+            <label>EPA-Filter</label>
+            <select id="ps_x3"><option value="0">Nein</option><option value="1">Ja</option></select>
+          </div>
+          <div class="field">
+            <label>HEPA-Filter</label>
+            <select id="ps_x4"><option value="0">Nein</option><option value="1">Ja</option></select>
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcPSFP()">
+        <i class="ti ti-calculator"></i> P<sub>SFP</sub> berechnen
+      </button>
+      <div id="res_psfp" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="psfp_metrics"></div>
+        <div id="psfp_breakdown" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-bottom:1rem"></div>
+        <div id="psfp_note" class="result-note"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 5: Jährlicher Elektrizitätsbedarf (Anh. G) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p5">
+      <div class="panel-header">
+        <div class="panel-title">Jährlicher Elektrizitätsbedarf für Luftförderung</div>
+        <div class="panel-desc">Berechnung des jährlichen Elektrizitätsbedarfs für die Luftförderung E<sub>V</sub> über Elektro-Volllaststunden (Gl. 48) oder über Steuer-/Regelfaktoren (Gl. 51).</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Anhang G, Gl. (46)–(51)</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Methode</div>
+        <div class="tab-row">
+          <button class="tab-btn active" onclick="switchEVTab('m1',this)">Methode 1: Volllaststunden</button>
+          <button class="tab-btn" onclick="switchEVTab('m2',this)">Methode 2: Steuer-/Regelfaktor</button>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Anlagedaten</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Auslegungs-Volumenstrom q<sub>v,a</sub> [m³/h]</label>
+            <input type="number" id="ev_qv" value="5800" min="100" step="100">
+          </div>
+          <div class="field">
+            <label>Spez. Ventilatorleistung P<sub>SFP,d</sub> [W/(m³/h)]</label>
+            <input type="number" id="ev_psfp" value="0.55" min="0.05" max="2" step="0.01">
+            <span class="field-hint">Aus PSFP-Rechner übernehmen</span>
+          </div>
+          <div class="field">
+            <label>Druckverlust Δp<sub>sys</sub> [Pa]</label>
+            <input type="number" id="ev_dp" value="0" min="0" step="50">
+            <span class="field-hint">Optional, alternativ zu P<sub>SFP</sub></span>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content active" id="ev_m1">
+        <div class="form-section">
+          <div class="form-section-title">Volllaststunden</div>
+          <div class="grid2">
+            <div class="field">
+              <label>Elektro-Volllaststunden t<sub>V,Fld,el</sub> [h/a]</label>
+              <input type="number" id="ev_tvfld" value="2740" min="100" max="8760" step="10">
+              <span class="field-hint">Nach SIA 2024 / Anh. G</span>
+            </div>
+            <div class="field">
+              <label>Wirkungsgrad η<sub>tot</sub> [%]</label>
+              <input type="number" id="ev_eta" value="55" min="20" max="80" step="1">
+              <span class="field-hint">Nur falls Δp<sub>sys</sub> verwendet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="ev_m2">
+        <div class="form-section">
+          <div class="form-section-title">Steuer-/Regelfaktor (Tab. 60)</div>
+          <div class="grid2">
+            <div class="field">
+              <label>Betriebsstunden t<sub>V,op</sub> [h/a]</label>
+              <input type="number" id="ev_top" value="3290" min="100" max="8760" step="10">
+            </div>
+            <div class="field">
+              <label>f<sub>flow,ctrl</sub><sup>x</sup></label>
+              <select id="ev_f">
+                <option value="1.00">1,00 — Dauerbetrieb</option>
+                <option value="0.95">0,95 — Zeitgesteuert</option>
+                <option value="0.85">0,85 — Ein/Aus bedarfsgeregelt</option>
+                <option value="0.82" selected>0,82 — 2-stufig Präsenz (Z-M)</option>
+                <option value="0.72">0,72 — Stufenlos (Z-F)</option>
+                <option value="0.60">0,60 — 2-stufig raumweise (R-M)</option>
+                <option value="0.52">0,52 — 3-stufig raumweise (R-M)</option>
+                <option value="0.42">0,42 — Stufenlos raumweise (R-F)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcEV()">
+        <i class="ti ti-calculator"></i> Elektrizitätsbedarf berechnen
+      </button>
+      <div id="res_ev" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="ev_metrics"></div>
+        <div id="ev_note" class="result-note"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 6: Wärmerückgewinnung (§ 5.7) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p6">
+      <div class="panel-header">
+        <div class="panel-title">Wärmerückgewinnung – Effizienz-Check</div>
+        <div class="panel-desc">Berechnung der Temperatur- und Feuchte-Bruttoeffizienz sowie der Leistungszahl ε<sub>hrs</sub> und Vergleich gegen die Anforderungen nach Tab. 40.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.7, Tab. 40, § 1.1.12.25–29</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Kategorie &amp; Volumenstrom</div>
+        <div class="grid2">
+          <div class="field">
+            <label>WRG-Kategorie</label>
+            <select id="hrc_kat">
+              <option value="HRC1a">HRC1a — Platten ohne Feuchte</option>
+              <option value="HRC1x">HRC1x — Platten mit Feuchte</option>
+              <option value="HRC2a">HRC2a — Kreislaufverbund</option>
+              <option value="HRC2b">HRC2b — Wärmerohr</option>
+              <option value="HRC3a" selected>HRC3a — Rotation ohne Feuchte</option>
+              <option value="HRC3x">HRC3x — Rotation mit Feuchte (hygroskopisch)</option>
+              <option value="HRC3b">HRC3b — Umschaltspeicher ohne Feuchte</option>
+              <option value="HRC3y">HRC3y — Umschaltspeicher mit Feuchte</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Luftvolumenstrom q<sub>v,a</sub> [m³/h]</label>
+            <input type="number" id="hrc_qv" value="5800" min="100" step="100">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Temperaturen (Aussenluft- &amp; Abluftseite)</div>
+        <div class="grid4">
+          <div class="field">
+            <label>θ<sub>11</sub> Abluft-Eintritt [°C]</label>
+            <input type="number" id="hrc_t11" value="22" step="0.5">
+          </div>
+          <div class="field">
+            <label>θ<sub>21</sub> Aussenluft-Eintritt [°C]</label>
+            <input type="number" id="hrc_t21" value="-8" step="0.5">
+          </div>
+          <div class="field">
+            <label>θ<sub>22</sub> Zuluft-Austritt [°C]</label>
+            <input type="number" id="hrc_t22" value="15" step="0.5">
+          </div>
+          <div class="field">
+            <label>Δp<sub>hrs</sub> Gesamt [Pa]</label>
+            <input type="number" id="hrc_dp" value="200" min="0" step="10">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Feuchtegehalte (optional, nur HRC1x/3x/3y)</div>
+        <div class="grid3">
+          <div class="field">
+            <label>x<sub>11</sub> Abluft-Eintritt [g/kg]</label>
+            <input type="number" id="hrc_x11" value="8" step="0.1">
+          </div>
+          <div class="field">
+            <label>x<sub>21</sub> Aussenluft-Eintritt [g/kg]</label>
+            <input type="number" id="hrc_x21" value="2" step="0.1">
+          </div>
+          <div class="field">
+            <label>x<sub>22</sub> Zuluft-Austritt [g/kg]</label>
+            <input type="number" id="hrc_x22" value="5" step="0.1">
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcHRC()">
+        <i class="ti ti-calculator"></i> WRG-Effizienz prüfen
+      </button>
+      <div id="res_hrc" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="hrc_metrics"></div>
+        <div id="hrc_checks" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-bottom:1rem"></div>
+        <div id="hrc_note" class="result-note"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 7: Wärmedämmung (§ 5.14) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p7">
+      <div class="panel-header">
+        <div class="panel-title">Wärmedämmung von Luftleitungen</div>
+        <div class="panel-desc">Mindestdämmdicken nach Tabelle 53 mit Anpassung für abweichende Wärmeleitfähigkeit. Reduzierte Dämmdicken für kurze Leitungen (Fig. 9).</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.14, Tab. 53, Fig. 9</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Leitungseigenschaften</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Luftart</label>
+            <select id="wd_art">
+              <option value="oda">Aussenluft (ODA) / Fortluft (EHA)</option>
+              <option value="sup" selected>Zuluft (SUP) / Abluft (ETA)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Lage der Luftleitung</label>
+            <select id="wd_lage">
+              <option value="innen" selected>Innerhalb der thermischen Hülle</option>
+              <option value="geschlossen">Geschlossener Raum ausserhalb Hülle</option>
+              <option value="frei">Nicht allseitig geschlossen / im Freien</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid3" style="margin-top:12px">
+          <div class="field">
+            <label>Temperaturdifferenz Medium/Umgebung [K]</label>
+            <input type="number" id="wd_dt" value="10" min="0" step="1">
+            <span class="field-hint">Nur für SUP/ETA innen relevant</span>
+          </div>
+          <div class="field">
+            <label>Wärmeleitfähigkeit λ [W/(m·K)]</label>
+            <input type="number" id="wd_lambda" value="0.04" min="0.02" max="0.10" step="0.005">
+            <span class="field-hint">Standard: 0,04 W/(m·K)</span>
+          </div>
+          <div class="field">
+            <label>Vorerwärmung der Aussenluft</label>
+            <select id="wd_preh">
+              <option value="0" selected>Nein</option>
+              <option value="1">Ja (Erdreich-WT etc.)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Kleinanlagen (Fig. 9)</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Leitungslänge [m]</label>
+            <input type="number" id="wd_lange" value="10" min="0" step="0.5">
+            <span class="field-hint">&lt; 6 m: Reduktion möglich (nur kleine Anl.)</span>
+          </div>
+          <div class="field">
+            <label>Luftvolumenstrom [m³/h]</label>
+            <input type="number" id="wd_qv" value="500" min="10" step="10">
+            <span class="field-hint">Reduktion nur bis 220 m³/h</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcWD()">
+        <i class="ti ti-calculator"></i> Dämmdicke berechnen
+      </button>
+      <div id="res_wd" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="wd_metrics"></div>
+        <div id="wd_status"></div>
+        <div id="wd_note" class="result-note"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 8: Vereisungsschutz (§ 4.4) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p8">
+      <div class="panel-header">
+        <div class="panel-title">Vorerwärmung / Vereisungsschutz WRG</div>
+        <div class="panel-desc">Abschätzung der Vereisungsgefahr im Wärmerückgewinner und Bestimmung der erforderlichen Vorerwärmungsleistung.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 4.4, § 5.5, Richtlinie SWKI VA300-01</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Aussenluft &amp; WRG</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Aussenlufttemperatur θ<sub>ODA</sub> [°C]</label>
+            <input type="number" id="vz_toda" value="-12" step="0.5">
+            <span class="field-hint">Auslegungswert Winter (SIA 2028)</span>
+          </div>
+          <div class="field">
+            <label>WRG-Kategorie</label>
+            <select id="vz_hrc">
+              <option value="HRC1a" selected>HRC1a — Platten ohne Feuchte</option>
+              <option value="HRC1x">HRC1x — Platten mit Feuchte</option>
+              <option value="HRC2a">HRC2a — Kreislaufverbund</option>
+              <option value="HRC3a">HRC3a — Rotation ohne Feuchte</option>
+              <option value="HRC3x">HRC3x — Rotation mit Feuchte</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Temperatur-Effizienz η<sub>t,gro</sub> [%]</label>
+            <input type="number" id="vz_eta" value="80" min="30" max="95" step="1">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Abluft</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Ablufttemperatur θ<sub>ETA</sub> [°C]</label>
+            <input type="number" id="vz_teta" value="22" step="0.5">
+          </div>
+          <div class="field">
+            <label>Abluftfeuchte x<sub>ETA</sub> [g/kg]</label>
+            <input type="number" id="vz_xeta" value="6" min="0" step="0.1">
+            <span class="field-hint">Kritisch ab > 4 g/kg</span>
+          </div>
+          <div class="field">
+            <label>Luftvolumenstrom [m³/h]</label>
+            <input type="number" id="vz_qv" value="2000" min="50" step="50">
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcVZ()">
+        <i class="ti ti-snowflake"></i> Vereisungsgefahr prüfen
+      </button>
+      <div id="res_vz" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="vz_metrics"></div>
+        <div id="vz_status"></div>
+        <div id="vz_note" class="result-note" style="margin-top:.75rem"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 9: CO₂-Konzentration instationär (§ 5.4.5.1.3) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p9">
+      <div class="panel-header">
+        <div class="panel-title">CO₂-Konzentration im Raum (instationär)</div>
+        <div class="panel-desc">Zeitlicher Verlauf der CO₂-Konzentration nach Gl. (30) bei konstantem Zuluft-Volumenstrom und gleichmässiger Durchmischung.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.4.5.1.3, Gl. (30), (31)</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Raum &amp; Lüftung</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Raumvolumen V<sub>R</sub> [m³]</label>
+            <input type="number" id="co2_vr" value="150" min="10" step="10">
+          </div>
+          <div class="field">
+            <label>Zuluft-Volumenstrom q<sub>v,SUP</sub> [m³/h]</label>
+            <input type="number" id="co2_qv" value="180" min="10" step="10">
+          </div>
+          <div class="field">
+            <label>Anzahl Personen</label>
+            <input type="number" id="co2_np" value="6" min="0" step="1">
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Konzentrationen</div>
+        <div class="grid4">
+          <div class="field">
+            <label>CO₂-Emission/Person [l/h]</label>
+            <input type="number" id="co2_g" value="20" min="5" step="1">
+          </div>
+          <div class="field">
+            <label>C<sub>IDA</sub>(0) Start [ppm]</label>
+            <input type="number" id="co2_c0" value="400" min="350" step="10">
+          </div>
+          <div class="field">
+            <label>C<sub>SUP</sub> Zuluft [ppm]</label>
+            <input type="number" id="co2_csup" value="450" min="350" step="10">
+          </div>
+          <div class="field">
+            <label>Simulationsdauer [h]</label>
+            <input type="number" id="co2_tend" value="4" min="0.5" max="24" step="0.5">
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcCO2()">
+        <i class="ti ti-chart-line"></i> Berechnen &amp; Diagramm
+      </button>
+      <div id="res_co2" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="co2_metrics"></div>
+        <div class="chart-wrap"><canvas id="co2_chart"></canvas></div>
+        <div id="co2_note" class="result-note" style="margin-top:.75rem"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 10: PMV/PPD & h,x-Diagramm (Anh. D) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p10">
+      <div class="panel-header">
+        <div class="panel-title">PMV/PPD &amp; h,x-Diagramm</div>
+        <div class="panel-desc">Vorausgesagtes mittleres Votum nach Fanger-Gleichung (SN EN ISO 7730), Anteil unzufriedener Personen PPD und Schwüleempfinden PTA. Visualisierung im h,x-Diagramm.</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Anhang D, § 2.2.6.8, SIA 180 Anh. B</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Bekleidung &amp; Aktivität</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Bekleidung I<sub>cl</sub> [clo]</label>
+            <input type="number" id="pmv_clo" value="1.0" min="0.3" max="1.5" step="0.1">
+            <span class="field-hint">Winter ≈ 1,0 · Sommer ≈ 0,5 · Übergang ≈ 0,8</span>
+          </div>
+          <div class="field">
+            <label>Aktivität M [met]</label>
+            <input type="number" id="pmv_met" value="1.2" min="0.8" max="3.0" step="0.1">
+            <span class="field-hint">Sitzend ≈ 1,2 · Stehend ≈ 1,6</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Raumklima</div>
+        <div class="grid4">
+          <div class="field">
+            <label>Lufttemperatur θ<sub>a</sub> [°C]</label>
+            <input type="number" id="pmv_ta" value="22" step="0.5">
+          </div>
+          <div class="field">
+            <label>Strahlungstemperatur θ<sub>r</sub> [°C]</label>
+            <input type="number" id="pmv_tr" value="22" step="0.5">
+          </div>
+          <div class="field">
+            <label>Rel. Luftfeuchte φ [%]</label>
+            <input type="number" id="pmv_rh" value="40" min="0" max="100" step="1">
+          </div>
+          <div class="field">
+            <label>Luftgeschwindigkeit v<sub>a</sub> [m/s]</label>
+            <input type="number" id="pmv_va" value="0.1" min="0" max="2" step="0.05">
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcPMV()">
+        <i class="ti ti-calculator"></i> PMV/PPD berechnen
+      </button>
+      <div id="res_pmv" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="pmv_metrics"></div>
+        <div id="pmv_status"></div>
+        <div class="chart-wrap"><canvas id="hx_chart"></canvas></div>
+        <div id="pmv_note" class="result-note" style="margin-top:.75rem"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- Panel 11: Luftdichte / Luftdruck (§ 1.12) -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <div class="panel" id="p11">
+      <div class="panel-header">
+        <div class="panel-title">Luftdichte &amp; Luftdruck nach Höhe</div>
+        <div class="panel-desc">Berechnung des Luftdrucks mit der barometrischen Höhenformel (Gl. 14), der Dichte trockener (Gl. 15) und feuchter Luft (Gl. 16) sowie Volumenstrom-Korrektur (Gl. 21).</div>
+        <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 1.12, Gl. (14)–(21)</span>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Eingangsdaten</div>
+        <div class="grid3">
+          <div class="field">
+            <label>Höhe über Meer [m]</label>
+            <input type="number" id="ld_h" value="500" min="0" max="4000" step="50">
+          </div>
+          <div class="field">
+            <label>Lufttemperatur θ [°C]</label>
+            <input type="number" id="ld_t" value="20" step="0.5">
+          </div>
+          <div class="field">
+            <label>Relative Luftfeuchte φ [%]</label>
+            <input type="number" id="ld_rh" value="50" min="0" max="100" step="1">
+          </div>
+        </div>
+        <div class="grid2" style="margin-top:12px">
+          <div class="field">
+            <label>Volumenstrom (Standardbedingungen) [m³/h]</label>
+            <input type="number" id="ld_qv" value="1000" min="0" step="50">
+            <span class="field-hint">Bei 20 °C, 101325 Pa, 40 % r. F. (ρ = 1,20 kg/m³)</span>
+          </div>
+          <div class="field"></div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="calcLD()">
+        <i class="ti ti-calculator"></i> Berechnen
+      </button>
+      <div id="res_ld" style="display:none" class="result-area">
+        <div class="result-header"><span class="result-title">Ergebnis</span></div>
+        <div class="metrics-row" id="ld_metrics"></div>
+        <div id="ld_note" class="result-note"></div>
+      </div>
+    </div>
+
   </main>
 </div>
-
 <footer>
   <span class="footer-left">© 2025 Normaflow · Berechnungen gemäss SIA 382/1:2025</span>
   <div class="footer-right">
@@ -447,15 +1229,27 @@ footer{background:var(--nf-black);padding:1.25rem 2rem;display:flex;align-items:
     <a href="#">Kontakt</a>
   </div>
 </footer>
-
 <script>
 function showPanel(n,el){
   document.querySelectorAll('.panel').forEach(function(p,i){p.classList.toggle('active',i===n);});
   document.querySelectorAll('.sidebar-item').forEach(function(s){s.classList.remove('active');});
   el.classList.add('active');
 }
+function mc(label,val,unit){
+  return '<div class="metric-card"><div class="metric-card-label">'+label+'</div>'
+    +'<div class="metric-card-value">'+val+'<span class="metric-card-unit">'+unit+'</span></div></div>';
+}
+function chk(ok,label,sub,ist,min,unit){
+  return '<div class="check-item">'
+    +'<div class="check-icon '+(ok?'ok':'err')+'"><i class="ti '+(ok?'ti-check':'ti-x')+'"></i></div>'
+    +'<div class="check-body"><div class="check-label">'+label+'</div>'+(sub?'<div class="check-sub">'+sub+'</div>':'')+'</div>'
+    +(ist!==undefined?'<div class="check-values"><div class="check-ist">'+ist+' '+unit+'</div>'+(min!==''?'<div class="check-min">'+min+' '+unit+'</div>':'')+'</div>':'')
+    +'</div>';
+}
 
-/* ── Modul 1 ── */
+/* ══════════════════════════════════════════ */
+/* Panel 0: Luftleitungen (BESTEHEND)        */
+/* ══════════════════════════════════════════ */
 function clearNutzung(){document.getElementById('nutzung').value='';}
 function updateStunden(){
   var v=document.getElementById('nutzung').value;
@@ -469,7 +1263,6 @@ function updateGeomFeld(){
   if(f==='rechteckig'||f==='oval') updateSV();
 }
 updateGeomFeld();
-
 var t50=[[1,0.941,null],[2,0.914,0.933],[3,0.876,0.893],[4,0.842,0.857],[5,0.813,0.825],[6,0.788,0.798],[7,0.766,0.775],[8,0.746,0.754],[9,0.729,0.736],[10,0.714,0.720]];
 function getF50(ratio,isOval){
   ratio=Math.max(1,Math.min(10,ratio));
@@ -487,7 +1280,6 @@ function updateSV(){
   var f=getF50(ratio,document.getElementById('leitungsform').value==='oval');
   document.getElementById('fva_anzeige').value=f.toFixed(3);
 }
-
 var t49=[[40,[2.5,2.5,2.5]],[1000,[3.0,3.0,3.0]],[2000,[4.0,4.0,3.5]],[4000,[5.0,5.0,4.0]],[10000,[6.0,5.5,4.5]],[1e9,[7.0,6.0,5.0]]];
 function interpVmax(qv,h){
   var row=t49.find(function(r){return qv<=r[0];});
@@ -498,11 +1290,6 @@ function interpVmax(qv,h){
   if(h<=4000) return v[0]+(v[1]-v[0])*(h-2000)/2000;
   return v[1]+(v[2]-v[1])*(h-4000)/4000;
 }
-function mc(label,val,unit){
-  return '<div class="metric-card"><div class="metric-card-label">'+label+'</div>'
-    +'<div class="metric-card-value">'+val+'<span class="metric-card-unit">'+unit+'</span></div></div>';
-}
-
 function calcLeitung(){
   var qv=parseFloat(document.getElementById('vol_strom').value)||0;
   var h=parseFloat(document.getElementById('vollstunden').value)||0;
@@ -510,7 +1297,6 @@ function calcLeitung(){
   if(!qv||!h){alert('Bitte Volumenstrom und Volllaststunden eingeben.');return;}
   var vmaxRund=interpVmax(qv,h);
   var resHTML='',statusHTML='',detailText='';
-
   if(form==='rund'){
     var d=parseFloat(document.getElementById('d_rund').value)||200;
     var A=Math.PI*(d/1000/2)*(d/1000/2);
@@ -552,7 +1338,9 @@ function calcLeitung(){
   document.getElementById('res_leitung').style.display='block';
 }
 
-/* ── Modul 2 Hilfsfunktion ── */
+/* ══════════════════════════════════════════ */
+/* Panel 1: Aussenluftfassung (BESTEHEND)    */
+/* ══════════════════════════════════════════ */
 function calcNettoALD(){
   var b=parseFloat(document.getElementById('ald_breite').value)||0;
   var h=parseFloat(document.getElementById('ald_hoehe').value)||0;
@@ -575,17 +1363,7 @@ function calcNettoALD(){
       +'</div>';
   } else { prev.style.display='none'; }
 }
-
-/* ── Modul 2 ── */
 var fortluftMin={'1':2,'3':5,'4_klein':8,'4_mittel':12,'4_gross':16,'4_xl':20};
-function checkItem(ok,label,sub,ist,min,unit){
-  return '<div class="check-item">'
-    +'<div class="check-icon '+(ok?'ok':'err')+'"><i class="ti '+(ok?'ti-check':'ti-x')+'" aria-hidden="true"></i></div>'
-    +'<div class="check-body"><div class="check-label">'+label+'</div>'+(sub?'<div class="check-sub">'+sub+'</div>':'')+'</div>'
-    +'<div class="check-values"><div class="check-ist">'+ist+' '+unit+'</div><div class="check-min">Min. '+min+' '+unit+'</div></div>'
-    +'</div>';
-}
-
 function calcAussen(){
   var hT=parseFloat(document.getElementById('h_terrain').value)||0;
   var hS=parseFloat(document.getElementById('h_schnee').value)||0;
@@ -599,24 +1377,686 @@ function calcAussen(){
   var aALD=parseFloat(document.getElementById('a_ald').value)||0.01;
   var qALD=parseFloat(document.getElementById('q_ald').value)||0;
   var html='',nOk=0,nFail=0;
-  function add(ok,l,s,ist,min,u){html+=checkItem(ok,l,s,ist,min,u);ok?nOk++:nFail++;}
+  function add(ok,l,s,ist,min,u){html+=chk(ok,l,s,ist,min,u);ok?nOk++:nFail++;}
   var hMin=(oeffentl==='ja')?3.0:1.5;
-  add(hT>=hMin,'Mindesthöhe über Terrain','§ 5.12.2.7 — öffentl. zugänglich: 3,0 m / sonst: 1,5 m',hT.toFixed(1),hMin.toFixed(1),'m');
+  add(hT>=hMin,'Mindesthöhe über Terrain','§ 5.12.2.7 — öffentl. zugänglich: 3,0 m / sonst: 1,5 m',hT.toFixed(1),'Min. '+hMin.toFixed(1),'m');
   var hSneeMin=parseFloat((1.5*hS).toFixed(2));
-  add(hT>=hSneeMin,'Schutz vor Schneeeintrag','§ 5.12.2.6 — Unterkante ≥ 1,5 × h_max,an',hT.toFixed(1),hSneeMin.toFixed(2),'m');
-  if(lage==='dach') add(hT>=hSneeMin,'Dach / Terrasse: Unterkante ≥ 1,5 × Schneehöhe','§ 5.12.2.8',hT.toFixed(1),hSneeMin.toFixed(2),'m');
-  add(abstS>=8,'Mindestabstand zu Schadstoffquellen','§ 5.12.2.2 — Strassen, Parkplätze ≥ 3 Fzg., Kamine, Abfall',abstS.toFixed(1),'8,0','m');
+  add(hT>=hSneeMin,'Schutz vor Schneeeintrag','§ 5.12.2.6 — Unterkante ≥ 1,5 × h_max,an',hT.toFixed(1),'Min. '+hSneeMin.toFixed(2),'m');
+  if(lage==='dach') add(hT>=hSneeMin,'Dach / Terrasse: Unterkante ≥ 1,5 × Schneehöhe','§ 5.12.2.8',hT.toFixed(1),'Min. '+hSneeMin.toFixed(2),'m');
+  add(abstS>=8,'Mindestabstand zu Schadstoffquellen','§ 5.12.2.2 — Strassen, Parkplätze ≥ 3 Fzg., Kamine, Abfall',abstS.toFixed(1),'Min. 8,0','m');
   var fMin=fortluftMin[fKat]||2;
   if(hVers>2) fMin=Math.max(fMin-Math.round(hVers)*1.5,1);
-  add(abstF>=fMin,'Mindestabstand zu Fortluft-Durchlass','§ 5.12.4, Figur 8'+(hVers>0?' (Höhenversatz '+hVers+' m berücksichtigt)':''),abstF.toFixed(1),fMin.toFixed(1),'m');
+  add(abstF>=fMin,'Mindestabstand zu Fortluft-Durchlass','§ 5.12.4, Figur 8'+(hVers>0?' (Höhenversatz '+hVers+' m berücksichtigt)':''),abstF.toFixed(1),'Min. '+fMin.toFixed(1),'m');
   var vALD=parseFloat((qALD/3600/aALD).toFixed(2));
-  add(vALD<=2.0,'Max. Luftgeschwindigkeit am Durchlass','§ 5.12.2.12 — bezogen auf Netto-Querschnitt',vALD.toFixed(2),'2,0','m/s');
+  add(vALD<=2.0,'Max. Luftgeschwindigkeit am Durchlass','§ 5.12.2.12 — bezogen auf Netto-Querschnitt',vALD.toFixed(2),'Max. 2,0','m/s');
   document.getElementById('checks_list').innerHTML=html;
   var summ=nFail===0
     ?'<div class="status-bar status-ok"><i class="ti ti-shield-check"></i> Alle '+nOk+' Kriterien erfüllt — Anordnung normkonform.</div>'
     :'<div class="status-bar status-err"><i class="ti ti-alert-triangle"></i> '+nFail+' Kriterium/Kriterien nicht erfüllt — Anordnung anpassen.</div>';
   document.getElementById('aussen_summary').innerHTML=summ;
   document.getElementById('res_aussen').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 2: Luftvolumenstrom (§ 5.4)         */
+/* ══════════════════════════════════════════ */
+function calcVS(){
+  var anfa=parseFloat(document.getElementById('vs_anfa').value)||0;
+  var hr=parseFloat(document.getElementById('vs_hr').value)||2.5;
+  var np=parseFloat(document.getElementById('vs_np').value)||0;
+  var hoehe=parseFloat(document.getElementById('vs_hoehe').value)||500;
+  var qvP=parseFloat(document.getElementById('vs_ida').value)||25;
+  var ev=parseFloat(document.getElementById('vs_ev').value)||1.0;
+  var phc=parseFloat(document.getElementById('vs_phc').value)||0;
+  var tsup=parseFloat(document.getElementById('vs_tsup').value)||18;
+  var tida=parseFloat(document.getElementById('vs_tida').value)||24;
+  var co2g=parseFloat(document.getElementById('vs_co2_g').value)||20;
+  var cida=parseFloat(document.getElementById('vs_cida').value)||1200;
+  var coda=parseFloat(document.getElementById('vs_coda').value)||400;
+  var gh=parseFloat(document.getElementById('vs_gh').value)||0;
+  var xsup=parseFloat(document.getElementById('vs_xsup').value)||5;
+  var xida=parseFloat(document.getElementById('vs_xida').value)||11;
+  if(!anfa){alert('Bitte Nettogeschossfläche eingeben.');return;}
+  var rhoCp=1220-0.14*hoehe;
+  var q_pers=np*qvP/ev;
+  var q_co2=0,q_warm=0,q_feucht=0;
+  if(np>0){
+    var dC=(cida-coda)/1e6;
+    q_co2=(np*co2g/1000)/dC/ev;
+  }
+  if(phc>0&&Math.abs(tida-tsup)>0.1){
+    q_warm=phc*3600/(rhoCp*Math.abs(tida-tsup))/ev;
+  }
+  if(gh>0&&Math.abs(xida-xsup)>0.1){
+    q_feucht=gh/(1.2*Math.abs(xida-xsup))/ev;
+  }
+  var q_neben=0.5*anfa;
+  var arr=[
+    {name:'Personenbelegung (Tab. 11 SIA 2024)',val:q_pers,active:np>0,sub:np+' Pers. × '+qvP+' m³/h ÷ ε<sub>V</sub> '+ev},
+    {name:'CO₂-Verdünnung (Gl. 29)',val:q_co2,active:np>0,sub:'ΔC = '+(cida-coda)+' ppm'},
+    {name:'Wärmeabfuhr (Gl. 25)',val:q_warm,active:phc>0,sub:'Φ = '+phc+' W, Δθ = '+Math.abs(tida-tsup).toFixed(1)+' K'},
+    {name:'Feuchteabfuhr (Gl. 33)',val:q_feucht,active:gh>0,sub:'G = '+gh+' g/h, Δx = '+Math.abs(xida-xsup).toFixed(1)+' g/kg'},
+    {name:'Grundlüftung Nebenraum',val:q_neben,active:true,sub:'0,5 m³/(h·m²) × '+anfa+' m²'}
+  ];
+  var qMass=0,qMassName='';
+  arr.forEach(function(a){if(a.active && a.val>qMass){qMass=a.val;qMassName=a.name;}});
+  var vol=anfa*hr;
+  var lw=vol>0?qMass/vol:0;
+  document.getElementById('vs_metrics').innerHTML=
+    mc('Massgeb. Volumenstrom',Math.round(qMass),'m³/h')+
+    mc('Pro m²',Math.round(qMass/anfa*10)/10,'m³/(h·m²)')+
+    mc('Luftwechsel',lw.toFixed(2),'h⁻¹')+
+    mc('Raumvolumen',vol.toFixed(1),'m³');
+  document.getElementById('vs_status').innerHTML='<div class="status-bar status-ok"><i class="ti ti-check"></i> Massgebend: <b>'+qMassName+'</b></div>';
+  var listH='';
+  arr.forEach(function(a){
+    if(!a.active) return;
+    var isMax=a.name===qMassName;
+    listH+='<div class="check-item">'
+      +'<div class="check-icon '+(isMax?'ok':'err')+'" style="background:'+(isMax?'var(--nf-accent-light)':'var(--nf-gray-100)')+';color:'+(isMax?'var(--nf-accent)':'var(--nf-gray-600)')+'"><i class="ti '+(isMax?'ti-target-arrow':'ti-circle')+'"></i></div>'
+      +'<div class="check-body"><div class="check-label">'+a.name+'</div><div class="check-sub">'+a.sub+'</div></div>'
+      +'<div class="check-values"><div class="check-ist">'+Math.round(a.val)+' m³/h</div></div>'
+      +'</div>';
+  });
+  document.getElementById('vs_detail_list').innerHTML=listH;
+  document.getElementById('vs_note').innerHTML='Massgebend ist der grösste resultierende Wert (§ 5.4.1.2). Berücksichtigt: ρ·c<sub>p</sub> = '+rhoCp.toFixed(0)+' J/(m³·K) bei '+hoehe+' m ü. M. Lüftungseffektivität ε<sub>V</sub> = '+ev+'.';
+  document.getElementById('res_vs').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 3: Fensterlüftung (Anh. I)          */
+/* ══════════════════════════════════════════ */
+function calcFL(){
+  var anfa=parseFloat(document.getElementById('fl_anfa').value)||0;
+  var hr=parseFloat(document.getElementById('fl_hr').value)||2.5;
+  var dr=parseFloat(document.getElementById('fl_dr').value)||5;
+  var af=parseFloat(document.getElementById('fl_af').value)||0;
+  var seiten=parseInt(document.getElementById('fl_seiten').value)||1;
+  var zweck=document.getElementById('fl_zweck').value;
+  var no2=parseFloat(document.getElementById('fl_no2').value)||0;
+  var pm10=parseFloat(document.getElementById('fl_pm10').value)||0;
+  var laerm=document.getElementById('fl_laerm').value;
+  if(!anfa){alert('Bitte Geschossfläche eingeben.');return;}
+  var prozent=zweck==='intensiv'?5:3;
+  var afMin=anfa*prozent/100;
+  var afProz=af/anfa*100;
+  var tiefenFaktor=hr*(seiten===1?2.5:5.0);
+  var nachtLuft=10;
+  document.getElementById('fl_metrics').innerHTML=
+    mc('Geforderte Fensterfläche',afMin.toFixed(2),'m²')+
+    mc('Vorhanden',af.toFixed(2),'m²')+
+    mc('Anteil v. NGF',afProz.toFixed(1),'%')+
+    mc('Max. Raumtiefe',tiefenFaktor.toFixed(1),'m');
+  var html='',nOk=0,nFail=0;
+  function add(ok,l,s,ist,min,u){html+=chk(ok,l,s,ist,min,u);ok?nOk++:nFail++;}
+  add(af>=afMin,'Mindest-Fensteröffnungsfläche','§ I.5.5 — '+prozent+' % der A<sub>NFA</sub>',af.toFixed(2),'Min. '+afMin.toFixed(2),'m²');
+  add(dr<=tiefenFaktor,'Raumtiefe vs. Raumhöhe','§ I.5.6 — '+(seiten===1?'1 Fassade: ≤ 2,5 × h_R':'2 Fassaden: ≤ 5,0 × h_R'),dr.toFixed(1),'Max. '+tiefenFaktor.toFixed(1),'m');
+  add(no2<=45,'NO₂-Belastung Aussenluft','§ I.2.2 — Grenze ODA 3',no2.toFixed(0),'Max. 45','μg/m³');
+  add(pm10<=30,'PM10-Belastung Aussenluft','§ I.2.2 — Grenze ODA 3',pm10.toFixed(0),'Max. 30','μg/m³');
+  add(laerm!=='hoch','Lärmbelastung','§ I.2.1 — Bewertung nach SIA 181 / LSV',laerm,'',(''));
+  if(zweck==='intensiv'){
+    var qvNacht=anfa*nachtLuft;
+    add(true,'Nachtauskühlung möglich','§ I.4.2 — Erfordert ≥ 10 m³/(h·m²)',Math.round(qvNacht),'erforderlich',(qvNacht.toFixed(0)+' m³/h'));
+  }
+  document.getElementById('fl_checks').innerHTML=html;
+  document.getElementById('fl_summary').innerHTML=(nFail===0
+    ?'<div class="status-bar status-ok"><i class="ti ti-shield-check"></i> Alle '+nOk+' Kriterien erfüllt — Fensterlüftung möglich.</div>'
+    :'<div class="status-bar status-err"><i class="ti ti-alert-triangle"></i> '+nFail+' Kriterien nicht erfüllt — mechanische / hybride Lüftung prüfen.</div>');
+  document.getElementById('res_fl').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 4: PSFP (§ 5.11.2)                  */
+/* ══════════════════════════════════════════ */
+var psfpAddTbl={
+  /* qv<2 m³/s */
+  '1':{small:120,big:100},'2':{small:200,big:167},
+  '3':{small:120,big:100},'4':{small:320,big:267},
+  '5':{small:218,big:185},'6':{small:291,big:246},
+  '7':{small:382,big:323},'8':{small:473,big:400},
+  '9':{small:545,big:462},'10':{small:564,big:477},
+  '11':{small:636,big:538}
+};
+var psfpExtTbl={
+  uvu_sup:{small:{L:500,M:800,H:1540},big:{L:417,M:667,H:1283}},
+  uvu_eta:{small:{L:300,M:600,H:940},big:{L:250,M:500,H:783}},
+  bvu:{small:{L:727,M:1273,H:2255},big:{L:615,M:1077,H:1908}}
+};
+function calcPSFP(){
+  var typ=document.getElementById('ps_typ').value;
+  var qv=parseFloat(document.getElementById('ps_qv').value)||0;
+  var qvS=qv/3600;
+  var isBig=qvS>=2.0;
+  var sizeKey=isBig?'big':'small';
+  var isBVU=parseInt(typ)>=5;
+  var hrc=document.getElementById('ps_hrc').value;
+  var eta=parseFloat(document.getElementById('ps_eta').value)/100||0;
+  var gamma=document.getElementById('ps_gamma').value;
+  var stdVal=document.getElementById('ps_std').value.split('|');
+  var desVal=document.getElementById('ps_des').value.split('|');
+  var fStd=parseFloat(stdVal[0]),xStd=parseFloat(stdVal[1]);
+  var fDes=parseFloat(desVal[0]),xDes=parseFloat(desVal[1]);
+  var fStdX=Math.pow(fStd,xStd),fDesX=Math.pow(fDes,xDes);
+  /* PSFP,int berechnen */
+  var psfpInt=0;
+  if(isBVU){
+    var E=0;
+    if(hrc==='2a') E=(eta-0.68)*3000;
+    else if(hrc!=='none') E=(eta-0.73)*3000;
+    if(isBig){
+      psfpInt=(hrc==='2a'?1300:800)+E;
+    } else {
+      psfpInt=(hrc==='2a'?1600:1100)+E-300*qvS/2;
+    }
+    if(psfpInt<230) psfpInt=230;
+  } else {
+    psfpInt=230;
+  }
+  /* PSFP,add */
+  var psfpAdd=psfpAddTbl[typ][sizeKey];
+  /* Erweiterte Komponenten */
+  var xtd=0;
+  var x1=parseInt(document.getElementById('ps_x1').value);
+  var x2=parseInt(document.getElementById('ps_x2').value);
+  var x3=parseInt(document.getElementById('ps_x3').value);
+  var x4=parseInt(document.getElementById('ps_x4').value);
+  var addPerComp=isBig?(isBVU?231:250):(isBVU?273:300);
+  var addEPA=isBig?(isBVU?385:417):(isBVU?455:500);
+  var addHEPA=isBig?(isBVU?769:833):(isBVU?909:1000);
+  if(x1) xtd+=addPerComp;
+  if(x2) xtd+=addPerComp;
+  if(x3) xtd+=addEPA;
+  if(x4) xtd+=addHEPA;
+  psfpAdd+=xtd;
+  /* PSFP,ext */
+  var extKey=isBVU?'bvu':(parseInt(typ)<=2?'uvu_sup':'uvu_eta');
+  var psfpExt=psfpExtTbl[extKey][sizeKey][gamma];
+  /* Korrektur Steuerung */
+  var corr=fStdX/fDesX;
+  var sum=psfpInt+psfpAdd+psfpExt;
+  var grenz=sum*corr*1.0;
+  var ziel=sum*corr*0.8;
+  /* Umrechnung */
+  function fmt(w){return w.toFixed(0)+' W/(m³/s) / '+(w/3600).toFixed(3)+' W/(m³/h)';}
+  document.getElementById('psfp_metrics').innerHTML=
+    mc('P<sub>SFP</sub> Grenzwert',Math.round(grenz),'W/(m³/s)')+
+    mc('Pro m³/h',(grenz/3600).toFixed(3),'W/(m³/h)')+
+    mc('P<sub>SFP</sub> Zielwert',Math.round(ziel),'W/(m³/s)')+
+    mc('Pro m³/h Ziel',(ziel/3600).toFixed(3),'W/(m³/h)');
+  var listH='';
+  listH+=chk(true,'P<sub>SFP,int,max</sub> — Lüftungsbauteile (Tab. '+(isBig?'42':'41')+')','VO (EU) Nr. 1253/2014',psfpInt.toFixed(0),'','W/(m³/s)');
+  listH+=chk(true,'P<sub>SFP,add,max</sub> — Anlagetyp + Sonderkomponenten','Anlagetyp '+typ+(xtd>0?' + '+xtd.toFixed(0)+' W/(m³/s) Sonderfilter':''),psfpAdd.toFixed(0),'','W/(m³/s)');
+  listH+=chk(true,'P<sub>SFP,ext,max</sub> — Luftverteilung (Tab. 44)','γ<sub>dis</sub> = '+gamma,psfpExt.toFixed(0),'','W/(m³/s)');
+  listH+=chk(true,'Steuerung/Regelung-Korrektur','f<sub>std</sub><sup>x</sup>/f<sub>des</sub><sup>x</sup> = '+fStdX.toFixed(3)+' / '+fDesX.toFixed(3),corr.toFixed(3),'','—');
+  document.getElementById('psfp_breakdown').innerHTML=listH;
+  var elLeistung=grenz*qvS;
+  document.getElementById('psfp_note').innerHTML='Elektrische Leistung bei Grenzwert: <b>'+Math.round(elLeistung)+' W</b> = '+(elLeistung/1000).toFixed(2)+' kW (q<sub>v</sub> = '+qvS.toFixed(2)+' m³/s). '+(isBVU?'Bidirektionale':'Unidirektionale')+' Lüftungsanlage, '+(isBig?'qv ≥ 2 m³/s':'qv < 2 m³/s')+'. Hinweis: PSFP,int kann negativ bzw. zu tief werden bei sehr hohen WRG-Effizienzen.';
+  document.getElementById('res_psfp').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 5: Elektrizitätsbedarf (Anh. G)     */
+/* ══════════════════════════════════════════ */
+var evTab='m1';
+function switchEVTab(t,el){
+  evTab=t;
+  document.querySelectorAll('#p5 .tab-btn').forEach(function(b){b.classList.remove('active');});
+  el.classList.add('active');
+  document.querySelectorAll('#p5 .tab-content').forEach(function(c){c.classList.remove('active');});
+  document.getElementById('ev_'+t).classList.add('active');
+}
+function calcEV(){
+  var qv=parseFloat(document.getElementById('ev_qv').value)||0;
+  var psfp=parseFloat(document.getElementById('ev_psfp').value)||0;
+  var dp=parseFloat(document.getElementById('ev_dp').value)||0;
+  var eta=parseFloat(document.getElementById('ev_eta').value)/100||0.55;
+  /* Leistung berechnen */
+  var pv;
+  if(dp>0){
+    pv=qv*dp/3600/eta;
+  } else {
+    pv=psfp*qv;
+  }
+  var ev=0,tval=0;
+  if(evTab==='m1'){
+    tval=parseFloat(document.getElementById('ev_tvfld').value)||0;
+    ev=pv*tval/1000;
+  } else {
+    var top=parseFloat(document.getElementById('ev_top').value)||0;
+    var f=parseFloat(document.getElementById('ev_f').value)||1;
+    ev=pv*top*f/1000;
+    tval=top*f;
+  }
+  document.getElementById('ev_metrics').innerHTML=
+    mc('Elektr. Leistung P<sub>V</sub>',Math.round(pv),'W')+
+    mc('Pro Jahr',Math.round(ev),'kWh/a')+
+    mc('Pro m³ Volumenstrom',(ev/qv*1000).toFixed(2),'Wh/(m³·a)')+
+    mc('Energieäquiv. Stunden',Math.round(tval),'h');
+  var co2_kg=Math.round(ev*0.128);
+  document.getElementById('ev_note').innerHTML='Berechnung nach '+(evTab==='m1'?'Gl. (48), Anh. G mit Elektro-Volllaststunden':'Gl. (51), Anh. G mit Steuer-/Regelfaktor')+'. '+(dp>0?'Druckverlust = '+dp+' Pa, η<sub>tot</sub> = '+(eta*100).toFixed(0)+' %.':'P<sub>SFP,d</sub> = '+psfp+' W/(m³/h).')+' Indikativ entspricht der Jahresverbrauch ca. '+co2_kg+' kg CO₂-Äquivalent (Schweizer Strommix).';
+  document.getElementById('res_ev').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 6: Wärmerückgewinnung (§ 5.7)       */
+/* ══════════════════════════════════════════ */
+var hrcReq={
+  'HRC1a':{grenz:73,ziel:78,fGrenz:0,fZiel:0,cop:25},
+  'HRC1x':{grenz:73,ziel:78,fGrenz:50,fZiel:60,cop:25},
+  'HRC2a':{grenz:70,ziel:75,fGrenz:0,fZiel:0,cop:16},
+  'HRC2b':{grenz:73,ziel:78,fGrenz:0,fZiel:0,cop:25},
+  'HRC3a':{grenz:73,ziel:78,fGrenz:0,fZiel:0,cop:25},
+  'HRC3x':{grenz:73,ziel:78,fGrenz:50,fZiel:60,cop:25},
+  'HRC3b':{grenz:73,ziel:85,fGrenz:0,fZiel:0,cop:25},
+  'HRC3y':{grenz:73,ziel:85,fGrenz:50,fZiel:70,cop:25}
+};
+function calcHRC(){
+  var kat=document.getElementById('hrc_kat').value;
+  var qv=parseFloat(document.getElementById('hrc_qv').value)||0;
+  var t11=parseFloat(document.getElementById('hrc_t11').value);
+  var t21=parseFloat(document.getElementById('hrc_t21').value);
+  var t22=parseFloat(document.getElementById('hrc_t22').value);
+  var dp=parseFloat(document.getElementById('hrc_dp').value)||0;
+  var x11=parseFloat(document.getElementById('hrc_x11').value);
+  var x21=parseFloat(document.getElementById('hrc_x21').value);
+  var x22=parseFloat(document.getElementById('hrc_x22').value);
+  if(t11===t21){alert('θ11 und θ21 müssen unterschiedlich sein.');return;}
+  var etaT=(t22-t21)/(t11-t21)*100;
+  var etaX=null;
+  if(['HRC1x','HRC3x','HRC3y'].indexOf(kat)>-1 && x11!==x21){
+    etaX=(x22-x21)/(x11-x21)*100;
+  }
+  var qvS=qv/3600;
+  var phi=qvS*1.2*1005*Math.abs(t22-t21);
+  var pEl=qvS*dp/0.55;
+  var cop=pEl>0?phi/pEl:0;
+  var req=hrcReq[kat];
+  document.getElementById('hrc_metrics').innerHTML=
+    mc('η<sub>t,gro</sub>',etaT.toFixed(1),'%')+
+    (etaX!==null?mc('η<sub>x,gro</sub>',etaX.toFixed(1),'%'):mc('η<sub>x,gro</sub>','—',''))+
+    mc('Wärmeleistung',Math.round(phi),'W')+
+    mc('Leistungszahl ε<sub>hrs</sub>',cop.toFixed(1),'—');
+  var html='';
+  html+=chk(etaT>=req.grenz,'Temperatur-Bruttoeffizienz','Tab. 40 Grenzwert ('+kat+')',etaT.toFixed(1)+' %','Min. '+req.grenz+' %','');
+  html+=chk(etaT>=req.ziel,'Temperatur-Bruttoeffizienz (Ziel)','Tab. 40 Zielwert ('+kat+')',etaT.toFixed(1)+' %','Ziel '+req.ziel+' %','');
+  if(req.fGrenz>0){
+    if(etaX!==null){
+      html+=chk(etaX>=req.fGrenz,'Feuchte-Bruttoeffizienz','Tab. 40 Grenzwert ('+kat+')',etaX.toFixed(1)+' %','Min. '+req.fGrenz+' %','');
+      html+=chk(etaX>=req.fZiel,'Feuchte-Bruttoeffizienz (Ziel)','Tab. 40 Zielwert',etaX.toFixed(1)+' %','Ziel '+req.fZiel+' %','');
+    } else {
+      html+=chk(false,'Feuchte-Bruttoeffizienz','Tab. 40 — Feuchteübertragung erforderlich','—','Min. '+req.fGrenz+' %','');
+    }
+  }
+  html+=chk(cop>=req.cop,'Leistungszahl ε<sub>hrs</sub>','Tab. 40 — bei trockenen Normprüfbedingungen W1',cop.toFixed(1),'Min. '+req.cop,'');
+  document.getElementById('hrc_checks').innerHTML=html;
+  document.getElementById('hrc_note').innerHTML='WRG-Kategorie: <b>'+kat+'</b>. Bei Aussenluft '+t21+' °C und Abluft '+t11+' °C wird die Zuluft auf '+t22+' °C erwärmt. Wärmeleistung berechnet mit ρ·c<sub>p</sub> = 1,2 · 1005 J/(m³·K).';
+  document.getElementById('res_hrc').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 7: Wärmedämmung (§ 5.14, Tab. 53)   */
+/* ══════════════════════════════════════════ */
+function calcWD(){
+  var art=document.getElementById('wd_art').value;
+  var lage=document.getElementById('wd_lage').value;
+  var dt=parseFloat(document.getElementById('wd_dt').value)||0;
+  var lam=parseFloat(document.getElementById('wd_lambda').value)||0.04;
+  var preh=parseInt(document.getElementById('wd_preh').value);
+  var lange=parseFloat(document.getElementById('wd_lange').value)||10;
+  var qv=parseFloat(document.getElementById('wd_qv').value)||0;
+  /* Tab. 53 */
+  var dMin=0;
+  if(art==='oda'){
+    if(lage==='innen') dMin=preh?60:100;
+    else if(lage==='geschlossen') dMin=30;
+    else dMin=0;
+  } else {
+    if(lage==='innen'){
+      if(dt<5) dMin=0;
+      else if(dt<10) dMin=30;
+      else if(dt<15) dMin=60;
+      else dMin=100;
+    }
+    else if(lage==='geschlossen') dMin=60;
+    else dMin=100;
+  }
+  /* Anpassung λ */
+  if(lam!==0.04 && dMin>0){
+    dMin=dMin*lam/0.04;
+  }
+  /* Reduktion bei kurzen Leitungen */
+  var redOK=lange<6 && qv<=220;
+  var dMinRed=dMin;
+  if(redOK){
+    dMinRed=dMin*Math.min(1,lange/6);
+  }
+  var verlust=lam*dt/(dMin/1000);
+  document.getElementById('wd_metrics').innerHTML=
+    mc('Mind. Dämmdicke',dMin.toFixed(0),'mm')+
+    (redOK?mc('Reduziert (kurz)',dMinRed.toFixed(0),'mm'):mc('Reduktion möglich','—',''))+
+    mc('Wärmeleitfähigkeit',lam.toFixed(3),'W/(m·K)')+
+    mc('Wärmestromdichte',verlust.toFixed(1),'W/m²');
+  var ok=verlust<=5;
+  document.getElementById('wd_status').innerHTML='<div class="status-bar '+(ok?'status-ok':'status-warn')+'"><i class="ti '+(ok?'ti-check':'ti-alert-triangle')+'"></i> '+(ok?'Mit '+dMin.toFixed(0)+' mm Dämmung wird die Wärmestromdichte ≤ 5 W/m² eingehalten (§ 5.14.1).':'Dämmdicke ggf. erhöhen — Zielwert ≤ 5 W/m².')+'</div>';
+  document.getElementById('wd_note').innerHTML='Berechnung nach Tab. 53: '+(art==='oda'?'ODA/EHA':'SUP/ETA')+' Leitung, '+lage+'. '+(redOK?'Reduktion gem. Fig. 9 (Leitung &lt; 6 m und q<sub>v</sub> ≤ 220 m³/h, kleine Anlage) angewendet.':'Keine Reduktion (Leitung ≥ 6 m oder q<sub>v</sub> &gt; 220 m³/h).')+' Ziel: Wärmestromdichte ≤ 5 W/m² mit Wärmedämmung (Standardwert ohne Dämmung würde &gt; 8 W/m² ergeben).';
+  document.getElementById('res_wd').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 8: Vereisungsschutz (§ 4.4)         */
+/* ══════════════════════════════════════════ */
+function calcVZ(){
+  var toda=parseFloat(document.getElementById('vz_toda').value);
+  var hrc=document.getElementById('vz_hrc').value;
+  var eta=parseFloat(document.getElementById('vz_eta').value)/100||0.8;
+  var teta=parseFloat(document.getElementById('vz_teta').value);
+  var xeta=parseFloat(document.getElementById('vz_xeta').value)||6;
+  var qv=parseFloat(document.getElementById('vz_qv').value)||0;
+  /* Abschätzung Vereisungstemperatur */
+  var hrcFeuchte=['HRC1x','HRC3x'].indexOf(hrc)>-1;
+  var grenzTeta;
+  if(hrcFeuchte){
+    grenzTeta=-15-2*xeta;
+  } else {
+    grenzTeta=-3-1.5*xeta+(0.78-eta)*30;
+  }
+  var vereisung=toda<grenzTeta || (toda<0 && xeta>4);
+  var tFortAbsch=teta-eta*(teta-toda);
+  /* Vorerwärmungsleistung */
+  var tODAneed=Math.max(grenzTeta,-15);
+  var pVor=0;
+  if(toda<tODAneed){
+    var qvS=qv/3600;
+    pVor=qvS*1.2*1005*(tODAneed-toda);
+  }
+  document.getElementById('vz_metrics').innerHTML=
+    mc('Eisbildungsgrenze (Schätz.)',grenzTeta.toFixed(1),'°C')+
+    mc('Fortlufttemp. (theor.)',tFortAbsch.toFixed(1),'°C')+
+    mc('Vorerwärmungsleist.',Math.round(pVor),'W')+
+    mc('Δt Vorerwärmung',Math.max(0,tODAneed-toda).toFixed(1),'K');
+  var status;
+  if(!vereisung){
+    status='<div class="status-bar status-ok"><i class="ti ti-check"></i> Keine Vereisungsgefahr bei θ<sub>ODA</sub> = '+toda+' °C.</div>';
+  } else {
+    status='<div class="status-bar status-warn"><i class="ti ti-snowflake"></i> Vereisungsgefahr! Massnahme erforderlich (Bypass, Vorerwärmung, Drehzahlreduktion Zuluft, Modulation).</div>';
+  }
+  document.getElementById('vz_status').innerHTML=status;
+  var hinw='';
+  if(hrcFeuchte){
+    hinw='Feuchteübertragende WRG ('+hrc+') verschiebt die Eisbildungsgrenze nach unten — die hier angegebenen Werte sind konservative Abschätzungen. Genaue Werte den Herstellerunterlagen entnehmen.';
+  } else {
+    hinw='Wärmerückgewinner ohne Feuchteübertragung kondensiert bei tieferen Aussenlufttemperaturen — Vereisungsgrenze stark von Abluftfeuchte abhängig. Bei elektrischer Vorerwärmung gilt § 5.5.2: nur bei WLA zulässig, bei NWLA nicht erlaubt.';
+  }
+  document.getElementById('vz_note').innerHTML=hinw;
+  document.getElementById('res_vz').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 9: CO₂ instationär (§ 5.4.5.1.3)    */
+/* ══════════════════════════════════════════ */
+function calcCO2(){
+  var vr=parseFloat(document.getElementById('co2_vr').value)||0;
+  var qv=parseFloat(document.getElementById('co2_qv').value)||0;
+  var np=parseFloat(document.getElementById('co2_np').value)||0;
+  var gPers=parseFloat(document.getElementById('co2_g').value)||20;
+  var c0=parseFloat(document.getElementById('co2_c0').value)||400;
+  var csup=parseFloat(document.getElementById('co2_csup').value)||450;
+  var tend=parseFloat(document.getElementById('co2_tend').value)||4;
+  if(!vr||!qv){alert('Bitte Raumvolumen und Volumenstrom eingeben.');return;}
+  var G=np*gPers;
+  var ratio=qv/vr;
+  var cStat=csup+G/qv*1e6;
+  var points=200;
+  var data=[];
+  for(var i=0;i<=points;i++){
+    var t=tend*i/points;
+    var c=(c0-G/qv*1e6-csup)*Math.exp(-ratio*t)+G/qv*1e6+csup;
+    data.push({t:t,c:c});
+  }
+  document.getElementById('co2_metrics').innerHTML=
+    mc('Stationärwert',Math.round(cStat),'ppm')+
+    mc('Bei t = '+tend+' h',Math.round(data[points].c),'ppm')+
+    mc('Zeitkonstante τ',(60/ratio).toFixed(0),'min')+
+    mc('Luftwechsel',ratio.toFixed(2),'h⁻¹');
+  /* Diagramm */
+  var canvas=document.getElementById('co2_chart');
+  canvas.width=800;canvas.height=380;
+  var ctx=canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  var pad={l:60,r:40,t:30,b:50};
+  var W=canvas.width-pad.l-pad.r,H=canvas.height-pad.t-pad.b;
+  var maxC=Math.max(2000,Math.ceil(Math.max(cStat,c0,data[points].c)/200)*200+200);
+  var minC=Math.min(c0,csup,400);
+  minC=Math.floor(minC/100)*100;
+  function sx(t){return pad.l+t/tend*W;}
+  function sy(c){return pad.t+H-(c-minC)/(maxC-minC)*H;}
+  /* Grid */
+  ctx.strokeStyle='#efefed';ctx.lineWidth=1;ctx.font='11px sans-serif';ctx.fillStyle='#5a5854';
+  for(var i=0;i<=5;i++){
+    var v=minC+(maxC-minC)*i/5;
+    var y=sy(v);
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();
+    ctx.textAlign='right';ctx.fillText(Math.round(v)+' ppm',pad.l-8,y+4);
+  }
+  for(var i=0;i<=5;i++){
+    var t=tend*i/5;
+    var x=sx(t);
+    ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,pad.t+H);ctx.stroke();
+    ctx.textAlign='center';ctx.fillText(t.toFixed(1)+' h',x,pad.t+H+18);
+  }
+  /* Grenzwerte */
+  ctx.strokeStyle='#dcfce7';ctx.lineWidth=1;ctx.setLineDash([4,3]);
+  [950,1200,1750].forEach(function(v){
+    if(v>=minC&&v<=maxC){
+      var y=sy(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();
+      ctx.fillStyle='#166534';ctx.font='10px sans-serif';ctx.textAlign='left';
+      ctx.fillText('IDA '+(v===950?'1':(v===1200?'2':'3')),pad.l+5,y-3);
+    }
+  });
+  ctx.setLineDash([]);
+  /* Achsen */
+  ctx.strokeStyle='#0a0a0a';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(pad.l,pad.t);ctx.lineTo(pad.l,pad.t+H);ctx.lineTo(pad.l+W,pad.t+H);ctx.stroke();
+  /* Kurve */
+  ctx.strokeStyle='#1a56db';ctx.lineWidth=2.5;
+  ctx.beginPath();
+  data.forEach(function(p,i){
+    var x=sx(p.t),y=sy(p.c);
+    if(i===0) ctx.moveTo(x,y);
+    else ctx.lineTo(x,y);
+  });
+  ctx.stroke();
+  /* Achsenbeschriftung */
+  ctx.fillStyle='#0a0a0a';ctx.font='12px sans-serif';ctx.textAlign='center';
+  ctx.fillText('Zeit t [h]',pad.l+W/2,canvas.height-10);
+  ctx.save();ctx.translate(15,pad.t+H/2);ctx.rotate(-Math.PI/2);
+  ctx.fillText('CO₂-Konzentration [ppm]',0,0);ctx.restore();
+  ctx.font='bold 13px sans-serif';ctx.textAlign='left';
+  ctx.fillText('CO₂-Verlauf bei '+np+' Personen',pad.l,18);
+  document.getElementById('co2_note').innerHTML='Berechnung nach Gl. (30) der SIA 382/1. Bei konstanter Emission G = '+G+' l/h ergibt sich nach t → ∞ ein Stationärwert C<sub>IDA</sub>(∞) = C<sub>SUP</sub> + G/q<sub>v</sub> = <b>'+Math.round(cStat)+' ppm</b>. Annahme: ideale Durchmischung (ε<sub>V</sub> = 1).';
+  document.getElementById('res_co2').style.display='block';
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 10: PMV/PPD & h,x (Anh. D)          */
+/* ══════════════════════════════════════════ */
+function pmvCalc(ta,tr,va,rh,M,clo){
+  var pa=rh/100*Math.exp(16.6536-4030.183/(ta+235));
+  pa=pa*1000;
+  var icl=clo*0.155;
+  var m=M*58.15;
+  var fcl=icl<=0.078?1+1.29*icl:1.05+0.645*icl;
+  var hcf=12.1*Math.sqrt(va);
+  var taa=ta+273;
+  var tcla=taa+(35.5-ta)/(3.5*icl+0.1);
+  var p1=icl*fcl,p2=p1*3.96,p3=p1*100,p4=p1*taa;
+  var p5=308.7-0.028*m+p2*Math.pow((tr+273)/100,4);
+  var xn=tcla/100,xf=xn,n=0,eps=1e-4,hc;
+  while(Math.abs(xn-xf)>eps && n<150){
+    xf=(xf+xn)/2;
+    hc=hcf>2.38*Math.pow(Math.abs(100*xf-taa),0.25)?hcf:2.38*Math.pow(Math.abs(100*xf-taa),0.25);
+    xn=(p5+p4*hc-p2*Math.pow(xf,4))/(100+p3*hc);
+    n++;
+  }
+  var tcl=100*xn-273;
+  var hl1=3.05e-3*(5733-6.99*(m-0)-pa);
+  var hl2=m-0>58.15?0.42*((m-0)-58.15):0;
+  var hl3=1.7e-5*m*(5867-pa);
+  var hl4=0.0014*m*(34-ta);
+  var hl5=3.96*fcl*(Math.pow(xn,4)-Math.pow((tr+273)/100,4));
+  var hl6=fcl*hc*(tcl-ta);
+  var ts=0.303*Math.exp(-0.036*m)+0.028;
+  var pmv=ts*(m-0-hl1-hl2-hl3-hl4-hl5-hl6);
+  var ppd=100-95*Math.exp(-(0.03353*Math.pow(pmv,4)+0.2179*Math.pow(pmv,2)));
+  return {pmv:pmv,ppd:ppd};
+}
+function calcPMV(){
+  var ta=parseFloat(document.getElementById('pmv_ta').value);
+  var tr=parseFloat(document.getElementById('pmv_tr').value);
+  var rh=parseFloat(document.getElementById('pmv_rh').value);
+  var va=parseFloat(document.getElementById('pmv_va').value);
+  var M=parseFloat(document.getElementById('pmv_met').value);
+  var clo=parseFloat(document.getElementById('pmv_clo').value);
+  var r=pmvCalc(ta,tr,va,rh,M,clo);
+  /* Feuchtegehalt */
+  var pSat=611.2*Math.exp(17.62*ta/(243.12+ta));
+  var pw=rh/100*pSat;
+  var x=0.622*pw/(101325-pw)*1000;
+  /* PTA Schwüle */
+  var pta=ta>=26 && x>10?(373.859-8.714*ta-3.959*x):100;
+  pta=Math.max(0,Math.min(100,pta));
+  /* Kategorie nach Tab. 4 */
+  var kat;
+  if(r.ppd<6) kat='IEQI';
+  else if(r.ppd<10) kat='IEQII';
+  else if(r.ppd<15) kat='IEQIII';
+  else if(r.ppd<25) kat='IEQIV';
+  else kat='—';
+  document.getElementById('pmv_metrics').innerHTML=
+    mc('PMV',r.pmv.toFixed(2),'')+
+    mc('PPD',r.ppd.toFixed(1),'%')+
+    mc('Kategorie',kat,'')+
+    mc('Schwüle (PTA)',pta.toFixed(0),'%');
+  var status;
+  if(Math.abs(r.pmv)<0.2) status='<div class="status-bar status-ok"><i class="ti ti-check"></i> Optimaler Behaglichkeitsbereich (Kategorie IEQ I, PMV ≈ 0).</div>';
+  else if(Math.abs(r.pmv)<0.5) status='<div class="status-bar status-ok"><i class="ti ti-check"></i> Kategorie IEQ II — Standard für Planung und Betrieb.</div>';
+  else if(Math.abs(r.pmv)<0.7) status='<div class="status-bar status-warn"><i class="ti ti-alert-triangle"></i> Kategorie IEQ III — moderate Behaglichkeit.</div>';
+  else status='<div class="status-bar status-err"><i class="ti ti-x"></i> Niedrige Behaglichkeit (PMV '+(r.pmv>0?'>':'<')+' '+(r.pmv>0?'+0,7':'-0,7')+'). Konditionierung anpassen.</div>';
+  document.getElementById('pmv_status').innerHTML=status;
+  /* h,x-Diagramm */
+  drawHX(ta,rh,x,kat);
+  document.getElementById('pmv_note').innerHTML='PMV-Berechnung nach Fanger-Gleichung (SN EN ISO 7730 / SIA 180 Anh. B). Feuchtegehalt x = '+x.toFixed(2)+' g/kg. Schwüleempfinden PTA gilt nur für θ ≥ 26 °C und x > 10 g/kg (§ 2.2.6.8, Gl. 17). Behaglichkeitskategorien gemäss Tab. 4 SIA 382/1.';
+  document.getElementById('res_pmv').style.display='block';
+}
+function drawHX(ta,rh,x,kat){
+  var canvas=document.getElementById('hx_chart');
+  canvas.width=800;canvas.height=460;
+  var ctx=canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  var pad={l:55,r:40,t:25,b:55};
+  var W=canvas.width-pad.l-pad.r,H=canvas.height-pad.t-pad.b;
+  var tMin=10,tMax=35,xMin=0,xMax=20;
+  function sx(t){return pad.l+(t-tMin)/(tMax-tMin)*W;}
+  function sy(xx){return pad.t+H-(xx-xMin)/(xMax-xMin)*H;}
+  /* Grid */
+  ctx.strokeStyle='#efefed';ctx.lineWidth=1;ctx.font='10px sans-serif';ctx.fillStyle='#5a5854';
+  for(var t=tMin;t<=tMax;t+=5){
+    var xc=sx(t);
+    ctx.beginPath();ctx.moveTo(xc,pad.t);ctx.lineTo(xc,pad.t+H);ctx.stroke();
+    ctx.textAlign='center';ctx.fillText(t+' °C',xc,pad.t+H+15);
+  }
+  for(var xx=xMin;xx<=xMax;xx+=2){
+    var yc=sy(xx);
+    ctx.beginPath();ctx.moveTo(pad.l,yc);ctx.lineTo(pad.l+W,yc);ctx.stroke();
+    ctx.textAlign='right';ctx.fillText(xx+' g/kg',pad.l-5,yc+3);
+  }
+  /* Sättigungslinien (rel. Feuchte) */
+  ctx.strokeStyle='#9e9b95';ctx.lineWidth=1;
+  [10,20,30,40,50,60,70,80,90,100].forEach(function(rrh){
+    ctx.beginPath();
+    var first=true;
+    for(var tt=tMin;tt<=tMax;tt+=0.5){
+      var pSat=611.2*Math.exp(17.62*tt/(243.12+tt));
+      var pw=rrh/100*pSat;
+      var xx=0.622*pw/(101325-pw)*1000;
+      if(xx<=xMax){
+        var xc=sx(tt),yc=sy(xx);
+        if(first){ctx.moveTo(xc,yc);first=false;}
+        else ctx.lineTo(xc,yc);
+      }
+    }
+    ctx.stroke();
+    /* Label */
+    var t0=rrh<50?tMax-5:Math.min(tMax,Math.log(xMax*101325/0.622/611.2/rrh*100)*243.12/(17.62-Math.log(xMax*101325/0.622/611.2/rrh*100)));
+    var pSat0=611.2*Math.exp(17.62*t0/(243.12+t0));
+    var pw0=rrh/100*pSat0;
+    var x0=0.622*pw0/(101325-pw0)*1000;
+    if(x0<=xMax && x0>0){
+      ctx.fillStyle='#9e9b95';ctx.font='9px sans-serif';ctx.textAlign='left';
+      ctx.fillText(rrh+' %',sx(t0)+2,sy(x0)-2);
+    }
+  });
+  /* Behaglichkeitsfeld (vereinfacht) */
+  ctx.fillStyle='rgba(26,86,219,0.10)';
+  ctx.strokeStyle='#1a56db';ctx.lineWidth=1.5;
+  ctx.beginPath();
+  ctx.moveTo(sx(20),sy(4));
+  ctx.lineTo(sx(26),sy(4));
+  ctx.lineTo(sx(26),sy(12));
+  ctx.lineTo(sx(20),sy(12));
+  ctx.closePath();ctx.fill();ctx.stroke();
+  ctx.fillStyle='#1a56db';ctx.font='bold 11px sans-serif';ctx.textAlign='center';
+  ctx.fillText('Behaglichkeitsfeld',sx(23),sy(8.5));
+  /* Achsen */
+  ctx.strokeStyle='#0a0a0a';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(pad.l,pad.t);ctx.lineTo(pad.l,pad.t+H);ctx.lineTo(pad.l+W,pad.t+H);ctx.stroke();
+  /* Aktueller Punkt */
+  ctx.fillStyle='#991b1b';
+  ctx.beginPath();
+  ctx.arc(sx(ta),sy(x),7,0,2*Math.PI);
+  ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+  ctx.fillStyle='#0a0a0a';ctx.font='bold 12px sans-serif';ctx.textAlign='left';
+  ctx.fillText('θ = '+ta+' °C, x = '+x.toFixed(1)+' g/kg ('+kat+')',sx(ta)+12,sy(x)-8);
+  /* Achsenbeschriftung */
+  ctx.fillStyle='#0a0a0a';ctx.font='12px sans-serif';ctx.textAlign='center';
+  ctx.fillText('Lufttemperatur θ [°C]',pad.l+W/2,canvas.height-10);
+  ctx.save();ctx.translate(13,pad.t+H/2);ctx.rotate(-Math.PI/2);
+  ctx.fillText('Feuchtegehalt x [g/kg]',0,0);ctx.restore();
+  ctx.font='bold 13px sans-serif';ctx.textAlign='left';
+  ctx.fillText('h,x-Diagramm mit Behaglichkeitsfeld (M=1,2 met)',pad.l,16);
+}
+
+/* ══════════════════════════════════════════ */
+/* Panel 11: Luftdichte (§ 1.12)             */
+/* ══════════════════════════════════════════ */
+function calcLD(){
+  var h=parseFloat(document.getElementById('ld_h').value)||0;
+  var theta=parseFloat(document.getElementById('ld_t').value)||20;
+  var rh=parseFloat(document.getElementById('ld_rh').value)||50;
+  var qvRef=parseFloat(document.getElementById('ld_qv').value)||0;
+  /* Luftdruck Gl. 14 */
+  var pb=101325*Math.pow(1-0.0065*h/288.15,5.256);
+  /* Sättigungsdampfdruck */
+  var pSat=611.2*Math.exp(17.62*theta/(243.12+theta));
+  var pw=rh/100*pSat;
+  var T=theta+273.15;
+  /* Dichte trocken Gl. 15 */
+  var rhoTrocken=pb/(287.058*T);
+  /* Dichte feucht Gl. 16 */
+  var x=0.622*pw/(pb-pw);
+  var rhoFeucht=pb/(287.058*T)*0.622*(x+1)/(x+0.622);
+  /* Volumenstrom-Korrektur Gl. 21 (Bezug: Standard 1.20 kg/m³) */
+  var qvKorr=qvRef*1.20/rhoFeucht;
+  document.getElementById('ld_metrics').innerHTML=
+    mc('Luftdruck p<sub>b</sub>',pb.toFixed(0),'Pa')+
+    mc('Dichte trocken',rhoTrocken.toFixed(3),'kg/m³')+
+    mc('Dichte feucht',rhoFeucht.toFixed(3),'kg/m³')+
+    mc('x (Feuchtegehalt)',(x*1000).toFixed(2),'g/kg')+
+    mc('Korr. Volumenstrom',Math.round(qvKorr),'m³/h')+
+    mc('Korrekturfaktor',(1.20/rhoFeucht).toFixed(3),'—');
+  document.getElementById('ld_note').innerHTML='Berechnung nach SIA 382/1 § 1.12: Luftdruck nach Gl. (14, barometrische Höhenformel), Dichte nach Gl. (15/16), Volumenstrom-Korrektur nach Gl. (21). Standardbedingungen nach 1.12.1: 20 °C, 101325 Pa, 40 % r. F., ρ = 1,20 kg/m³. Bei '+h+' m ü. M., '+theta+' °C und '+rh+' % r. F. ist die Luft '+((1.20-rhoFeucht)/1.20*100).toFixed(1)+' % weniger dicht als unter Standardbedingungen.';
+  document.getElementById('res_ld').style.display='block';
 }
 </script>
 </body></html>
