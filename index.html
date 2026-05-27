@@ -154,16 +154,11 @@ footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:cen
     <div class="sidebar-item" onclick="showPanel(3,this)"><i class="ti ti-window"></i> Fensterlüftung <span class="norm-chip">Anh. I</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Energie &amp; Effizienz</div>
-    <div class="sidebar-item" onclick="showPanel(4,this)"><i class="ti ti-bolt"></i> Ventilatorleistung P<sub>SFP</sub> <span class="norm-chip">§ 5.11.2</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(5,this)"><i class="ti ti-chart-bar"></i> Elektrizitätsbedarf <span class="norm-chip">Anh. G</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(6,this)"><i class="ti ti-recycle"></i> Wärmerückgewinnung <span class="norm-chip">§ 5.7</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(7,this)"><i class="ti ti-layout-grid"></i> Wärmedämmung <span class="norm-chip">§ 5.14</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(8,this)"><i class="ti ti-snowflake"></i> Vereisungsschutz <span class="norm-chip">§ 4.4</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Raumklima</div>
-    <div class="sidebar-item" onclick="showPanel(9,this)"><i class="ti ti-molecule"></i> CO₂-Konzentration <span class="norm-chip">§ 5.4.5</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(10,this)"><i class="ti ti-mood-happy"></i> PMV/PPD &amp; h,x <span class="norm-chip">Anh. D</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(11,this)"><i class="ti ti-mountain"></i> Luftdichte/-druck <span class="norm-chip">§ 1.12</span><span class="beta-chip">Beta</span></div>
+
+    <div class="sidebar-item" onclick="showPanel(4,this)"><i class="ti ti-chart-bar"></i> Elektrizitätsbedarf <span class="norm-chip">Anh. G</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(5,this)"><i class="ti ti-recycle"></i> Gesamte Auslegung Lufterhitzer mit WRG <span class="norm-chip">§ 5.7</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(6,this)"><i class="ti ti-layout-grid"></i> Wärmedämmung <span class="norm-chip">§ 5.14</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(7,this)"><i class="ti ti-snowflake"></i> Vereisungsschutz <span class="norm-chip">§ 4.4</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Referenz</div>
     <div class="sidebar-item" style="cursor:default;opacity:.5"><i class="ti ti-book"></i> Norm SIA 382/1:2025</div>
@@ -174,7 +169,7 @@ footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:cen
     <!-- P0: Luftleitungen -->
     <div class="panel active" id="p0">
       <div class="panel-header">
-        <div class="panel-title">Luftleitungsdimensionierung</div>
+        <div class="panel-title">Dimensionierung von Luftleitungen</div>
         <div class="panel-desc">Maximale Luftgeschwindigkeit nach Volumenstrom und jährlichen Elektro-Volllaststunden.</div>
         <span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Tab. 49+50, Ziff. 5.11.5.7–5.11.5.8</span>
       </div>
@@ -363,22 +358,26 @@ footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:cen
       </div>
     </div></div></div>
 
-    <!-- P4–P11: Beta-Panels (kompakt) -->
+    <!-- P4–P10: Beta-Panels (P4 = ehem. P5, PSFP entfernt) -->
     <div class="panel" id="p4"><div class="panel-wrap"><div class="watermark">BETA</div><div class="panel-content">
       <div class="beta-banner"><div class="beta-banner-icon"><i class="ti ti-flask"></i></div><div class="beta-banner-body"><div class="beta-banner-title">Beta</div><div class="beta-banner-sub">Ergebnisse gegenprüfen.</div></div></div>
-      <div class="panel-header"><div class="panel-title">Spezifische Ventilatorleistung P<sub>SFP</sub></div><span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.11.2</span></div>
-      <div class="form-section"><div class="form-section-title">Anlage</div>
-        <div class="grid2"><div class="field"><label>Anlagetyp</label><select id="ps_typ"><option value="5" selected>5 — Lüftungsanlage (BVU)</option><option value="1">1 — Zuluft (UVU)</option><option value="8">8 — Klimaanlage (BVU)</option></select></div><div class="field"><label>q<sub>v,a,n</sub> [m³/h]</label><input type="number" id="ps_qv" value="5800" min="100" step="100"></div></div>
+      <div class="panel-header"><div class="panel-title">Elektrizitätsbedarf</div><span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 Anh. G</span></div>
+      <div class="form-section"><div class="form-section-title">Methode</div>
+        <div class="tab-row"><button class="tab-btn active" onclick="switchEVTab('m1',this)">Volllaststunden</button><button class="tab-btn" onclick="switchEVTab('m2',this)">Steuer-/Regelfaktor</button></div>
       </div>
-      <div class="form-section"><div class="form-section-title">WRG &amp; Steuerung</div>
-        <div class="grid3"><div class="field"><label>WRG</label><select id="ps_hrc"><option value="other">HRC1/2b/3a</option><option value="2a">HRC2a</option><option value="none">Keine</option></select></div><div class="field"><label>η<sub>t,gro</sub> [%]</label><input type="number" id="ps_eta" value="78"></div><div class="field"><label>γ<sub>dis</sub></label><select id="ps_gamma"><option value="L" selected>Niedrig</option><option value="M">Mittel</option><option value="H">Hoch</option></select></div></div>
-        <div class="grid2" style="margin-top:12px"><div class="field"><label>Standard</label><select id="ps_std"><option value="0.95|1.0" selected>SZC02 — Zeitgesteuert</option><option value="1.00|1.0">SZC00 — Dauerbetrieb</option></select></div><div class="field"><label>Geplant</label><select id="ps_des"><option value="0.95|1.2" selected>SZC06 — 2-stufig</option><option value="0.85|2.0">SZC09 — Stufenlos</option><option value="0.65|2.0">SZC11 — Stufenlos raumweise</option></select></div></div>
+      <div class="form-section"><div class="form-section-title">Anlagedaten</div>
+        <div class="grid3"><div class="field"><label>q<sub>v,a</sub> [m³/h]</label><input type="number" id="ev_qv" value="5800"></div><div class="field"><label>P<sub>SFP,d</sub> [W/(m³/h)]</label><input type="number" id="ev_psfp" value="0.55" step="0.01"></div><div class="field"><label>Δp<sub>sys</sub> [Pa]</label><input type="number" id="ev_dp" value="0" step="50"></div></div>
       </div>
-      <button class="btn-primary" onclick="calcPSFP()"><i class="ti ti-calculator"></i> P<sub>SFP</sub> berechnen</button>
-      <div id="res_psfp" style="display:none" class="result-area">
-        <div class="metrics-row" id="psfp_metrics"></div>
-        <div id="psfp_breakdown" class="checks-list" style="background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:.5rem 1rem;margin-bottom:1rem"></div>
-        <div id="psfp_note" class="result-note"></div>
+      <div class="tab-content active" id="ev_m1"><div class="form-section"><div class="form-section-title">Volllaststunden</div>
+        <div class="grid2"><div class="field"><label>t<sub>V,Fld,el</sub> [h/a]</label><input type="number" id="ev_tvfld" value="2740"></div><div class="field"><label>η<sub>tot</sub> [%]</label><input type="number" id="ev_eta" value="55"></div></div>
+      </div></div>
+      <div class="tab-content" id="ev_m2"><div class="form-section"><div class="form-section-title">Steuer-/Regelfaktor</div>
+        <div class="grid2"><div class="field"><label>t<sub>V,op</sub> [h/a]</label><input type="number" id="ev_top" value="3290"></div><div class="field"><label>f<sub>flow,ctrl</sub></label><select id="ev_f"><option value="1.00">1,00 — Dauerbetrieb</option><option value="0.82" selected>0,82 — 2-stufig</option><option value="0.72">0,72 — Stufenlos</option></select></div></div>
+      </div></div>
+      <button class="btn-primary" onclick="calcEV()"><i class="ti ti-calculator"></i> Berechnen</button>
+      <div id="res_ev" style="display:none" class="result-area">
+        <div class="metrics-row" id="ev_metrics"></div>
+        <div id="ev_note" class="result-note"></div>
       </div>
     </div></div></div>
 
@@ -406,7 +405,7 @@ footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:cen
 
     <div class="panel" id="p6"><div class="panel-wrap"><div class="watermark">BETA</div><div class="panel-content">
       <div class="beta-banner"><div class="beta-banner-icon"><i class="ti ti-flask"></i></div><div class="beta-banner-body"><div class="beta-banner-title">Beta</div><div class="beta-banner-sub">Ergebnisse gegenprüfen.</div></div></div>
-      <div class="panel-header"><div class="panel-title">Wärmerückgewinnung</div><span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.7</span></div>
+      <div class="panel-header"><div class="panel-title">Wärmerückgewinnung</div><span class="norm-ref">SIA 382/1 § 5.7</span></div>
       <div class="form-section"><div class="form-section-title">Kategorie</div>
         <div class="grid2"><div class="field"><label>WRG-Kategorie</label><select id="hrc_kat"><option value="HRC1a">HRC1a</option><option value="HRC1x">HRC1x</option><option value="HRC2a">HRC2a</option><option value="HRC3a" selected>HRC3a</option><option value="HRC3x">HRC3x</option></select></div><div class="field"><label>q<sub>v,a</sub> [m³/h]</label><input type="number" id="hrc_qv" value="5800"></div></div>
       </div>
@@ -651,7 +650,112 @@ var evTab='m1';
 function switchEVTab(t,el){evTab=t;document.querySelectorAll('#p5 .tab-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');document.querySelectorAll('#p5 .tab-content').forEach(function(c){c.classList.remove('active');});document.getElementById('ev_'+t).classList.add('active');}
 function calcEV(){var qv=parseFloat(document.getElementById('ev_qv').value)||0,psfp=parseFloat(document.getElementById('ev_psfp').value)||0,dp=parseFloat(document.getElementById('ev_dp').value)||0,eta=parseFloat(document.getElementById('ev_eta').value)/100||0.55,pv=dp>0?qv*dp/3600/eta:psfp*qv,ev=0,tval=0;if(evTab==='m1'){tval=parseFloat(document.getElementById('ev_tvfld').value)||0;ev=pv*tval/1000;}else{var top=parseFloat(document.getElementById('ev_top').value)||0,f=parseFloat(document.getElementById('ev_f').value)||1;ev=pv*top*f/1000;tval=top*f;}document.getElementById('ev_metrics').innerHTML=mc('P<sub>V</sub>',Math.round(pv),'W')+mc('E<sub>V</sub>',Math.round(ev),'kWh/a')+mc('Volllaststunden',Math.round(tval),'h');document.getElementById('ev_note').innerHTML='Ca. '+Math.round(ev*0.128)+' kg CO₂-Äq./a (CH Strommix).';document.getElementById('res_ev').style.display='block';}
 
-// P6 HRC
+// P5 WRG Tab-Switcher
+function switchWRGTab(t){
+  document.getElementById('wrg_tab_btn_auslegung').classList.toggle('active', t==='auslegung');
+  document.getElementById('wrg_tab_btn_effizienz').classList.toggle('active', t==='effizienz');
+  document.getElementById('wrg_tab_auslegung').style.display = t==='auslegung' ? 'block' : 'none';
+  document.getElementById('wrg_tab_effizienz').style.display = t==='effizienz' ? 'block' : 'none';
+}
+
+// P5 Lufterhitzer-Auslegung
+function calcLufterhitzer(){
+  var qv   = parseFloat(document.getElementById('le_qv').value)   || 0;
+  var rho  = parseFloat(document.getElementById('le_rho').value)  || 1.2;
+  var cp   = parseFloat(document.getElementById('le_cp').value)   || 1005;
+  var tAUL = parseFloat(document.getElementById('le_taul').value);
+  var tABL = parseFloat(document.getElementById('le_tabl').value);
+  var tWRG = parseFloat(document.getElementById('le_twrg').value);
+  var tSol = parseFloat(document.getElementById('le_tsoll').value);
+  if(!qv) return;
+
+  // 1. Massenstrom
+  var mdot = (qv / 3600) * rho;
+
+  // 2. Rückwärmzahl
+  var rwz  = (tWRG - tAUL) / (tABL - tAUL) * 100;
+
+  // 3. Heizleistung Lufterhitzer
+  var dtLE = tSol - tWRG;
+  var pLE  = mdot * cp * dtLE / 1000; // kW
+
+  // 4. Ohne WRG
+  var dtOhne = tSol - tAUL;
+  var pOhne  = mdot * cp * dtOhne / 1000; // kW
+  var pEinsparung = pOhne - pLE;
+  var einsparPct  = pOhne > 0 ? pEinsparung / pOhne * 100 : 0;
+
+  // RWZ Bewertung
+  var rwzOk = rwz >= 70;
+  var rwzStatus = rwzOk
+    ? '<div class="status-bar status-ok"><i class="ti ti-check"></i> Rückwärmzahl <b>'+rwz.toFixed(1)+'%</b> — realistisch für Kreuzgegenstrom-/Rotationswärmetauscher</div>'
+    : '<div class="status-bar status-warn"><i class="ti ti-alert-triangle"></i> Rückwärmzahl <b>'+rwz.toFixed(1)+'%</b> — unter 70 %, WRG-Typ prüfen</div>';
+
+  // Metriken
+  document.getElementById('le_metrics').innerHTML =
+    mc('Massenstrom', mdot.toFixed(3), 'kg/s', false) +
+    mc('Rückwärmzahl WRG', rwz.toFixed(1), '%', rwzOk) +
+    mc('ΔT Lufterhitzer', dtLE.toFixed(1), 'K', false) +
+    mc('Heizleistung', pLE.toFixed(1), 'kW', true) +
+    mc('Ohne WRG', pOhne.toFixed(1), 'kW', false) +
+    mc('Einsparung', pEinsparung.toFixed(1)+' kW ('+einsparPct.toFixed(0)+'%)', '', false);
+
+  document.getElementById('le_rwz_status').innerHTML = rwzStatus;
+
+  // Schritte
+  function step(nr, title, formula, result) {
+    return '<div style="display:flex;gap:12px;padding:.625rem 0;border-bottom:0.5px solid var(--nf-gray-100)">'
+      +'<div style="width:22px;height:22px;background:var(--nf-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;color:#fff">'+nr+'</div>'
+      +'<div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--nf-black);margin-bottom:2px">'+title+'</div>'
+      +'<div style="font-size:11px;color:var(--nf-gray-400);font-family:monospace;margin-bottom:3px">'+formula+'</div>'
+      +'<div style="font-size:13px;font-weight:700;color:var(--nf-accent)">'+result+'</div>'
+      +'</div></div>';
+  }
+  document.getElementById('le_steps').innerHTML =
+    step(1,'Massenstrom',
+      'ṁ = q_v / 3600 × ρ = '+qv+'/3600 × '+rho,
+      'ṁ = '+mdot.toFixed(3)+' kg/s') +
+    step(2,'Rückwärmzahl WRG',
+      'RWZ = (T_WRG − T_AUL) / (T_ABL − T_AUL) = ('+tWRG+'−('+tAUL+')) / ('+tABL+'−('+tAUL+'))',
+      'RWZ = '+rwz.toFixed(1)+' %') +
+    step(3,'Heizleistung Lufterhitzer',
+      'P = ṁ × c_p × ΔT = '+mdot.toFixed(3)+' × '+cp+' × '+dtLE.toFixed(1),
+      'P = '+pLE.toFixed(1)+' kW') +
+    step(4,'Heizleistung ohne WRG',
+      'P_ohne = ṁ × c_p × (T_Soll − T_AUL) = '+mdot.toFixed(3)+' × '+cp+' × '+dtOhne.toFixed(1),
+      'P_ohne = '+pOhne.toFixed(1)+' kW') +
+    step(5,'Einsparung durch WRG',
+      'P_Einsparung = P_ohne − P = '+pOhne.toFixed(1)+' − '+pLE.toFixed(1),
+      'P_Einsparung = '+pEinsparung.toFixed(1)+' kW ('+einsparPct.toFixed(0)+' %)');
+
+  // Zusammenfassungstabelle
+  var rows = [
+    ['Volumenstrom', qv.toLocaleString('de-CH')+' m³/h'],
+    ['Massenstrom ṁ', mdot.toFixed(3)+' kg/s'],
+    ['Temperatur AUL', tAUL+' °C'],
+    ['Temperatur ABL', tABL+' °C'],
+    ['Temperatur nach WRG', tWRG+' °C'],
+    ['Rückwärmzahl WRG', rwz.toFixed(1)+' %'],
+    ['Solltemperatur Zuluft', tSol+' °C'],
+    ['ΔT Lufterhitzer', dtLE.toFixed(1)+' K'],
+    ['Heizleistung Lufterhitzer', '<b>'+pLE.toFixed(1)+' kW</b>'],
+    ['Heizleistung ohne WRG', pOhne.toFixed(1)+' kW'],
+    ['Einsparung durch WRG', '<b>'+pEinsparung.toFixed(1)+' kW ('+einsparPct.toFixed(0)+' %)</b>'],
+  ];
+  document.getElementById('le_table').innerHTML = rows.map(function(r,i){
+    var bg = i===rows.length-1 ? 'background:var(--nf-accent-light)' : i%2===0 ? 'background:var(--nf-gray-50)' : '';
+    return '<tr style="'+bg+'"><td style="padding:7px 12px;border-bottom:0.5px solid var(--nf-gray-100);color:var(--nf-gray-600)">'+r[0]+'</td>'
+      +'<td style="padding:7px 12px;border-bottom:0.5px solid var(--nf-gray-100);text-align:right;color:var(--nf-black)">'+r[1]+'</td></tr>';
+  }).join('');
+
+  document.getElementById('le_note').innerHTML =
+    'Berechnung nach SIA 382/1. ρ = '+rho+' kg/m³, c<sub>p</sub> = '+cp+' J/(kg·K). '
+    +'Die WRG spart <b>'+einsparPct.toFixed(0)+' %</b> der Heizenergie gegenüber direkter Erwärmung von T<sub>AUL</sub> auf T<sub>Soll</sub>.';
+
+  document.getElementById('res_le').style.display = 'block';
+}
+
+// P5 HRC Effizienz
 var hrcReq={'HRC1a':{grenz:73,ziel:78,cop:25},'HRC1x':{grenz:73,ziel:78,cop:25},'HRC2a':{grenz:70,ziel:75,cop:16},'HRC3a':{grenz:73,ziel:78,cop:25},'HRC3x':{grenz:73,ziel:78,cop:25}};
 function calcHRC(){var kat=document.getElementById('hrc_kat').value,qv=parseFloat(document.getElementById('hrc_qv').value)||0,t11=parseFloat(document.getElementById('hrc_t11').value),t21=parseFloat(document.getElementById('hrc_t21').value),t22=parseFloat(document.getElementById('hrc_t22').value),dp=parseFloat(document.getElementById('hrc_dp').value)||0;if(t11===t21){alert('θ11 ≠ θ21');return;}var etaT=(t22-t21)/(t11-t21)*100,qvS=qv/3600,phi=qvS*1.2*1005*Math.abs(t22-t21),pEl=qvS*dp/0.55,cop=pEl>0?phi/pEl:0,req=hrcReq[kat]||hrcReq['HRC3a'];document.getElementById('hrc_metrics').innerHTML=mc('η<sub>t,gro</sub>',etaT.toFixed(1),'%')+mc('Wärmeleistung',Math.round(phi),'W')+mc('ε<sub>hrs</sub>',cop.toFixed(1),'');document.getElementById('hrc_checks').innerHTML=chk(etaT>=req.grenz,'Grenzwert '+req.grenz+' %','',etaT.toFixed(1)+' %','','')+chk(etaT>=req.ziel,'Zielwert '+req.ziel+' %','',etaT.toFixed(1)+' %','','')+chk(cop>=req.cop,'ε<sub>hrs</sub> ≥ '+req.cop,'',cop.toFixed(1),'','');document.getElementById('hrc_note').innerHTML='WRG: '+kat;document.getElementById('res_hrc').style.display='block';}
 
