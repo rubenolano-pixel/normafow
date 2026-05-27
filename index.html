@@ -4,165 +4,165 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --nf-black:#0a0a0a;--nf-white:#ffffff;--nf-gray-50:#f7f7f6;--nf-gray-100:#efefed;
-  --nf-gray-200:#dddbd7;--nf-gray-400:#9e9b95;--nf-gray-600:#5a5854;--nf-gray-800:#2c2b28;
-  --nf-accent:#1a56db;--nf-accent-light:#e8f0fe;
-  --nf-green:#166534;--nf-green-bg:#dcfce7;--nf-red:#991b1b;--nf-red-bg:#fee2e2;
-  --nf-amber:#92400e;--nf-amber-bg:#fef3c7;
-  --nf-cyan:#0369a1;--nf-cyan-bg:#e0f2fe;
-  --radius-sm:4px;--radius-md:8px;--radius-lg:12px;
+  --nf-black:#1c1c1a;--nf-white:#ffffff;--nf-gray-50:#f5f4f2;--nf-gray-100:#edece9;
+  --nf-gray-200:#d9d7d2;--nf-gray-400:#9a9890;--nf-gray-600:#5c5a54;--nf-gray-800:#2e2d29;
+  --nf-accent:#e05a1e;--nf-accent-light:#fdf0ea;
+  --nf-green:#1a5c30;--nf-green-bg:#e3f5e9;--nf-red:#8c1c1c;--nf-red-bg:#fde8e8;
+  --nf-amber:#7a3c0a;--nf-amber-bg:#fdf2e3;
+  --nf-cyan:#0f5a8c;--nf-cyan-bg:#e3f0fd;
+  --radius-sm:3px;--radius-md:6px;--radius-lg:10px;
 }
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--nf-gray-50);color:var(--nf-black);font-size:14px;line-height:1.6;min-height:100vh}
-nav{background:var(--nf-black);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-mark{width:28px;height:28px;background:var(--nf-accent);border-radius:6px;display:flex;align-items:center;justify-content:center}
-.nav-logo-mark svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
-.nav-logo-text{color:#fff;font-size:15px;font-weight:600;letter-spacing:-.01em}
-.nav-logo-text span{color:var(--nf-gray-400);font-weight:400}
-.nav-badge{background:rgba(255,255,255,.08);color:var(--nf-gray-400);font-size:11px;padding:2px 8px;border-radius:20px;border:0.5px solid rgba(255,255,255,.1)}
-.hero{background:var(--nf-black);padding:3rem 2rem 2.5rem;border-bottom:0.5px solid rgba(255,255,255,.08)}
-.hero-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-accent);margin-bottom:.75rem}
-.hero-title{font-size:32px;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem}
-.hero-title span{color:var(--nf-gray-400);font-weight:300}
-.hero-sub{font-size:14px;color:var(--nf-gray-400);max-width:520px;line-height:1.7}
-.app{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 56px - 60px)}
-.sidebar{background:var(--nf-white);border-right:0.5px solid var(--nf-gray-200);padding:1.5rem 0;overflow-y:auto;max-height:calc(100vh - 56px)}
-.sidebar-section{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-gray-400);padding:.5rem 1.25rem .4rem;margin-top:.5rem}
-.sidebar-item{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;cursor:pointer;font-size:13px;color:var(--nf-gray-600);transition:all .12s;border-left:2px solid transparent;user-select:none}
-.sidebar-item i{font-size:16px;color:var(--nf-gray-400);flex-shrink:0}
+body{font-family:'Helvetica Neue',Helvetica,'Arial',sans-serif;background:var(--nf-gray-50);color:var(--nf-black);font-size:14px;line-height:1.6;min-height:100vh}
+nav{background:var(--nf-black);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--nf-accent)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo-mark{width:32px;height:32px;background:var(--nf-accent);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.nav-logo-text{color:#fff;font-size:16px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.nav-logo-text span{color:var(--nf-gray-400);font-weight:300;text-transform:none;letter-spacing:0}
+.nav-badge{background:rgba(255,255,255,.1);color:var(--nf-gray-400);font-size:11px;padding:3px 10px;border-radius:2px;border:0.5px solid rgba(255,255,255,.15);letter-spacing:.05em;text-transform:uppercase}
+.hero{background:var(--nf-black);padding:3.5rem 2.5rem 3rem;border-bottom:0.5px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--nf-accent)}
+.hero-label{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--nf-accent);margin-bottom:.875rem}
+.hero-title{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.1;margin-bottom:.875rem;text-transform:uppercase}
+.hero-title span{color:var(--nf-gray-400);font-weight:300;text-transform:none}
+.hero-sub{font-size:14px;color:var(--nf-gray-400);max-width:540px;line-height:1.7}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 60px - 56px)}
+.sidebar{background:var(--nf-white);border-right:1px solid var(--nf-gray-200);padding:1.5rem 0;overflow-y:auto;max-height:calc(100vh - 60px)}
+.sidebar-section{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--nf-gray-400);padding:.625rem 1.5rem .4rem;margin-top:.5rem}
+.sidebar-item{display:flex;align-items:center;gap:10px;padding:.65rem 1.5rem;cursor:pointer;font-size:13px;color:var(--nf-gray-600);transition:all .12s;border-left:3px solid transparent;user-select:none}
+.sidebar-item i{font-size:15px;color:var(--nf-gray-400);flex-shrink:0}
 .sidebar-item:hover{background:var(--nf-gray-50);color:var(--nf-black)}
-.sidebar-item:hover i{color:var(--nf-black)}
-.sidebar-item.active{background:var(--nf-accent-light);color:var(--nf-accent);border-left-color:var(--nf-accent);font-weight:500}
+.sidebar-item:hover i{color:var(--nf-accent)}
+.sidebar-item.active{background:var(--nf-accent-light);color:var(--nf-accent);border-left-color:var(--nf-accent);font-weight:600}
 .sidebar-item.active i{color:var(--nf-accent)}
 .sidebar-item-label{flex:1;min-width:0}
-.sidebar-divider{height:0.5px;background:var(--nf-gray-100);margin:.75rem 1.25rem}
-.norm-chip{font-size:10px;background:var(--nf-gray-100);color:var(--nf-gray-600);padding:2px 6px;border-radius:3px;flex-shrink:0}
-.beta-chip{font-size:10px;background:var(--nf-amber-bg);color:var(--nf-amber);padding:2px 6px;border-radius:3px;flex-shrink:0;font-weight:600}
+.sidebar-divider{height:1px;background:var(--nf-gray-100);margin:.75rem 1.5rem}
+.norm-chip{font-size:10px;background:var(--nf-gray-100);color:var(--nf-gray-600);padding:2px 6px;border-radius:2px;flex-shrink:0;font-weight:600;letter-spacing:.03em}
+.beta-chip{font-size:10px;background:var(--nf-amber-bg);color:var(--nf-amber);padding:2px 6px;border-radius:2px;flex-shrink:0;font-weight:700;letter-spacing:.05em}
 .main{padding:0;overflow:hidden}
-.panel{display:none;padding:2rem}
+.panel{display:none;padding:2.25rem}
 .panel.active{display:block}
-.beta-banner{display:flex;align-items:center;gap:12px;background:var(--nf-amber-bg);border:0.5px solid #f59e0b;border-radius:var(--radius-lg);padding:1rem 1.25rem;margin-bottom:1.5rem}
-.beta-banner-icon{width:36px;height:36px;background:#f59e0b;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.beta-banner{display:flex;align-items:center;gap:12px;background:var(--nf-amber-bg);border-left:3px solid #e07a1e;border-radius:var(--radius-md);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.beta-banner-icon{width:36px;height:36px;background:#e07a1e;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .beta-banner-icon i{color:#fff;font-size:18px}
-.beta-banner-title{font-size:13px;font-weight:700;color:var(--nf-amber)}
-.beta-banner-sub{font-size:12px;color:#78350f;line-height:1.5;margin-top:1px}
+.beta-banner-title{font-size:13px;font-weight:700;color:var(--nf-amber);letter-spacing:.03em}
+.beta-banner-sub{font-size:12px;color:#6b3a0a;line-height:1.5;margin-top:1px}
 .panel-wrap{position:relative}
-.watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);font-size:96px;font-weight:900;color:rgba(245,158,11,.06);letter-spacing:.1em;text-transform:uppercase;pointer-events:none;z-index:0;white-space:nowrap;user-select:none}
+.watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);font-size:96px;font-weight:900;color:rgba(224,90,30,.05);letter-spacing:.1em;text-transform:uppercase;pointer-events:none;z-index:0;white-space:nowrap;user-select:none}
 .panel-content{position:relative;z-index:1}
-.panel-header{margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:0.5px solid var(--nf-gray-200)}
-.panel-title{font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--nf-black);margin-bottom:.35rem}
+.panel-header{margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:2px solid var(--nf-gray-200)}
+.panel-title{font-size:22px;font-weight:800;letter-spacing:-.01em;color:var(--nf-black);margin-bottom:.35rem;text-transform:uppercase}
 .panel-desc{font-size:13px;color:var(--nf-gray-600);line-height:1.6}
-.norm-ref{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--nf-accent-light);color:var(--nf-accent);padding:3px 8px;border-radius:3px;font-weight:500;margin-top:.5rem}
-.norm-ref-2024{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:#e0f2fe;color:#0369a1;padding:3px 8px;border-radius:3px;font-weight:500;margin-top:.5rem;margin-left:6px}
+.norm-ref{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--nf-accent-light);color:var(--nf-accent);padding:3px 8px;border-radius:2px;font-weight:600;margin-top:.5rem;letter-spacing:.03em}
+.norm-ref-2024{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:#e3f0fd;color:#0f5a8c;padding:3px 8px;border-radius:2px;font-weight:600;margin-top:.5rem;margin-left:6px;letter-spacing:.03em}
 .form-section{margin-bottom:1.75rem}
-.form-section-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nf-gray-400);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
-.form-section-title::after{content:'';flex:1;height:0.5px;background:var(--nf-gray-200)}
+.form-section-title{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--nf-gray-400);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.form-section-title::after{content:'';flex:1;height:1px;background:var(--nf-gray-200)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
 .field{display:flex;flex-direction:column;gap:5px}
-.field label{font-size:12px;font-weight:500;color:var(--nf-gray-600);letter-spacing:.01em}
-.field input,.field select{width:100%;padding:8px 11px;border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-md);font-size:13px;background:var(--nf-white);color:var(--nf-black);transition:border-color .12s,box-shadow .12s;-webkit-appearance:none}
-.field input:focus,.field select:focus{outline:none;border-color:var(--nf-accent);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.field label{font-size:12px;font-weight:600;color:var(--nf-gray-600);letter-spacing:.01em;text-transform:uppercase;font-size:10px}
+.field input,.field select{width:100%;padding:9px 12px;border:1px solid var(--nf-gray-200);border-radius:var(--radius-md);font-size:13px;background:var(--nf-white);color:var(--nf-black);transition:border-color .12s,box-shadow .12s;-webkit-appearance:none}
+.field input:focus,.field select:focus{outline:none;border-color:var(--nf-accent);box-shadow:0 0 0 3px rgba(224,90,30,.12)}
 .field input[readonly]{background:var(--nf-gray-50);color:var(--nf-gray-600);cursor:default}
 .field-hint{font-size:11px;color:var(--nf-gray-400);line-height:1.4}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--nf-black);color:#fff;border:none;border-radius:var(--radius-md);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.01em;transition:background .15s;width:100%;justify-content:center;margin-top:.5rem}
-.btn-primary:hover{background:var(--nf-gray-800)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--nf-accent);color:#fff;border:none;border-radius:var(--radius-md);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;transition:background .15s;width:100%;justify-content:center;margin-top:.5rem}
+.btn-primary:hover{background:#c04a10}
 .btn-primary i{font-size:16px}
 .result-area{margin-top:1.5rem;animation:fadeIn .2s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 .result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
-.result-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nf-gray-400)}
+.result-title{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--nf-gray-400)}
 .metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem}
-.metric-card{background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.125rem}
-.metric-card-label{font-size:11px;color:var(--nf-gray-400);font-weight:500;margin-bottom:.25rem;letter-spacing:.01em}
-.metric-card-value{font-size:22px;font-weight:700;color:var(--nf-black);letter-spacing:-.02em;line-height:1.1}
+.metric-card{background:var(--nf-white);border:1px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.125rem;border-top:3px solid var(--nf-gray-200)}
+.metric-card-label{font-size:10px;color:var(--nf-gray-400);font-weight:700;margin-bottom:.25rem;letter-spacing:.08em;text-transform:uppercase}
+.metric-card-value{font-size:24px;font-weight:800;color:var(--nf-black);letter-spacing:-.02em;line-height:1}
 .metric-card-unit{font-size:11px;color:var(--nf-gray-400);margin-left:2px;font-weight:400}
-.metric-card.hi-green{border-color:var(--nf-green);background:var(--nf-green-bg)}
+.metric-card.hi-green{border-top-color:var(--nf-green);background:var(--nf-green-bg)}
 .metric-card.hi-green .metric-card-value{color:var(--nf-green)}
 .metric-card.hi-green .metric-card-label{color:var(--nf-green)}
-.metric-card.hi-blue{border-color:var(--nf-accent);background:var(--nf-accent-light)}
+.metric-card.hi-blue{border-top-color:var(--nf-accent);background:var(--nf-accent-light)}
 .metric-card.hi-blue .metric-card-value{color:var(--nf-accent)}
 .metric-card.hi-blue .metric-card-label{color:var(--nf-accent)}
-.metric-card.hi-red{border-color:#0ea5e9;background:#f0f9ff}
-.metric-card.hi-red .metric-card-value{color:#0369a1}
-.metric-card.hi-red .metric-card-label{color:#0369a1}
-.status-bar{display:flex;align-items:center;gap:10px;padding:.75rem 1rem;border-radius:var(--radius-md);font-size:13px;font-weight:500;margin-bottom:.75rem}
-.status-ok{background:var(--nf-green-bg);color:var(--nf-green)}
-.status-err{background:var(--nf-red-bg);color:var(--nf-red)}
-.status-warn{background:var(--nf-amber-bg);color:var(--nf-amber)}
-.status-info{background:var(--nf-accent-light);color:var(--nf-accent)}
-.status-cool{background:#f0f9ff;color:#0369a1}
-.result-note{font-size:12px;color:var(--nf-gray-600);line-height:1.6;padding:.75rem 1rem;background:var(--nf-gray-50);border-radius:var(--radius-md);border-left:2px solid var(--nf-gray-200)}
+.metric-card.hi-red{border-top-color:#0f5a8c;background:#e3f0fd}
+.metric-card.hi-red .metric-card-value{color:#0f5a8c}
+.metric-card.hi-red .metric-card-label{color:#0f5a8c}
+.status-bar{display:flex;align-items:center;gap:10px;padding:.75rem 1rem;border-radius:var(--radius-md);font-size:13px;font-weight:600;margin-bottom:.75rem}
+.status-ok{background:var(--nf-green-bg);color:var(--nf-green);border-left:3px solid var(--nf-green)}
+.status-err{background:var(--nf-red-bg);color:var(--nf-red);border-left:3px solid var(--nf-red)}
+.status-warn{background:var(--nf-amber-bg);color:var(--nf-amber);border-left:3px solid #e07a1e}
+.status-info{background:var(--nf-accent-light);color:var(--nf-accent);border-left:3px solid var(--nf-accent)}
+.status-cool{background:#e3f0fd;color:#0f5a8c;border-left:3px solid #0f5a8c}
+.result-note{font-size:12px;color:var(--nf-gray-600);line-height:1.6;padding:.75rem 1rem;background:var(--nf-gray-50);border-radius:var(--radius-md);border-left:3px solid var(--nf-gray-200)}
 .checks-list{display:flex;flex-direction:column;gap:0}
-.check-item{display:flex;align-items:flex-start;gap:12px;padding:.75rem 0;border-bottom:0.5px solid var(--nf-gray-100)}
+.check-item{display:flex;align-items:flex-start;gap:12px;padding:.75rem 0;border-bottom:1px solid var(--nf-gray-100)}
 .check-item:last-child{border-bottom:none}
-.check-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-icon{width:24px;height:24px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .check-icon.ok{background:var(--nf-green-bg);color:var(--nf-green)}
 .check-icon.err{background:var(--nf-red-bg);color:var(--nf-red)}
 .check-icon i{font-size:14px}
 .check-body{flex:1}
-.check-label{font-size:13px;font-weight:500;color:var(--nf-black)}
+.check-label{font-size:13px;font-weight:600;color:var(--nf-black)}
 .check-sub{font-size:11px;color:var(--nf-gray-400);margin-top:1px}
 .check-values{margin-left:auto;text-align:right;flex-shrink:0;padding-left:12px}
-.check-ist{font-size:13px;font-weight:600;color:var(--nf-black)}
+.check-ist{font-size:13px;font-weight:700;color:var(--nf-black)}
 .check-min{font-size:11px;color:var(--nf-gray-400)}
-.chart-wrap{background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem;margin-top:1rem}
+.chart-wrap{background:var(--nf-white);border:1px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem;margin-top:1rem;border-top:3px solid var(--nf-accent)}
 .chart-wrap canvas{display:block;width:100%;height:auto}
-/* Tab switcher (pill style) */
+/* Tabs – pill */
 .vs-tabs{display:flex;gap:0;margin-bottom:1.75rem;background:var(--nf-gray-100);border-radius:var(--radius-md);padding:3px}
-.vs-tab-btn{flex:1;padding:.5rem 1rem;background:none;border:none;cursor:pointer;font-size:13px;font-weight:500;color:var(--nf-gray-600);border-radius:6px;transition:all .15s}
-.vs-tab-btn.active{background:var(--nf-white);color:var(--nf-black);box-shadow:0 1px 3px rgba(0,0,0,.1)}
-/* EV tabs (line style) */
-.tab-row{display:flex;gap:4px;margin-bottom:1rem;border-bottom:0.5px solid var(--nf-gray-200)}
-.tab-btn{padding:.5rem 1rem;background:none;border:none;cursor:pointer;font-size:12px;color:var(--nf-gray-600);font-weight:500;border-bottom:2px solid transparent;transition:all .12s}
+.vs-tab-btn{flex:1;padding:.55rem 1rem;background:none;border:none;cursor:pointer;font-size:12px;font-weight:700;color:var(--nf-gray-600);border-radius:5px;transition:all .15s;letter-spacing:.04em;text-transform:uppercase}
+.vs-tab-btn.active{background:var(--nf-white);color:var(--nf-accent);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+/* Tabs – line */
+.tab-row{display:flex;gap:4px;margin-bottom:1rem;border-bottom:2px solid var(--nf-gray-200)}
+.tab-btn{padding:.5rem 1rem;background:none;border:none;cursor:pointer;font-size:11px;color:var(--nf-gray-600);font-weight:700;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .12s;letter-spacing:.06em;text-transform:uppercase}
 .tab-btn.active{color:var(--nf-accent);border-bottom-color:var(--nf-accent)}
 .tab-btn:hover{color:var(--nf-black)}
 .tab-content{display:none}
 .tab-content.active{display:block}
 /* SIA 2024 */
-.sia-info{background:#f0f9ff;border:0.5px solid #bae6fd;border-radius:var(--radius-lg);padding:.875rem 1.125rem;margin-bottom:1.5rem;display:flex;gap:10px;align-items:flex-start}
-.sia-info i{color:#0369a1;font-size:18px;flex-shrink:0;margin-top:2px}
-.sia-info-text{font-size:12px;color:#0c4a6e;line-height:1.6}
-.nutzung-card{background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.25rem;margin-bottom:1.25rem}
-.nutzung-card-title{font-size:12px;font-weight:600;color:var(--nf-gray-600);margin-bottom:.625rem;text-transform:uppercase;letter-spacing:.05em}
+.sia-info{background:#e3f0fd;border-left:3px solid #0f5a8c;border-radius:var(--radius-md);padding:.875rem 1.125rem;margin-bottom:1.5rem;display:flex;gap:10px;align-items:flex-start}
+.sia-info i{color:#0f5a8c;font-size:18px;flex-shrink:0;margin-top:2px}
+.sia-info-text{font-size:12px;color:#0a3d60;line-height:1.6}
+.nutzung-card{background:var(--nf-white);border:1px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.25rem;margin-bottom:1.25rem;border-top:3px solid var(--nf-accent)}
+.nutzung-card-title{font-size:10px;font-weight:800;color:var(--nf-gray-600);margin-bottom:.625rem;text-transform:uppercase;letter-spacing:.1em}
 .nutzung-params{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .nutzung-param{background:var(--nf-gray-50);border-radius:var(--radius-md);padding:.5rem .75rem}
-.nutzung-param-label{font-size:10px;color:var(--nf-gray-400);font-weight:500;margin-bottom:2px}
-.nutzung-param-value{font-size:15px;font-weight:700;color:var(--nf-black)}
+.nutzung-param-label{font-size:10px;color:var(--nf-gray-400);font-weight:700;margin-bottom:2px;letter-spacing:.05em;text-transform:uppercase}
+.nutzung-param-value{font-size:15px;font-weight:800;color:var(--nf-black)}
 .nutzung-param-unit{font-size:10px;color:var(--nf-gray-600);margin-left:2px}
 /* Schritt-Box */
-.step-box{background:var(--nf-white);border:0.5px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.25rem;margin-bottom:.75rem}
-.step-box-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nf-gray-400);margin-bottom:.875rem}
-.step-item{display:flex;gap:12px;padding:.625rem 0;border-bottom:0.5px solid var(--nf-gray-100)}
+.step-box{background:var(--nf-white);border:1px solid var(--nf-gray-200);border-radius:var(--radius-lg);padding:1rem 1.25rem;margin-bottom:.75rem}
+.step-box-title{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--nf-gray-400);margin-bottom:.875rem}
+.step-item{display:flex;gap:12px;padding:.625rem 0;border-bottom:1px solid var(--nf-gray-100)}
 .step-item:last-child{border-bottom:none}
-.step-nr{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;color:#fff}
+.step-nr{width:22px;height:22px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:800;color:#fff}
 .step-nr.heat{background:var(--nf-accent)}
-.step-nr.cool{background:#0369a1}
+.step-nr.cool{background:#0f5a8c}
 .step-body{flex:1}
-.step-title{font-size:13px;font-weight:600;color:var(--nf-black);margin-bottom:2px}
+.step-title{font-size:13px;font-weight:700;color:var(--nf-black);margin-bottom:2px}
 .step-formula{font-size:11px;color:var(--nf-gray-400);font-family:monospace;margin-bottom:3px}
 .step-result{font-size:13px;font-weight:700}
 .step-result.heat{color:var(--nf-accent)}
-.step-result.cool{color:#0369a1}
-/* Zusammenfassungstabelle */
+.step-result.cool{color:#0f5a8c}
 .sum-table{width:100%;border-collapse:collapse;font-size:12px}
-.sum-table th{background:var(--nf-gray-50);color:var(--nf-gray-600);font-weight:600;padding:8px 12px;text-align:left;border-bottom:0.5px solid var(--nf-gray-200)}
-.sum-table td{padding:7px 12px;border-bottom:0.5px solid var(--nf-gray-100);color:var(--nf-black)}
+.sum-table th{background:var(--nf-gray-50);color:var(--nf-gray-600);font-weight:700;padding:8px 12px;text-align:left;border-bottom:1px solid var(--nf-gray-200);text-transform:uppercase;font-size:10px;letter-spacing:.08em}
+.sum-table td{padding:7px 12px;border-bottom:1px solid var(--nf-gray-100);color:var(--nf-black)}
 .sum-table td:last-child{text-align:right}
 .sum-table tr.tr-alt td{background:var(--nf-gray-50)}
-.sum-table tr.tr-heat td{background:var(--nf-accent-light);color:var(--nf-accent);font-weight:600}
-.sum-table tr.tr-cool td{background:#f0f9ff;color:#0369a1;font-weight:600}
-footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.footer-left{font-size:12px;color:var(--nf-gray-600)}
-.footer-right{font-size:12px;display:flex;gap:1.5rem}
-.footer-right a{color:var(--nf-gray-400);text-decoration:none}
-/* Trennlinie zw. Heiz- und Kühlsektion */
+.sum-table tr.tr-heat td{background:var(--nf-accent-light);color:var(--nf-accent);font-weight:700}
+.sum-table tr.tr-cool td{background:#e3f0fd;color:#0f5a8c;font-weight:700}
 .section-divider{display:flex;align-items:center;gap:10px;margin:1.5rem 0 1.25rem}
-.section-divider-line{flex:1;height:0.5px;background:var(--nf-gray-200)}
-.section-divider-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.section-divider-line{flex:1;height:1px;background:var(--nf-gray-200)}
+.section-divider-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:2px}
 .section-divider-label.heat{background:var(--nf-accent-light);color:var(--nf-accent)}
-.section-divider-label.cool{background:#f0f9ff;color:#0369a1}
+.section-divider-label.cool{background:#e3f0fd;color:#0f5a8c}
+footer{background:var(--nf-black);padding:1.125rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--nf-accent)}
+.footer-left{font-size:11px;color:var(--nf-gray-600);letter-spacing:.05em;text-transform:uppercase}
+.footer-right{font-size:11px;display:flex;gap:1.5rem}
+.footer-right a{color:var(--nf-gray-400);text-decoration:none;letter-spacing:.05em;text-transform:uppercase}
+.footer-right a:hover{color:var(--nf-accent)}
 </style></head><body>
 
 <nav>
@@ -190,15 +190,14 @@ footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:cen
     <div class="sidebar-item" onclick="showPanel(3,this)"><i class="ti ti-window"></i><span class="sidebar-item-label">Fensterlüftung</span><span class="norm-chip">Anh. I</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Energie &amp; Effizienz</div>
-    <div class="sidebar-item" onclick="showPanel(4,this)"><i class="ti ti-chart-bar"></i><span class="sidebar-item-label">Elektrizitätsbedarf</span><span class="norm-chip">Anh. G</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-item" onclick="showPanel(5,this)"><i class="ti ti-temperature"></i><span class="sidebar-item-label">Lufterhitzer- und Luftkühlerleistung</span><span class="norm-chip">§ 5.7</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(4,this)"><i class="ti ti-chart-bar"></i><span class="sidebar-item-label">Elektrizitätsbedarf</span><span class="norm-chip">Anh. G</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-item" onclick="showPanel(6,this)"><i class="ti ti-layout-grid"></i><span class="sidebar-item-label">Wärmedämmung</span><span class="norm-chip">§ 5.14</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(7,this)"><i class="ti ti-snowflake"></i><span class="sidebar-item-label">Vereisungsschutz</span><span class="norm-chip">§ 4.4</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Raumklima</div>
-    <div class="sidebar-item" onclick="showPanel(8,this)"><i class="ti ti-molecule"></i><span class="sidebar-item-label">CO₂-Konzentration</span><span class="norm-chip">§ 5.4.5</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(9,this)"><i class="ti ti-mood-happy"></i><span class="sidebar-item-label">PMV/PPD &amp; h,x</span><span class="norm-chip">Anh. D</span><span class="beta-chip">Beta</span></div>
-    <div class="sidebar-item" onclick="showPanel(10,this)"><i class="ti ti-mountain"></i><span class="sidebar-item-label">Luftdichte/-druck</span><span class="norm-chip">§ 1.12</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(7,this)"><i class="ti ti-molecule"></i><span class="sidebar-item-label">CO₂-Konzentration</span><span class="norm-chip">§ 5.4.5</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(8,this)"><i class="ti ti-mood-happy"></i><span class="sidebar-item-label">PMV/PPD &amp; h,x</span><span class="norm-chip">Anh. D</span><span class="beta-chip">Beta</span></div>
+    <div class="sidebar-item" onclick="showPanel(9,this)"><i class="ti ti-mountain"></i><span class="sidebar-item-label">Luftdichte/-druck</span><span class="norm-chip">§ 1.12</span><span class="beta-chip">Beta</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Referenz</div>
     <div class="sidebar-item" style="cursor:default;opacity:.5"><i class="ti ti-book"></i><span class="sidebar-item-label">Norm SIA 382/1:2025</span></div>
@@ -529,39 +528,169 @@ footer{background:var(--nf-black);padding:1rem 2rem;display:flex;align-items:cen
       </div>
     </div></div></div>
 
-    <!-- ═══ P7: Vereisungsschutz ═══ -->
-    <div class="panel" id="p7"><div class="panel-wrap"><div class="watermark">BETA</div><div class="panel-content">
-      <div class="beta-banner"><div class="beta-banner-icon"><i class="ti ti-flask"></i></div><div class="beta-banner-body"><div class="beta-banner-title">Beta</div><div class="beta-banner-sub">Ergebnisse gegenprüfen.</div></div></div>
-      <div class="panel-header"><div class="panel-title">Vereisungsschutz WRG</div><span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 4.4</span></div>
-      <div class="form-section"><div class="form-section-title">Aussenluft &amp; WRG</div>
-        <div class="grid3"><div class="field"><label>θ<sub>ODA</sub> [°C]</label><input type="number" id="vz_toda" value="-12" step="0.5"></div><div class="field"><label>WRG</label><select id="vz_hrc"><option value="HRC1a" selected>HRC1a</option><option value="HRC3a">HRC3a</option><option value="HRC3x">HRC3x</option></select></div><div class="field"><label>η<sub>t,gro</sub> [%]</label><input type="number" id="vz_eta" value="80"></div></div>
-      </div>
-      <div class="form-section"><div class="form-section-title">Abluft</div>
-        <div class="grid3"><div class="field"><label>θ<sub>ETA</sub> [°C]</label><input type="number" id="vz_teta" value="22"></div><div class="field"><label>x<sub>ETA</sub> [g/kg]</label><input type="number" id="vz_xeta" value="6" step="0.1"></div><div class="field"><label>q<sub>v</sub> [m³/h]</label><input type="number" id="vz_qv" value="2000"></div></div>
-      </div>
-      <button class="btn-primary" onclick="calcVZ()"><i class="ti ti-snowflake"></i> Prüfen</button>
-      <div id="res_vz" style="display:none" class="result-area">
-        <div class="metrics-row" id="vz_metrics"></div>
-        <div id="vz_status"></div>
-        <div id="vz_note" class="result-note" style="margin-top:.75rem"></div>
-      </div>
-    </div></div></div>
-
-    <!-- ═══ P8: CO₂ ═══ -->
+    <!-- ═══ P7: CO₂ ═══ -->
     <div class="panel" id="p8"><div class="panel-wrap"><div class="watermark">BETA</div><div class="panel-content">
       <div class="beta-banner"><div class="beta-banner-icon"><i class="ti ti-flask"></i></div><div class="beta-banner-body"><div class="beta-banner-title">Beta</div><div class="beta-banner-sub">Ergebnisse gegenprüfen.</div></div></div>
-      <div class="panel-header"><div class="panel-title">CO₂-Konzentration (instationär)</div><span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.4.5</span></div>
-      <div class="form-section"><div class="form-section-title">Raum &amp; Lüftung</div>
-        <div class="grid3"><div class="field"><label>V<sub>R</sub> [m³]</label><input type="number" id="co2_vr" value="150"></div><div class="field"><label>q<sub>v,SUP</sub> [m³/h]</label><input type="number" id="co2_qv" value="180"></div><div class="field"><label>Personen</label><input type="number" id="co2_np" value="6"></div></div>
+      <div class="panel-header"><div class="panel-title">CO₂-Konzentration (instationär)</div><span class="norm-ref"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 382/1 § 5.4.5, Gl. (30)</span><span class="norm-ref-2024"><i class="ti ti-file-text" style="font-size:12px"></i> SIA 2024:2015 Belegungsprofile</span></div>
+
+      <div class="vs-tabs">
+        <button class="vs-tab-btn active" id="co2tab_manuell" onclick="switchCO2Tab('manuell')">Manuelle Eingabe</button>
+        <button class="vs-tab-btn" id="co2tab_profil" onclick="switchCO2Tab('profil')">SIA 2024 Tagesprofil 24 h</button>
       </div>
-      <div class="form-section"><div class="form-section-title">Konzentrationen</div>
-        <div class="grid4"><div class="field"><label>CO₂/P [l/h]</label><input type="number" id="co2_g" value="20"></div><div class="field"><label>C(0) [ppm]</label><input type="number" id="co2_c0" value="400"></div><div class="field"><label>C<sub>SUP</sub> [ppm]</label><input type="number" id="co2_csup" value="450"></div><div class="field"><label>Dauer [h]</label><input type="number" id="co2_tend" value="4" step="0.5"></div></div>
+
+      <!-- ── Tab 1: Manuell ── -->
+      <div id="co2_tab_manuell">
+        <div class="form-section"><div class="form-section-title">Raum &amp; Lüftung</div>
+          <div class="grid4">
+            <div class="field"><label>Raumvolumen V<sub>R</sub> [m³]</label><input type="number" id="co2_vr" value="150" oninput="calcCO2()"><span class="field-hint">Länge × Breite × Raumhöhe</span></div>
+            <div class="field"><label>Zuluft-Volumenstrom [m³/h]</label><input type="number" id="co2_qv" value="180" oninput="calcCO2()"><span class="field-hint">Frischluft-Zuführung pro Stunde</span></div>
+            <div class="field"><label>CO₂-Abgabe je Person [l/h]</label><input type="number" id="co2_g" value="20" oninput="calcCO2()"><span class="field-hint">Typisch 15–25 l/h (Büroarbeit ≈ 20)</span></div>
+            <div class="field"><label>CO₂-Gehalt der Zuluft [ppm]</label><input type="number" id="co2_csup" value="450" oninput="calcCO2()"><span class="field-hint">Aussenluft ≈ 420–450 ppm</span></div>
+          </div>
+          <div class="grid2" style="margin-top:12px">
+            <div class="field"><label>CO₂-Startkonzentration um 00:00 Uhr [ppm]</label><input type="number" id="co2_c0" value="400" oninput="calcCO2()"><span class="field-hint">Raumluft zu Mitternacht — bei leerem Raum ≈ Aussenluft (450 ppm)</span></div>
+            <div class="field"></div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Personenbelegung je Stunde — Anzahl Personen</div>
+          <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px">
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">00 h</div><input type="number" id="co2_h0"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">01 h</div><input type="number" id="co2_h1"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">02 h</div><input type="number" id="co2_h2"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">03 h</div><input type="number" id="co2_h3"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">04 h</div><input type="number" id="co2_h4"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">05 h</div><input type="number" id="co2_h5"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">06 h</div><input type="number" id="co2_h6"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">07 h</div><input type="number" id="co2_h7"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">08 h</div><input type="number" id="co2_h8"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">09 h</div><input type="number" id="co2_h9"  value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">10 h</div><input type="number" id="co2_h10" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">11 h</div><input type="number" id="co2_h11" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">12 h</div><input type="number" id="co2_h12" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">13 h</div><input type="number" id="co2_h13" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">14 h</div><input type="number" id="co2_h14" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-accent);font-weight:700;margin-bottom:3px">15 h</div><input type="number" id="co2_h15" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-accent);border-radius:5px;font-size:12px;text-align:center;background:var(--nf-accent-light)" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">16 h</div><input type="number" id="co2_h16" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">17 h</div><input type="number" id="co2_h17" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">18 h</div><input type="number" id="co2_h18" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">19 h</div><input type="number" id="co2_h19" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">20 h</div><input type="number" id="co2_h20" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">21 h</div><input type="number" id="co2_h21" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">22 h</div><input type="number" id="co2_h22" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+            <div style="text-align:center"><div style="font-size:10px;color:var(--nf-gray-400);font-weight:600;margin-bottom:3px">23 h</div><input type="number" id="co2_h23" value="0" min="0" step="1" style="width:100%;padding:5px 3px;border:0.5px solid var(--nf-gray-200);border-radius:5px;font-size:12px;text-align:center" oninput="calcCO2()"></div>
+          </div>
+          <div style="font-size:11px;color:var(--nf-gray-400);margin-top:6px">Blau hinterlegt = Tagesstunden 08–15 h. Anzahl Personen je Stunde direkt eingeben.</div>
+        </div>
+        <button class="btn-primary" onclick="calcCO2()"><i class="ti ti-chart-line"></i> 24-h-Diagramm berechnen</button>
+        <div id="res_co2" style="display:none" class="result-area">
+          <div class="result-header"><span class="result-title">Tagesverlauf CO₂ — Manuelle Belegung</span></div>
+          <div class="metrics-row" id="co2_metrics"></div>
+          <div class="chart-wrap"><canvas id="co2_chart"></canvas></div>
+          <div id="co2_note" class="result-note" style="margin-top:.75rem"></div>
+        </div>
       </div>
-      <button class="btn-primary" onclick="calcCO2()"><i class="ti ti-chart-line"></i> Berechnen</button>
-      <div id="res_co2" style="display:none" class="result-area">
-        <div class="metrics-row" id="co2_metrics"></div>
-        <div class="chart-wrap"><canvas id="co2_chart"></canvas></div>
-        <div id="co2_note" class="result-note" style="margin-top:.75rem"></div>
+
+      <!-- ── Tab 2: SIA 2024 Tagesprofil ── -->
+      <div id="co2_tab_profil" style="display:none">
+        <div class="sia-info"><i class="ti ti-info-circle"></i><div class="sia-info-text"><strong>Tagesprofil SIA 2024:</strong> Nutzung wählen → stündliche Belegung in % wird geladen. Diese wird mit der manuell eingegebenen Personenzahl multipliziert. <b>Beispiel:</b> 10 Personen × 10 % Profil = 1 Person von 12:00–13:00 Uhr.</div></div>
+        <div class="form-section"><div class="form-section-title">Nutzung &amp; Belegung</div>
+          <div class="grid2">
+            <div class="field"><label>Raumnutzung (SIA 2024)</label>
+              <select id="co2p_nutzung" onchange="loadCO2Profile()">
+                <option value="">— Nutzung wählen —</option>
+                <optgroup label="1 · Wohnen">
+                  <option value="wohnen_mfh">1.1 Wohnen MFH</option>
+                  <option value="wohnen_efh">1.2 Wohnen EFH</option>
+                </optgroup>
+                <optgroup label="2 · Hotel">
+                  <option value="hotelzimmer">2.1 Hotelzimmer</option>
+                  <option value="hotel_lobby">2.2 Empfang / Lobby</option>
+                  <option value="hotel_rest">2.3 Hotelrestaurant</option>
+                </optgroup>
+                <optgroup label="3 · Büro / Verwaltung">
+                  <option value="einzelbuero">3.1 Einzel-/Gruppenbüro</option>
+                  <option value="grossraumbuero">3.2 Grossraumbüro</option>
+                  <option value="sitzung">3.3 Sitzungszimmer</option>
+                  <option value="schalterhalle">3.4 Schalterhalle / Empfang</option>
+                </optgroup>
+                <optgroup label="4 · Bildung">
+                  <option value="schulzimmer">4.1 Schulzimmer</option>
+                  <option value="hoersaal">4.2 Hörsaal</option>
+                  <option value="bibliothek">4.3 Bibliothek</option>
+                  <option value="lehrerzimmer">4.4 Lehrerzimmer</option>
+                  <option value="kita">4.5 Kita / Spielraum</option>
+                </optgroup>
+                <optgroup label="5 · Verkauf">
+                  <option value="lebensmittel">5.1 Lebensmittelverkauf</option>
+                  <option value="fachgeschaeft">5.2 Fachgeschäft / Kaufhaus</option>
+                  <option value="moebel">5.3 Möbel / Bau / Garten</option>
+                </optgroup>
+                <optgroup label="6 · Gastronomie">
+                  <option value="restaurant">6.1 Restaurant</option>
+                  <option value="sbr">6.2 Selbstbedienungsrestaurant</option>
+                  <option value="kueche_rest">6.3 Küche zu Restaurant</option>
+                  <option value="kueche_sbr">6.4 Küche zu SBR</option>
+                  <option value="bar">6.5 Bar / Café</option>
+                </optgroup>
+                <optgroup label="7 · Versammlung / Kultur">
+                  <option value="vorstellung">7.1 Vorstellungsraum (Theater/Kino)</option>
+                  <option value="mehrzweck">7.2 Mehrzweckhalle</option>
+                  <option value="ausstellung">7.3 Ausstellungshalle</option>
+                </optgroup>
+                <optgroup label="8 · Gesundheit / Pflege">
+                  <option value="bettenzimmer">8.1 Bettenzimmer</option>
+                  <option value="stationszimmer">8.2 Stationszimmer / Pflege</option>
+                  <option value="behandlung">8.3 Behandlungsraum</option>
+                  <option value="wartezimmer">8.4 Wartezimmer</option>
+                </optgroup>
+                <optgroup label="9 · Sport">
+                  <option value="turnhalle">9.1 Turnhalle</option>
+                  <option value="fitness">9.2 Fitnessraum</option>
+                  <option value="schwimmhalle">9.3 Schwimmhalle</option>
+                  <option value="umkleide">9.4 Umkleide / Dusche</option>
+                </optgroup>
+                <optgroup label="10 · Industrie / Labor">
+                  <option value="labor">10.1 Laborraum</option>
+                  <option value="produktion_fein">10.2 Produktion (feine Arbeit)</option>
+                  <option value="produktion_grob">10.3 Produktion (grobe Arbeit)</option>
+                  <option value="lager">10.4 Lagerhalle</option>
+                </optgroup>
+                <optgroup label="11 · Nebenräume">
+                  <option value="wc">11.1 WC / Bad</option>
+                  <option value="garderobe">11.2 Garderobe</option>
+                  <option value="verkehr">11.3 Verkehrsfläche</option>
+                  <option value="teekueche">11.4 Teeküche</option>
+                </optgroup>
+                <optgroup label="12 · Parking">
+                  <option value="parkhaus">12.1 Parkhaus / Einstellhalle</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="field"><label>Max. Personen bei 100 % Belegung</label>
+              <input type="number" id="co2p_npmax" value="10" min="1" step="1" oninput="calcCO2_profile()">
+              <span class="field-hint">Profil-% × diese Zahl = tatsächliche Personenanzahl je Stunde</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-section"><div class="form-section-title">Raum &amp; Lüftung</div>
+          <div class="grid4">
+            <div class="field"><label>Raumvolumen V<sub>R</sub> [m³]</label><input type="number" id="co2p_vr" value="150" min="10" oninput="calcCO2_profile()"><span class="field-hint">Länge × Breite × Raumhöhe</span></div>
+            <div class="field"><label>Zuluft-Volumenstrom [m³/h]</label><input type="number" id="co2p_qv" value="180" min="10" oninput="calcCO2_profile()"><span class="field-hint">Frischluft-Zuführung pro Stunde</span></div>
+            <div class="field"><label>CO₂-Abgabe je Person [l/h]</label><input type="number" id="co2p_g" value="20" min="5" oninput="calcCO2_profile()"><span class="field-hint">Typisch 15–25 l/h (Büroarbeit ≈ 20)</span></div>
+            <div class="field"><label>CO₂-Gehalt der Zuluft [ppm]</label><input type="number" id="co2p_csup" value="450" oninput="calcCO2_profile()"><span class="field-hint">Aussenluft ≈ 420–450 ppm</span></div>
+          </div>
+          <div class="grid2" style="margin-top:12px">
+            <div class="field"><label>CO₂-Startkonzentration um 00:00 Uhr [ppm]</label><input type="number" id="co2p_c0" value="500" oninput="calcCO2_profile()"><span class="field-hint">Raumluft zu Mitternacht — bei leerem Raum ≈ Aussenluft (450 ppm)</span></div>
+            <div class="field"></div>
+          </div>
+        </div>
+        <div id="res_co2p" style="display:none" class="result-area">
+          <div class="result-header"><span class="result-title">Tagesverlauf CO₂</span></div>
+          <div class="metrics-row" id="co2p_metrics"></div>
+          <div class="chart-wrap"><canvas id="co2p_chart"></canvas></div>
+          <div id="co2p_note" class="result-note" style="margin-top:.75rem"></div>
+        </div>
       </div>
     </div></div></div>
 
@@ -823,13 +952,242 @@ function calcWD(){var art=document.getElementById('wd_art').value,lage=document.
 function calcVZ(){var toda=parseFloat(document.getElementById('vz_toda').value),eta=parseFloat(document.getElementById('vz_eta').value)/100||0.8,teta=parseFloat(document.getElementById('vz_teta').value),xeta=parseFloat(document.getElementById('vz_xeta').value)||6,qv=parseFloat(document.getElementById('vz_qv').value)||0,grenz=-3-1.5*xeta+(0.78-eta)*30,ver=toda<grenz,tNeed=Math.max(grenz,-15),pVor=0;if(toda<tNeed)pVor=qv/3600*1.2*1005*(tNeed-toda);document.getElementById('vz_metrics').innerHTML=mc('Eisbildungsgrenze',grenz.toFixed(1),'°C')+mc('Vorerwärmung',Math.round(pVor),'W')+mc('Δt',Math.max(0,tNeed-toda).toFixed(1),'K');document.getElementById('vz_status').innerHTML=ver?'<div class="status-bar status-warn"><i class="ti ti-snowflake"></i> Vereisungsgefahr!</div>':'<div class="status-bar status-ok"><i class="ti ti-check"></i> Keine Vereisungsgefahr.</div>';document.getElementById('vz_note').innerHTML='Grenze stark von Abluftfeuchte abhängig.';document.getElementById('res_vz').style.display='block';}
 
 // ── P8 CO₂ ──
-function calcCO2(){var vr=parseFloat(document.getElementById('co2_vr').value)||0,qv=parseFloat(document.getElementById('co2_qv').value)||0,np=parseFloat(document.getElementById('co2_np').value)||0,gP=parseFloat(document.getElementById('co2_g').value)||20,c0=parseFloat(document.getElementById('co2_c0').value)||400,csup=parseFloat(document.getElementById('co2_csup').value)||450,tend=parseFloat(document.getElementById('co2_tend').value)||4;if(!vr||!qv)return;var G=np*gP,ratio=qv/vr,cStat=csup+G/qv*1e6,pts=200,data=[];for(var i=0;i<=pts;i++){var t=tend*i/pts,c=(c0-G/qv*1e6-csup)*Math.exp(-ratio*t)+G/qv*1e6+csup;data.push({t:t,c:c});}document.getElementById('co2_metrics').innerHTML=mc('C(∞)',Math.round(cStat),'ppm')+mc('C(t='+tend+'h)',Math.round(data[pts].c),'ppm')+mc('τ',(60/ratio).toFixed(0),'min')+mc('n',ratio.toFixed(2),'h⁻¹');var canvas=document.getElementById('co2_chart');canvas.width=800;canvas.height=340;var ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);var pad={l:60,r:40,t:25,b:45},W=canvas.width-pad.l-pad.r,H=canvas.height-pad.t-pad.b,maxC=Math.max(2000,Math.ceil(Math.max(cStat,c0)/200)*200+200),minC=Math.floor(Math.min(c0,csup,400)/100)*100;function sx(t){return pad.l+t/tend*W;}function sy(c){return pad.t+H-(c-minC)/(maxC-minC)*H;}ctx.strokeStyle='#efefed';ctx.lineWidth=1;ctx.font='11px sans-serif';ctx.fillStyle='#5a5854';for(var i=0;i<=5;i++){var v=minC+(maxC-minC)*i/5,y=sy(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();ctx.textAlign='right';ctx.fillText(Math.round(v),pad.l-5,y+4);}for(var i=0;i<=5;i++){var xt=tend*i/5,xc=sx(xt);ctx.beginPath();ctx.moveTo(xc,pad.t);ctx.lineTo(xc,pad.t+H);ctx.stroke();ctx.textAlign='center';ctx.fillText(xt.toFixed(1)+'h',xc,pad.t+H+16);}ctx.strokeStyle='#9e9b95';ctx.lineWidth=1;ctx.setLineDash([4,3]);[950,1200,1750].forEach(function(v){if(v>=minC&&v<=maxC){var y=sy(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();}});ctx.setLineDash([]);ctx.strokeStyle='#1a56db';ctx.lineWidth=2.5;ctx.beginPath();data.forEach(function(p,i){i===0?ctx.moveTo(sx(p.t),sy(p.c)):ctx.lineTo(sx(p.t),sy(p.c));});ctx.stroke();document.getElementById('co2_note').innerHTML='C(∞) = '+Math.round(cStat)+' ppm.';document.getElementById('res_co2').style.display='block';}
+function calcCO2(){var vr=parseFloat(document.getElementById('co2_vr').value)||0,qv=parseFloat(document.getElementById('co2_qv').value)||0,np=parseFloat(document.getElementById('co2_np').value)||0,gP=parseFloat(document.getElementById('co2_g').value)||20,c0=parseFloat(document.getElementById('co2_c0').value)||400,csup=parseFloat(document.getElementById('co2_csup').value)||450,tend=parseFloat(document.getElementById('co2_tend').value)||4;if(!vr||!qv)return;
+  // G in l/h → Umrechnung: G[l/h]/qv[m³/h]*1000 = ppm (1 l/m³ = 1000 ppm)
+  var G=np*gP,ratio=qv/vr,cStat=csup+G/qv*1000,pts=200,data=[];for(var i=0;i<=pts;i++){var t=tend*i/pts,c=(c0-cStat)*Math.exp(-ratio*t)+cStat;data.push({t:t,c:c});}document.getElementById('co2_metrics').innerHTML=mc('C(∞)',Math.round(cStat),'ppm')+mc('C(t='+tend+'h)',Math.round(data[pts].c),'ppm')+mc('τ',(60/ratio).toFixed(0),'min')+mc('n',ratio.toFixed(2),'h⁻¹');var canvas=document.getElementById('co2_chart');canvas.width=800;canvas.height=340;var ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);var pad={l:60,r:40,t:25,b:45},W=canvas.width-pad.l-pad.r,H=canvas.height-pad.t-pad.b,maxC=Math.max(2000,Math.ceil(Math.max(cStat,c0)/200)*200+200),minC=Math.floor(Math.min(c0,csup,400)/100)*100;function sx(t){return pad.l+t/tend*W;}function sy(c){return pad.t+H-(c-minC)/(maxC-minC)*H;}ctx.strokeStyle='#efefed';ctx.lineWidth=1;ctx.font='11px sans-serif';ctx.fillStyle='#5a5854';for(var i=0;i<=5;i++){var v=minC+(maxC-minC)*i/5,y=sy(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();ctx.textAlign='right';ctx.fillText(Math.round(v),pad.l-5,y+4);}for(var i=0;i<=5;i++){var xt=tend*i/5,xc=sx(xt);ctx.beginPath();ctx.moveTo(xc,pad.t);ctx.lineTo(xc,pad.t+H);ctx.stroke();ctx.textAlign='center';ctx.fillText(xt.toFixed(1)+'h',xc,pad.t+H+16);}ctx.strokeStyle='#9e9b95';ctx.lineWidth=1;ctx.setLineDash([4,3]);[950,1200,1750].forEach(function(v){if(v>=minC&&v<=maxC){var y=sy(v);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();}});ctx.setLineDash([]);ctx.strokeStyle='#1a56db';ctx.lineWidth=2.5;ctx.beginPath();data.forEach(function(p,i){i===0?ctx.moveTo(sx(p.t),sy(p.c)):ctx.lineTo(sx(p.t),sy(p.c));});ctx.stroke();document.getElementById('co2_note').innerHTML='C(∞) = '+Math.round(cStat)+' ppm.';document.getElementById('res_co2').style.display='block';}
 
 // ── P9 PMV ──
 function pmvCalc(ta,tr,va,rh,M,clo){var pa=rh/100*Math.exp(16.6536-4030.183/(ta+235))*1000,icl=clo*0.155,m=M*58.15,fcl=icl<=0.078?1+1.29*icl:1.05+0.645*icl,hcf=12.1*Math.sqrt(va),taa=ta+273,tcla=taa+(35.5-ta)/(3.5*icl+0.1),p1=icl*fcl,p2=p1*3.96,p3=p1*100,p4=p1*taa,p5=308.7-0.028*m+p2*Math.pow((tr+273)/100,4),xn=tcla/100,xf=xn,n=0,hc;while(Math.abs(xn-xf)>1e-4&&n<150){xf=(xf+xn)/2;hc=hcf>2.38*Math.pow(Math.abs(100*xf-taa),0.25)?hcf:2.38*Math.pow(Math.abs(100*xf-taa),0.25);xn=(p5+p4*hc-p2*Math.pow(xf,4))/(100+p3*hc);n++;}var tcl=100*xn-273,hl1=3.05e-3*(5733-6.99*m-pa),hl2=m>58.15?0.42*(m-58.15):0,hl3=1.7e-5*m*(5867-pa),hl4=0.0014*m*(34-ta),hl5=3.96*fcl*(Math.pow(xn,4)-Math.pow((tr+273)/100,4)),hl6=fcl*hc*(tcl-ta),ts=0.303*Math.exp(-0.036*m)+0.028,pmv=ts*(m-hl1-hl2-hl3-hl4-hl5-hl6),ppd=100-95*Math.exp(-(0.03353*Math.pow(pmv,4)+0.2179*pmv*pmv));return{pmv:pmv,ppd:ppd};}
 function calcPMV(){var ta=parseFloat(document.getElementById('pmv_ta').value),tr=parseFloat(document.getElementById('pmv_tr').value),rh=parseFloat(document.getElementById('pmv_rh').value),va=parseFloat(document.getElementById('pmv_va').value),M=parseFloat(document.getElementById('pmv_met').value),clo=parseFloat(document.getElementById('pmv_clo').value),r=pmvCalc(ta,tr,va,rh,M,clo),pSat=611.2*Math.exp(17.62*ta/(243.12+ta)),pw=rh/100*pSat,x=0.622*pw/(101325-pw)*1000,kat=r.ppd<6?'IEQ I':r.ppd<10?'IEQ II':r.ppd<15?'IEQ III':'IEQ IV';document.getElementById('pmv_metrics').innerHTML=mc('PMV',r.pmv.toFixed(2),'')+mc('PPD',r.ppd.toFixed(1),'%')+mc('Kategorie',kat,'')+mc('x',x.toFixed(2),'g/kg');var st=Math.abs(r.pmv)<0.5?'status-ok':'status-warn';document.getElementById('pmv_status').innerHTML='<div class="status-bar '+st+'"><i class="ti ti-'+(Math.abs(r.pmv)<0.5?'check':'alert-triangle')+'"></i> '+kat+'</div>';var canvas=document.getElementById('hx_chart');canvas.width=700;canvas.height=380;var ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);var pad={l:50,r:30,t:20,b:40},W=canvas.width-pad.l-pad.r,H=canvas.height-pad.t-pad.b,tMin=10,tMax=35,xMin=0,xMax=20;function sx(t){return pad.l+(t-tMin)/(tMax-tMin)*W;}function sy(xx){return pad.t+H-(xx-xMin)/(xMax-xMin)*H;}ctx.strokeStyle='#efefed';ctx.lineWidth=1;ctx.font='10px sans-serif';ctx.fillStyle='#5a5854';for(var t=tMin;t<=tMax;t+=5){ctx.beginPath();ctx.moveTo(sx(t),pad.t);ctx.lineTo(sx(t),pad.t+H);ctx.stroke();ctx.textAlign='center';ctx.fillText(t+'°C',sx(t),pad.t+H+13);}for(var xx=0;xx<=20;xx+=2){ctx.beginPath();ctx.moveTo(pad.l,sy(xx));ctx.lineTo(pad.l+W,sy(xx));ctx.stroke();ctx.textAlign='right';ctx.fillText(xx,pad.l-4,sy(xx)+3);}[20,40,60,80,100].forEach(function(rrh){ctx.strokeStyle='#ccc';ctx.lineWidth=0.8;ctx.beginPath();var first=true;for(var tt=tMin;tt<=tMax;tt+=0.5){var ps=611.2*Math.exp(17.62*tt/(243.12+tt)),pw2=rrh/100*ps,xx2=0.622*pw2/(101325-pw2)*1000;if(xx2<=xMax){if(first){ctx.moveTo(sx(tt),sy(xx2));first=false;}else ctx.lineTo(sx(tt),sy(xx2));}}ctx.stroke();});ctx.fillStyle='rgba(26,86,219,.1)';ctx.strokeStyle='#1a56db';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(sx(20),sy(4));ctx.lineTo(sx(26),sy(4));ctx.lineTo(sx(26),sy(12));ctx.lineTo(sx(20),sy(12));ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle='#991b1b';ctx.beginPath();ctx.arc(sx(ta),sy(x),7,0,2*Math.PI);ctx.fill();document.getElementById('pmv_note').innerHTML='x='+x.toFixed(2)+' g/kg, '+kat;document.getElementById('res_pmv').style.display='block';}
 
+// ── CO₂ Tab-Switcher + SIA 2024 Profile ──
+function switchCO2Tab(t){
+  document.getElementById('co2tab_manuell').classList.toggle('active',t==='manuell');
+  document.getElementById('co2tab_profil').classList.toggle('active',t==='profil');
+  document.getElementById('co2_tab_manuell').style.display=t==='manuell'?'block':'none';
+  document.getElementById('co2_tab_profil').style.display=t==='profil'?'block':'none';
+  document.getElementById('res_co2').style.display='none';
+  document.getElementById('res_co2p').style.display='none';
+}
+
+var co2Prof={
+  wohnen_mfh:    {label:'Wohnen MFH (1.1)',          nPD:0.04,qvS:0.7, p:[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.5,0.25,0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.5,0.75,1,1,1,0.75,0.5]},
+  hotelzimmer:   {label:'Hotelzimmer (2.1)',           nPD:0.05,qvS:1.5, p:[1,1,1,1,1,1,0.75,0.5,0.25,0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.5,0.5,0.5,0.75,1,1,1,1]},
+  einzelbuero:   {label:'Einzel-/Gruppenbüro (3.1)',   nPD:0.07,qvS:2.0, p:[0,0,0,0,0,0,0,0.1,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.1,0,0,0,0,0]},
+  grossraumbuero:{label:'Grossraumbüro (3.2)',          nPD:0.10,qvS:2.5, p:[0,0,0,0,0,0,0,0.1,0.6,0.9,0.9,0.9,0.5,0.6,0.9,0.9,0.8,0.4,0.1,0,0,0,0,0]},
+  sitzung:       {label:'Sitzungszimmer (3.3)',         nPD:0.50,qvS:4.0, p:[0,0,0,0,0,0,0,0,0.5,1,1,1,0.5,0.5,1,1,0.5,0.25,0,0,0,0,0,0]},
+  schulzimmer:   {label:'Schulzimmer (4.1)',            nPD:0.50,qvS:3.0, p:[0,0,0,0,0,0,0,0,0.8,1,1,1,0,0.8,1,1,0.5,0,0,0,0,0,0,0]},
+  hoersaal:      {label:'Hörsaal (4.2)',                nPD:0.80,qvS:4.0, p:[0,0,0,0,0,0,0,0,0.5,1,1,1,0,0.5,1,1,0.5,0,0,0,0,0,0,0]},
+  kita:          {label:'Kita / Spielraum (4.5)',       nPD:0.40,qvS:3.5, p:[0,0,0,0,0,0,0,0.25,0.75,1,1,1,0.75,0.75,1,1,0.75,0.25,0,0,0,0,0,0]},
+  restaurant:    {label:'Restaurant (6.1)',             nPD:0.67,qvS:6.0, p:[0,0,0,0,0,0,0,0,0,0,0,0.5,1,1,0.25,0.1,0.1,0.25,0.75,1,1,0.75,0.25,0]},
+  turnhalle:     {label:'Turnhalle (9.1)',              nPD:0.20,qvS:4.0, p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,1,1,0.75,0.5,0,0,0,0]},
+  fitness:       {label:'Fitnessraum (9.2)',            nPD:0.20,qvS:5.0, p:[0,0,0,0,0,0,0.25,0.75,0.75,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,1,1,0.75,0.5,0.25,0,0]},
+  bettenzimmer:  {label:'Bettenzimmer (8.1)',           nPD:0.15,qvS:2.5, p:[1,1,1,1,1,1,0.75,0.5,0.5,0.25,0.25,0.25,0.25,0.25,0.25,0.5,0.5,0.5,0.75,1,1,1,1,1]}
+};
+
+function loadCO2Profile(){
+  var key=document.getElementById('co2p_nutzung').value;
+  if(!key)return;
+  // Nur Profil laden, keine Felder überschreiben
+  calcCO2_profile();
+}
+
+function calcCO2_profile(){
+  var key=document.getElementById('co2p_nutzung').value;
+  if(!key)return;
+  var pr=co2Prof[key];
+  var nPmax=parseFloat(document.getElementById('co2p_npmax').value)||0;
+  if(!nPmax)return;
+  var vr=parseFloat(document.getElementById('co2p_vr').value)||150;
+  var qv=parseFloat(document.getElementById('co2p_qv').value)||180;
+  var gP=parseFloat(document.getElementById('co2p_g').value)||20;
+  var csup=parseFloat(document.getElementById('co2p_csup').value)||450;
+  var c0=parseFloat(document.getElementById('co2p_c0').value)||500;
+  var n=qv/vr, dt=1/60;
+  var C=c0, data=[];
+  for(var i=0;i<=1440;i++){
+    var t=i*dt, h=Math.min(Math.floor(t),23);
+    var frac=pr.p[h];
+    // Personen = max_personen × Profil% → z.B. 10 P × 10% = 1 P
+    var nP=nPmax*frac, G=nP*gP;
+    var Ceq=csup+(qv>0?G/qv*1000:0);
+    data.push({t:t,c:C,frac:frac,nP:Math.round(nP*10)/10});
+    C=Ceq+(C-Ceq)*Math.exp(-n*dt);
+  }
+  var allC=data.map(function(d){return d.c;});
+  var maxC=Math.max.apply(null,allC), minCval=Math.min.apply(null,allC);
+  var tA12=data.filter(function(d){return d.c>1200;}).length/60;
+  var tA17=data.filter(function(d){return d.c>1750;}).length/60;
+  document.getElementById('co2p_metrics').innerHTML=
+    mc('CO₂ max.',Math.round(maxC),'ppm',maxC>1750?'hi-red':maxC>1200?'':'hi-green')+
+    mc('CO₂ min.',Math.round(minCval),'ppm')+
+    mc('Personen max.',nPmax,'P')+
+    mc('t &gt; IDA 2 (1200 ppm)',tA12.toFixed(1),'h')+
+    mc('t &gt; IDA 3 (1750 ppm)',tA17>0?tA17.toFixed(1):'0','h')+
+    mc('Luftwechsel n',n.toFixed(2),'h⁻¹');
+  drawCO2ProfChart(data,pr.label,nPmax,'co2p_chart');
+  document.getElementById('co2p_note').innerHTML=
+    'SIA 2024 Profil «'+pr.label+'». Max. '+nPmax+' Personen (= 100 % Belegung). '+
+    'V<sub>R</sub>='+vr+' m³, q<sub>v</sub>='+qv+' m³/h, n='+n.toFixed(2)+' h⁻¹. '+
+    'Personenzahl je Stunde = '+nPmax+' × Profil-% aus SIA 2024.';
+  document.getElementById('res_co2p').style.display='block';
+}
+
+function drawCO2ProfChart(data,label,nPmax,canvasId){
+  var canvas=document.getElementById(canvasId||'co2p_chart');
+  canvas.width=900; canvas.height=420;
+  var ctx=canvas.getContext('2d');
+  ctx.clearRect(0,0,900,420);
+  var pad={l:72,r:24,t:40,b:52},W=900-pad.l-pad.r,H=420-pad.t-pad.b;
+  var allC=data.map(function(d){return d.c;});
+  var maxC=Math.max.apply(null,allC);
+  var minAx=350, maxAx=Math.max(Math.ceil((maxC+150)/200)*200,1400);
+  function sx(t){return pad.l+t/24*W;}
+  function sy(c){return pad.t+H-(c-minAx)/(maxAx-minAx)*H;}
+  // Belegungsbalken Hintergrund
+  for(var h=0;h<24;h++){
+    var idx=h*60, frac=(idx<data.length?data[idx].frac:0);
+    if(frac>0){
+      ctx.fillStyle='rgba(26,86,219,0.08)';
+      ctx.fillRect(sx(h),pad.t+H*(1-frac),W/24,H*frac);
+      ctx.fillStyle='rgba(26,86,219,0.22)';
+      ctx.fillRect(sx(h),pad.t+H*(1-frac),W/24,2);
+    }
+  }
+  // Y-Gitter
+  ctx.font='11px sans-serif'; ctx.fillStyle='#5a5854'; ctx.lineWidth=1;
+  for(var j=0;j<=6;j++){
+    var v=minAx+(maxAx-minAx)*j/6, y=sy(v);
+    ctx.strokeStyle='#efefed'; ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+W,y); ctx.stroke();
+    ctx.textAlign='right'; ctx.fillText(Math.round(v),pad.l-5,y+4);
+  }
+  // X-Gitter
+  for(var h=0;h<=24;h++){
+    var x=sx(h);
+    ctx.strokeStyle=h%6===0?'#dddbd7':'#efefed'; ctx.lineWidth=h%6===0?1:0.5;
+    ctx.beginPath(); ctx.moveTo(x,pad.t); ctx.lineTo(x,pad.t+H); ctx.stroke();
+    if(h%2===0){ctx.fillStyle='#5a5854'; ctx.textAlign='center'; ctx.fillText(h+':00',x,pad.t+H+16);}
+  }
+  // IDA-Linien
+  ctx.setLineDash([5,4]); ctx.lineWidth=1.5;
+  [{v:950,l:'IDA 1',c:'#166534'},{v:1200,l:'IDA 2',c:'#92400e'},{v:1750,l:'IDA 3',c:'#991b1b'}].forEach(function(ida){
+    if(ida.v<minAx||ida.v>maxAx)return;
+    var y=sy(ida.v);
+    ctx.strokeStyle=ida.c; ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+W,y); ctx.stroke();
+    ctx.fillStyle=ida.c; ctx.font='bold 10px sans-serif'; ctx.textAlign='left';
+    ctx.fillText(ida.l+' ('+ida.v+' ppm)',pad.l+4,y-4);
+  });
+  ctx.setLineDash([]);
+  // CO₂-Kurve
+  ctx.strokeStyle='#1a56db'; ctx.lineWidth=2.5;
+  ctx.beginPath();
+  data.forEach(function(d,i){
+    if(d.t>24)return;
+    i===0?ctx.moveTo(sx(d.t),sy(d.c)):ctx.lineTo(sx(d.t),sy(d.c));
+  });
+  ctx.stroke();
+  // Achsen
+  ctx.strokeStyle='#2c2b28'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(pad.l,pad.t); ctx.lineTo(pad.l,pad.t+H); ctx.lineTo(pad.l+W,pad.t+H); ctx.stroke();
+  // Titel & Labels
+  ctx.fillStyle='#0a0a0a'; ctx.font='bold 12px sans-serif'; ctx.textAlign='left';
+  ctx.fillText('CO₂-Tagesverlauf 24 h — '+label,pad.l,pad.t-16);
+  ctx.save(); ctx.translate(14,pad.t+H/2); ctx.rotate(-Math.PI/2);
+  ctx.fillStyle='#5a5854'; ctx.font='11px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('CO₂ [ppm]',0,0); ctx.restore();
+  ctx.fillStyle='#5a5854'; ctx.font='11px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('Tageszeit',pad.l+W/2,pad.t+H+38);
+  // Legende
+  var lx=pad.l+W-260, ly=pad.t+6;
+  ctx.fillStyle='rgba(26,86,219,0.18)'; ctx.fillRect(lx,ly,14,14);
+  ctx.fillStyle='#5a5854'; ctx.font='10px sans-serif'; ctx.textAlign='left';
+  ctx.fillText('Belegung SIA 2024 (100% = '+Math.round(nPmax)+' P)',lx+18,ly+11);
+  ctx.strokeStyle='#1a56db'; ctx.lineWidth=2; ctx.beginPath();
+  ctx.moveTo(lx,ly+26); ctx.lineTo(lx+14,ly+26); ctx.stroke();
+  ctx.fillStyle='#5a5854'; ctx.fillText('CO₂-Konzentration',lx+18,ly+29);
+}
+
 // ── P10 Luftdichte ──
 function calcLD(){var h=parseFloat(document.getElementById('ld_h').value)||0,theta=parseFloat(document.getElementById('ld_t').value)||20,rh=parseFloat(document.getElementById('ld_rh').value)||50,qvRef=parseFloat(document.getElementById('ld_qv').value)||0,pb=101325*Math.pow(1-0.0065*h/288.15,5.256),pSat=611.2*Math.exp(17.62*theta/(243.12+theta)),pw=rh/100*pSat,T=theta+273.15,rhoT=pb/(287.058*T),x=0.622*pw/(pb-pw),rhoF=pb/(287.058*T)*0.622*(x+1)/(x+0.622),qvK=qvRef*1.20/rhoF;document.getElementById('ld_metrics').innerHTML=mc('p<sub>b</sub>',pb.toFixed(0),'Pa')+mc('ρ trocken',rhoT.toFixed(3),'kg/m³')+mc('ρ feucht',rhoF.toFixed(3),'kg/m³')+mc('q<sub>v</sub> korr.',Math.round(qvK),'m³/h');document.getElementById('ld_note').innerHTML='Bei '+h+' m, '+theta+' °C, '+rh+' % r.F.';document.getElementById('res_ld').style.display='block';}
+// ── Vollständiges co2Prof (alle 36 SIA 2024 Nutzungen) ──
+co2Prof={
+  wohnen_mfh:     {label:'Wohnen MFH (1.1)',               p:[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.5,0.25,0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.5,0.75,1,1,1,0.75,0.5]},
+  wohnen_efh:     {label:'Wohnen EFH (1.2)',               p:[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.5,0.25,0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.5,0.75,1,1,1,0.75,0.5]},
+  hotelzimmer:    {label:'Hotelzimmer (2.1)',               p:[1,1,1,1,1,1,0.75,0.5,0.25,0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.5,0.5,0.5,0.75,1,1,1,1]},
+  hotel_lobby:    {label:'Empfang/Lobby Hotel (2.2)',       p:[0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.5,0.5,0.5,0.5,0.5,0.75,0.75,0.5,0.5,0.5,0.5,0.75,1,1,0.75,0.5,0.25]},
+  hotel_rest:     {label:'Hotelrestaurant (2.3)',           p:[0,0,0,0,0,0,0.5,1,0.75,0.25,0,0,0.5,0.75,0.25,0,0,0.25,0.75,1,0.75,0.5,0.25,0]},
+  einzelbuero:    {label:'Einzel-/Gruppenbüro (3.1)',       p:[0,0,0,0,0,0,0,0.1,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.1,0,0,0,0,0]},
+  grossraumbuero: {label:'Grossraumbüro (3.2)',              p:[0,0,0,0,0,0,0,0.1,0.6,0.9,0.9,0.9,0.5,0.6,0.9,0.9,0.8,0.4,0.1,0,0,0,0,0]},
+  sitzung:        {label:'Sitzungszimmer (3.3)',             p:[0,0,0,0,0,0,0,0,0.5,1,1,1,0.5,0.5,1,1,0.5,0.25,0,0,0,0,0,0]},
+  schalterhalle:  {label:'Schalterhalle/Empfang (3.4)',      p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.5,0.25,0,0,0,0,0,0]},
+  schulzimmer:    {label:'Schulzimmer (4.1)',                p:[0,0,0,0,0,0,0,0,0.8,1,1,1,0,0.8,1,1,0.5,0,0,0,0,0,0,0]},
+  hoersaal:       {label:'Hörsaal (4.2)',                    p:[0,0,0,0,0,0,0,0,0.5,1,1,1,0,0.5,1,1,0.5,0,0,0,0,0,0,0]},
+  bibliothek:     {label:'Bibliothek (4.3)',                 p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.5,0.25,0,0,0,0,0,0]},
+  lehrerzimmer:   {label:'Lehrerzimmer (4.4)',               p:[0,0,0,0,0,0,0,0,0.5,0.5,0.5,0.5,0.75,0.5,0.5,0.5,0.25,0,0,0,0,0,0,0]},
+  kita:           {label:'Kita/Spielraum (4.5)',             p:[0,0,0,0,0,0,0,0.25,0.75,1,1,1,0.75,0.75,1,1,0.75,0.25,0,0,0,0,0,0]},
+  lebensmittel:   {label:'Lebensmittelverkauf (5.1)',        p:[0,0,0,0,0,0,0,0,0.25,0.5,0.75,0.75,1,1,0.75,0.75,0.75,0.75,0.5,0.25,0,0,0,0]},
+  fachgeschaeft:  {label:'Fachgeschäft/Kaufhaus (5.2)',      p:[0,0,0,0,0,0,0,0,0.25,0.5,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.25,0,0,0,0,0]},
+  moebel:         {label:'Möbel/Bau/Garten (5.3)',           p:[0,0,0,0,0,0,0,0,0.1,0.5,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.1,0,0,0,0,0]},
+  restaurant:     {label:'Restaurant (6.1)',                 p:[0,0,0,0,0,0,0,0,0,0,0,0.5,1,1,0.25,0.1,0.1,0.25,0.75,1,1,0.75,0.25,0]},
+  sbr:            {label:'Selbstbedienungsrestaurant (6.2)', p:[0,0,0,0,0,0,0,0,0,0,0.25,0.75,1,0.75,0.25,0.1,0.1,0.25,0.5,0.75,0.5,0.25,0,0]},
+  kueche_rest:    {label:'Küche zu Restaurant (6.3)',        p:[0,0,0,0,0,0,0,0,0.25,0.5,0.75,1,1,1,0.5,0.25,0.25,0.5,0.75,1,1,0.75,0.5,0]},
+  kueche_sbr:     {label:'Küche zu SBR (6.4)',               p:[0,0,0,0,0,0,0,0.25,0.75,1,1,1,0.75,0.5,0.25,0.1,0.1,0.25,0.5,0.5,0.25,0,0,0]},
+  bar:            {label:'Bar/Café (6.5)',                   p:[0,0,0,0,0,0,0,0,0.25,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,1,1,1,0.75,0.25]},
+  vorstellung:    {label:'Vorstellungsraum (7.1)',           p:[0,0,0,0,0,0,0,0,0.1,0.25,0.5,0.5,0.25,0.25,0.25,0.5,0.75,0.75,1,1,1,0.75,0.5,0.1]},
+  mehrzweck:      {label:'Mehrzweckhalle (7.2)',             p:[0,0,0,0,0,0,0,0,0.25,0.5,0.5,0.5,0.25,0.25,0.5,0.5,0.5,0.5,0.75,0.75,0.5,0.25,0,0]},
+  ausstellung:    {label:'Ausstellungshalle (7.3)',          p:[0,0,0,0,0,0,0,0,0.1,0.5,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.1,0,0,0,0,0]},
+  bettenzimmer:   {label:'Bettenzimmer (8.1)',               p:[1,1,1,1,1,1,0.75,0.5,0.5,0.25,0.25,0.25,0.25,0.25,0.25,0.5,0.5,0.5,0.75,1,1,1,1,1]},
+  stationszimmer: {label:'Stationszimmer/Pflege (8.2)',      p:[0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.5,0.5,0.5]},
+  behandlung:     {label:'Behandlungsraum (8.3)',            p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.25,0,0,0,0,0]},
+  wartezimmer:    {label:'Wartezimmer (8.4)',                p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.25,0.25,0.75,0.75,0.5,0.25,0,0,0,0,0,0]},
+  turnhalle:      {label:'Turnhalle (9.1)',                  p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,1,1,0.75,0.5,0,0,0,0]},
+  fitness:        {label:'Fitnessraum (9.2)',                p:[0,0,0,0,0,0,0.25,0.75,0.75,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,1,1,0.75,0.5,0.25,0,0]},
+  schwimmhalle:   {label:'Schwimmhalle (9.3)',               p:[0,0,0,0,0,0,0,0.25,0.5,0.75,0.75,0.75,0.75,0.75,0.75,0.75,1,1,0.75,0.5,0.25,0,0,0]},
+  umkleide:       {label:'Umkleide/Dusche (9.4)',            p:[0,0,0,0,0,0,0,0.25,0.75,0.75,0.75,0.75,0.5,0.5,0.75,0.75,1,1,0.75,0.5,0.25,0,0,0]},
+  labor:          {label:'Laborraum (10.1)',                 p:[0,0,0,0,0,0,0,0.1,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.75,0.5,0.1,0,0,0,0,0]},
+  produktion_fein:{label:'Produktion feine Arbeit (10.2)',   p:[0,0,0,0,0,0,0,0,0.75,1,1,1,0.5,0.5,1,1,1,0.5,0,0,0,0,0,0]},
+  produktion_grob:{label:'Produktion grobe Arbeit (10.3)',   p:[0,0,0,0,0,0,0,0,0.75,1,1,1,0.5,0.5,1,1,1,0.5,0,0,0,0,0,0]},
+  lager:          {label:'Lagerhalle (10.4)',                p:[0,0,0,0,0,0,0,0,0.5,0.75,0.75,0.75,0.5,0.5,0.75,0.75,0.5,0.25,0,0,0,0,0,0]},
+  wc:             {label:'WC/Bad (11.1)',                    p:[0.1,0.1,0.1,0.1,0.1,0.1,0.5,0.75,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.75,0.5,0.5,0.5,0.5,0.25,0.1]},
+  garderobe:      {label:'Garderobe (11.2)',                 p:[0,0,0,0,0,0,0.25,0.75,0.75,0.25,0.1,0.1,0.1,0.1,0.1,0.25,1,1,0.5,0.25,0.1,0,0,0]},
+  verkehr:        {label:'Verkehrsfläche (11.3)',            p:[0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.75,0.75,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.75,0.5,0.25,0.1,0.1,0.1,0.1]},
+  teekueche:      {label:'Teeküche (11.4)',                  p:[0,0,0,0,0,0,0,0.1,0.5,0.75,0.5,0.5,0.75,0.5,0.5,0.75,0.5,0.25,0,0,0,0,0,0]},
+  parkhaus:       {label:'Parkhaus/Einstellhalle (12.1)',    p:[0.1,0.1,0.1,0.1,0.1,0.1,0.25,0.75,1,0.5,0.25,0.25,0.5,0.5,0.25,0.25,0.5,0.75,0.5,0.25,0.1,0.1,0.1,0.1]}
+};
+
+// ── Korrekte calcCO2 (24-h Personenprofil) ──
+calcCO2 = function(){
+  var vr=parseFloat(document.getElementById('co2_vr').value)||150;
+  var qv=parseFloat(document.getElementById('co2_qv').value)||180;
+  var gP=parseFloat(document.getElementById('co2_g').value)||20;
+  var csup=parseFloat(document.getElementById('co2_csup').value)||450;
+  var c0=parseFloat(document.getElementById('co2_c0').value)||400;
+  var persons=[];
+  for(var h=0;h<24;h++){var el=document.getElementById('co2_h'+h);persons.push(el?parseFloat(el.value)||0:0);}
+  var nPmax=Math.max.apply(null,persons)||1;
+  var n=qv/vr,dt=1/60,C=c0,data=[];
+  for(var i=0;i<=1440;i++){
+    var t=i*dt,hh=Math.min(Math.floor(t),23);
+    var nP=persons[hh],G=nP*gP,Ceq=csup+(qv>0?G/qv*1000:0);
+    data.push({t:t,c:C,frac:nP/nPmax,nP:nP});
+    C=Ceq+(C-Ceq)*Math.exp(-n*dt);
+  }
+  var allC=data.map(function(d){return d.c;});
+  var maxC=Math.max.apply(null,allC),minCv=Math.min.apply(null,allC);
+  var tA12=data.filter(function(d){return d.c>1200;}).length/60;
+  var tA17=data.filter(function(d){return d.c>1750;}).length/60;
+  document.getElementById('co2_metrics').innerHTML=
+    mc('CO₂ max.',Math.round(maxC),'ppm',maxC>1750?'hi-red':maxC>1200?'':'hi-green')+
+    mc('CO₂ min.',Math.round(minCv),'ppm')+
+    mc('Personen max.',nPmax,'P')+
+    mc('t > IDA 2 (1200 ppm)',tA12.toFixed(1),'h')+
+    mc('t > IDA 3 (1750 ppm)',tA17>0?tA17.toFixed(1):'0','h')+
+    mc('Luftwechsel n',n.toFixed(2),'h⁻¹');
+  if(typeof drawCO2ProfChart==='function') drawCO2ProfChart(data,'Manuelle Belegung',nPmax,'co2_chart');
+  document.getElementById('co2_note').innerHTML=
+    'Manuelle Personenbelegung 24 h. Raumvolumen V<sub>R</sub>='+vr+' m³, Zuluft q<sub>v</sub>='+qv+
+    ' m³/h, Luftwechsel n='+n.toFixed(2)+' h⁻¹.';
+  document.getElementById('res_co2').style.display='block';
+};
 </script>
 </body></html>
